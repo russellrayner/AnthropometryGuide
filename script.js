@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const areas = document.querySelectorAll('map[name="skinfoldmap"] area');
+    const skinfoldImage = document.getElementById('skinfoldImage');
+    const svgDotsContainer = document.getElementById('skinfoldDots');
     const infoDisplay = document.getElementById('infoDisplay');
     const infoTitle = document.getElementById('infoTitle');
     const infoContent = document.getElementById('infoContent');
     const closeButton = document.getElementById('closeButton');
+    let selectedDot = null; // Variable to keep track of the selected dot
 
-// Database of skinfold site information
+// Database of skinfold site information with coordinates
     const skinfoldData = {
         triceps: {
             title: "Triceps Skinfold®",
@@ -24,7 +26,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>The nearest edge of the contact faces of the caliper are applied 1 cm away from the edge of the thumb and finger. The caliper should be placed at a depth of approximately mid-fingernail.</li>
                     <li>The caliper is held at 90&deg; to the surface of the skinfold site at all times. The hand grasping the skin remains holding the fold while the caliper is in contact with the skin.</li>
                     <li>Measurement is recorded two seconds after the full pressure of the caliper is applied.</li>
-                </ul>`
+                </ul>`,
+            x: "85.5%",
+            y: "35.1%"
         },
         subscapular: {
             title: "Subscapular Skinfold®",
@@ -43,7 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>The nearest edge of the contact faces of the caliper are applied 1 cm away from the edge of the thumb and finger.</li>
                     <li>The caliper is held at 90&deg; to the surface of the skinfold site at all times. The hand grasping the skin remains holding the fold while the caliper is in contact with the skin.</li>
                     <li>Measurement is recorded two seconds after the full pressure of the caliper is applied.</li>
-                </ul>`
+                </ul>`,
+            x: "78.2%",
+            y: "31.5%"
         },
         biceps: {
             title: "Biceps Skinfold®",
@@ -62,7 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Apply caliper faces 1 cm away from thumb and finger, at approximately mid-fingernail depth.</li>
                     <li>Caliper at 90&deg; to skinfold surface. Maintain grasp during measurement.</li>
                     <li>Record measurement 2 seconds after full caliper pressure is applied.</li>
-                </ul>`
+                </ul>`,
+            x: "17.6%",
+            y: "33.7%"
         },
         iliac_crest: {
             title: "Iliac Crest Skinfold®",
@@ -81,7 +89,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Grasp skinfold at marked site.</li>
                     <li>Apply caliper 1 cm from fingers, perpendicular to fold.</li>
                     <li>Record after 2 seconds.</li>
-                </ul>`
+                </ul>`,
+            x: "82.2%",
+            y: "45.1%"
         },
         supraspinale: {
             title: "Supraspinale Skinfold®",
@@ -101,7 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Grasp skinfold at marked site following its natural line.</li>
                     <li>Apply caliper 1 cm from fingers, perpendicular to fold.</li>
                     <li>Record after 2 seconds.</li>
-                </ul>`
+                </ul>`,
+            x: "22.9%",
+            y: "43.5%"
         },
         abdominal: {
             title: "Abdominal Skinfold®",
@@ -119,7 +131,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Grasp a firm, broad, vertical fold at the marked site.</li>
                     <li>Apply caliper 1 cm from fingers, perpendicular to fold.</li>
                     <li>Record after 2 seconds.</li>
-                </ul>`
+                </ul>`,
+            x: "25.6%",
+            y: "43.9%"
         },
         front_thigh: {
             title: "Front Thigh Skinfold®",
@@ -142,7 +156,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Grasp skinfold at marked site, parallel to long axis of thigh.</li>
                     <li>Apply caliper 1 cm from fingers, perpendicular to fold.</li>
                     <li>Record after 2 seconds.</li>
-                </ul>`
+                </ul>`,
+            x: "23.2%",
+            y: "60.4%"
         },
         medial_calf: {
             title: "Medial Calf Skinfold®",
@@ -160,28 +176,92 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Grasp vertical skinfold at marked site (most medial point at maximum girth).</li>
                     <li>Apply caliper 1 cm from fingers, perpendicular to fold.</li>
                     <li>Record after 2 seconds.</li>
-                </ul>`
+                </ul>`,
+            x: "26.7%",
+            y: "82.5%"
         }
     };
 
-    areas.forEach(area => {
-        area.addEventListener('click', function(event) {
-            event.preventDefault(); 
-            const siteKey = this.dataset.site;
-            if (skinfoldData[siteKey]) {
-                const data = skinfoldData[siteKey];
-                infoTitle.textContent = data.title;
-                infoContent.innerHTML = data.instructions; 
-                infoDisplay.style.display = 'block';
-                infoDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    function createDot(siteKey, siteData) {
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", siteData.x);
+        circle.setAttribute("cy", siteData.y);
+        circle.setAttribute("r", "1.3%"); // Use fixed radius for all dots
+        circle.setAttribute("data-site", siteKey);
+        circle.classList.add("skinfold-dot"); // For styling
+        svgDotsContainer.appendChild(circle);
+        return circle;
+    }
 
+    // Create dots and add event listeners
+    for (const siteKey in skinfoldData) {
+        if (skinfoldData.hasOwnProperty(siteKey)) {
+            const site = skinfoldData[siteKey];
+            if (site.x && site.y) { // Ensure coordinates are present
+                const dot = createDot(siteKey, site);
+                dot.addEventListener('click', function(event) {
+                    if (selectedDot) {
+                        selectedDot.classList.remove('skinfold-dot-selected');
+                    }
+                    this.classList.add('skinfold-dot-selected');
+                    selectedDot = this;
+
+                    const clickedSiteKey = this.dataset.site;
+                    if (skinfoldData[clickedSiteKey]) {
+                        const data = skinfoldData[clickedSiteKey];
+                        infoTitle.textContent = data.title;
+                        infoContent.innerHTML = data.instructions;
+                        infoDisplay.style.display = 'block';
+                        infoDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
             }
-        });
-    });
+        }
+    }
 
     if (closeButton) {
         closeButton.addEventListener('click', function() {
             infoDisplay.style.display = 'none';
+            if (selectedDot) {
+                selectedDot.classList.remove('skinfold-dot-selected');
+                selectedDot = null;
+            }
         });
+    }
+
+    // Adjust dot positions if the image or window resizes (optional, but good for responsiveness)
+    function adjustDotPositions() {
+        const imageWidth = skinfoldImage.offsetWidth;
+        const imageHeight = skinfoldImage.offsetHeight;
+        const dots = svgDotsContainer.querySelectorAll('.skinfold-dot');
+
+        // Check if image has loaded and has dimensions
+        if (imageWidth === 0 || imageHeight === 0) {
+            // Image not loaded yet, or hidden. Try again shortly.
+            // Or, if the image is loaded but the container is not yet sized, this might also happen.
+            // Ensure the image-container and image have appropriate CSS for sizing.
+            return; 
+        }
+
+        dots.forEach(dot => {
+            const siteKey = dot.dataset.site;
+            const siteData = skinfoldData[siteKey];
+            if (siteData && siteData.x && siteData.y) {
+                // Current cx, cy, r are percentages. No need to recalculate for SVG if using percentages.
+                // If they were absolute, you would recalculate them here based on imageWidth and imageHeight.
+                // For example:
+                // dot.setAttribute("cx", parseFloat(siteData.x) / 100 * imageWidth);
+                // dot.setAttribute("cy", parseFloat(siteData.y) / 100 * imageHeight);
+            }
+        });
+    }
+
+    // Initial adjustment
+    skinfoldImage.onload = adjustDotPositions; // Adjust when image is loaded
+    window.addEventListener('resize', adjustDotPositions); // Adjust on window resize
+
+    // If the image might already be loaded from cache before onload is set
+    if (skinfoldImage.complete && skinfoldImage.naturalHeight !== 0) {
+        adjustDotPositions();
     }
 });
