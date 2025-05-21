@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Skinfold Site Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Skinfold Site Guide</h1>
+        <p>Click on a marked point on the image to learn how to measure the skinfold at that site.</p>
+    </header>
+
+    <main>
+        <div class="image-container">
+            <img src="Dotted-Sillouette.png" alt="Anatomical chart showing skinfold sites" usemap="#skinfoldmap" id="skinfoldImage">
+            <map name="skinfoldmap">
+                <area target="" alt="Biceps" title="Biceps" href="#" coords="176,337,16" shape="circle" data-site="biceps">
+                <area target="" alt="Supraspinale" title="Supraspinale" href="#" coords="229,435,12" shape="circle" data-site="supraspinale">
+                <area target="" alt="Abdominal" title="Abdominal" href="#" coords="256,439,13" shape="circle" data-site="abdominal">
+                <area target="" alt="Front Thigh" title="Front Thigh" href="#" coords="232,604,12" shape="circle" data-site="front_thigh">
+                <area target="" alt="Medial Calf" title="Medial Calf" href="#" coords="267,825,13" shape="circle" data-site="medial_calf">
+                <area target="" alt="Subscapular" title="Subscapular" href="#" coords="782,315,12" shape="circle" data-site="subscapular">
+                <area target="" alt="Triceps" title="Triceps" href="#" coords="855,351,14" shape="circle" data-site="triceps">
+                <area target="" alt="Iliac Crest" title="Iliac Crest" href="#" coords="822,451,12" shape="circle" data-site="iliac_crest">
+            </map>
+        </div>
+
+        <div id="infoDisplay" class="info-display-area" style="display:none;">
+            <h2 id="infoTitle"></h2>
+            <div id="infoContent"></div>
+            <button id="closeButton">Close</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
