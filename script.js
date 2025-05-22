@@ -17,6 +17,47 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentVideoStartTime = 0;
     let currentVideoEndTime = 0;
 
+    // Add coordinate finder functionality
+    let coordinateFindingMode = false;
+    const imageContainer = document.querySelector('.image-container');
+
+    // Add coordinate finder event listeners
+    document.addEventListener('keydown', function(e) {
+        // Toggle coordinate finding mode with Alt+C
+        if (e.altKey && e.key.toLowerCase() === 'c') {
+            e.preventDefault(); // Prevent any default Alt+C behavior
+            coordinateFindingMode = !coordinateFindingMode;
+            document.body.style.cursor = coordinateFindingMode ? 'crosshair' : 'default';
+            console.log('Coordinate finding mode:', coordinateFindingMode ? 'ON' : 'OFF');
+        }
+    });
+
+    imageContainer.addEventListener('click', function(e) {
+        if (!coordinateFindingMode) return;
+
+        // Get image and container dimensions
+        const rect = skinfoldImage.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+        const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+
+        // Create temporary dot
+        const tempDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        tempDot.setAttribute("cx", x + "%");
+        tempDot.setAttribute("cy", y + "%");
+        tempDot.setAttribute("r", "1.3%");
+        tempDot.setAttribute("fill", "yellow");
+        tempDot.setAttribute("stroke", "black");
+        svgDotsContainer.appendChild(tempDot);
+
+        // Log the coordinates
+        console.log(`Coordinates: x: "${x}%", y: "${y}%"`);
+
+        // Remove the temporary dot after 2 seconds
+        setTimeout(() => {
+            svgDotsContainer.removeChild(tempDot);
+        }, 2000);
+    });
+
 // Database of skinfold site information with coordinates
     const skinfoldData = {
         triceps: {
@@ -37,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>The caliper is held at 90&deg; to the surface of the skinfold site at all times. The hand grasping the skin remains holding the fold while the caliper is in contact with the skin.</li>
                     <li>Measurement is recorded two seconds after the full pressure of the caliper is applied.</li>
                 </ul>`,
-            x: "85.5%",
-            y: "35.1%",
+            x: "83.3%",
+            y: "35.0%",
             videoId: videoId,
             startTime: 845,
             endTime: 864
@@ -85,8 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Caliper at 90&deg; to skinfold surface. Maintain grasp during measurement.</li>
                     <li>Record measurement 2 seconds after full caliper pressure is applied.</li>
                 </ul>`,
-            x: "17.6%",
-            y: "33.7%",
+            x: "17.0%",
+            y: "34.2%",
             videoId: videoId,
             startTime: 883,
             endTime: 900
@@ -109,8 +150,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Apply caliper 1 cm from fingers, perpendicular to fold.</li>
                     <li>Record after 2 seconds.</li>
                 </ul>`,
-            x: "82.2%",
-            y: "45.1%",
+            x: "80.8%",
+            y: "44.2%",
             videoId: videoId,
             startTime: 901,
             endTime: 917
@@ -157,8 +198,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Apply caliper 1 cm from fingers, perpendicular to fold.</li>
                     <li>Record after 2 seconds.</li>
                 </ul>`,
-            x: "25.6%",
-            y: "43.9%",
+            x: "25.4%",
+            y: "42.8%",
             videoId: videoId,
             startTime: 933,
             endTime: 951
@@ -186,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Record after 2 seconds.</li>
                 </ul>`,
             x: "23.2%",
-            y: "60.4%",
+            y: "61.0%",
             videoId: videoId,
             startTime: 953,
             endTime: 1022
@@ -208,8 +249,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Apply caliper 1 cm from fingers, perpendicular to fold.</li>
                     <li>Record after 2 seconds.</li>
                 </ul>`,
-            x: "26.7%",
-            y: "82.5%",
+            x: "26.3%",
+            y: "79.5%",
             videoId: videoId,
             startTime: 1024,
             endTime: 1041
