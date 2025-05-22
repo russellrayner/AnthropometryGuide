@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             y: "33.7%",
             videoId: videoId,
             startTime: 883,
-            endTime: 889
+            endTime: 900
         },
         iliac_crest: {
             title: "Iliac Crest Skinfold®",
