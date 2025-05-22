@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
             x: "26.3%",
             y: "79.5%",
             videoId: videoId,
-            startTime: 1024,
+            startTime: 1025,
             endTime: 1041
         }
     };
