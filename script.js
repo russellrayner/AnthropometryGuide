@@ -5,7 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const infoTitle = document.getElementById('infoTitle');
     const infoContent = document.getElementById('infoContent');
     const closeButton = document.getElementById('closeButton');
+    const interactiveArea = document.querySelector('.interactive-area');
+    const detailsPanel = document.querySelector('.details-panel');
     let selectedDot = null; // Variable to keep track of the selected dot
+
+    const videoPlayerContainer = document.getElementById('videoPlayerContainer');
+    const youtubePlayer = document.getElementById('youtubePlayer');
+    const closeVideoButton = document.getElementById('closeVideoButton');
+    const videoId = "qZtZWQXZ9sI";
 
 // Database of skinfold site information with coordinates
     const skinfoldData = {
@@ -28,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Measurement is recorded two seconds after the full pressure of the caliper is applied.</li>
                 </ul>`,
             x: "85.5%",
-            y: "35.1%"
+            y: "35.1%",
+            videoId: videoId,
+            startTime: 845,
+            endTime: 864
         },
         subscapular: {
             title: "Subscapular Skinfold®",
@@ -49,7 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Measurement is recorded two seconds after the full pressure of the caliper is applied.</li>
                 </ul>`,
             x: "78.2%",
-            y: "31.5%"
+            y: "31.5%",
+            videoId: videoId,
+            startTime: 865,
+            endTime: 881
         },
         biceps: {
             title: "Biceps Skinfold®",
@@ -70,7 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Record measurement 2 seconds after full caliper pressure is applied.</li>
                 </ul>`,
             x: "17.6%",
-            y: "33.7%"
+            y: "33.7%",
+            videoId: videoId,
+            startTime: 882,
+            endTime: 889
         },
         iliac_crest: {
             title: "Iliac Crest Skinfold®",
@@ -91,7 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Record after 2 seconds.</li>
                 </ul>`,
             x: "82.2%",
-            y: "45.1%"
+            y: "45.1%",
+            videoId: videoId,
+            startTime: 901,
+            endTime: 917
         },
         supraspinale: {
             title: "Supraspinale Skinfold®",
@@ -113,7 +132,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Record after 2 seconds.</li>
                 </ul>`,
             x: "22.9%",
-            y: "43.5%"
+            y: "43.5%",
+            videoId: videoId,
+            startTime: 919,
+            endTime: 931
         },
         abdominal: {
             title: "Abdominal Skinfold®",
@@ -133,7 +155,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Record after 2 seconds.</li>
                 </ul>`,
             x: "25.6%",
-            y: "43.9%"
+            y: "43.9%",
+            videoId: videoId,
+            startTime: 933,
+            endTime: 951
         },
         front_thigh: {
             title: "Front Thigh Skinfold®",
@@ -158,7 +183,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Record after 2 seconds.</li>
                 </ul>`,
             x: "23.2%",
-            y: "60.4%"
+            y: "60.4%",
+            videoId: videoId,
+            startTime: 953,
+            endTime: 1022
         },
         medial_calf: {
             title: "Medial Calf Skinfold®",
@@ -178,7 +206,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Record after 2 seconds.</li>
                 </ul>`,
             x: "26.7%",
-            y: "82.5%"
+            y: "82.5%",
+            videoId: videoId,
+            startTime: 1024,
+            endTime: 1041
         }
     };
 
@@ -207,12 +238,30 @@ document.addEventListener('DOMContentLoaded', function() {
                     selectedDot = this;
 
                     const clickedSiteKey = this.dataset.site;
-                    if (skinfoldData[clickedSiteKey]) {
-                        const data = skinfoldData[clickedSiteKey];
+                    const data = skinfoldData[clickedSiteKey];
+
+                    if (data) {
+                        // Show the details panel and shift layout
+                        detailsPanel.classList.add('visible');
+                        interactiveArea.classList.add('showing-info');
+
+                        // Display text info
                         infoTitle.textContent = data.title;
                         infoContent.innerHTML = data.instructions;
                         infoDisplay.style.display = 'block';
                         infoDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                        // Display video
+                        if (data.videoId && data.startTime !== undefined && data.endTime !== undefined) {
+                            const embedUrl = `https://www.youtube.com/embed/${data.videoId}?start=${data.startTime}&end=${data.endTime}&autoplay=1&rel=0`;
+                            youtubePlayer.src = embedUrl;
+                            videoPlayerContainer.style.display = 'block';
+                            videoPlayerContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        } else {
+                            // If no video data, hide player and clear src
+                            videoPlayerContainer.style.display = 'none';
+                            youtubePlayer.src = 'about:blank';
+                        }
                     }
                 });
             }
@@ -221,11 +270,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (closeButton) {
         closeButton.addEventListener('click', function() {
+            // Hide the details panel and reset layout
+            detailsPanel.classList.remove('visible');
+            interactiveArea.classList.remove('showing-info');
+
             infoDisplay.style.display = 'none';
+            
+            // Also close video when main info is closed
+            videoPlayerContainer.style.display = 'none';
+            youtubePlayer.src = 'about:blank'; 
+
+            // Deselect the dot if one is selected
             if (selectedDot) {
                 selectedDot.classList.remove('skinfold-dot-selected');
                 selectedDot = null;
             }
+        });
+    }
+
+    if (closeVideoButton) {
+        closeVideoButton.addEventListener('click', function() {
+            videoPlayerContainer.style.display = 'none';
+            youtubePlayer.src = 'about:blank'; // Stop video playback
         });
     }
 

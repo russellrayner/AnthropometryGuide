@@ -30,10 +30,38 @@ main {
     align-items: center; 
 }
 
+/* New layout structure */
+.interactive-area {
+    display: flex;
+    flex-direction: row; /* Side-by-side on wider screens */
+    justify-content: center;
+    align-items: flex-start; /* Align at the top */
+    width: 100%;
+    max-width: 1200px; /* Maximum width for very large screens */
+    gap: 1.5rem; /* Space between image and details */
+    transition: justify-content 0.3s ease;
+}
+
+.interactive-area.showing-info {
+    justify-content: flex-start;
+}
+
 .image-container {
     position: relative;
+    width: 45%; /* Takes 45% of the interactive-area width */
     max-width: 600px;
-    margin: auto;
+    margin: 0; /* Reset margin */
+    transition: margin 0.3s ease;
+}
+
+.details-panel {
+    width: 50%; /* Takes 50% of the interactive-area width */
+    display: none; /* Hidden by default */
+    flex-direction: column;
+}
+
+.details-panel.visible {
+    display: flex;
 }
 
 #skinfoldImage {
@@ -75,16 +103,23 @@ area:hover {
     cursor: pointer;
 }
 
-.info-display-area {
+/* Info display and video container adjustments */
+.info-display-area, .video-player-container {
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 0.5rem;
     padding: 1.25rem;
-    margin-top: 1.25rem;
-    width: 80%;
-    max-width: 600px;
+    width: 100%; /* Take full width of the details-panel */
+    max-width: 100%; /* Remove max-width restriction */
+    margin-top: 0; /* Reset margin for stacked elements */
+    margin-bottom: 1rem; /* Add space between elements when stacked */
     box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.1);
     transition: all 0.3s ease-in-out;
+}
+
+/* Keep first element in details-panel from having top margin */
+.details-panel > div:first-child {
+    margin-top: 0;
 }
 
 .info-display-area h2 {
@@ -119,6 +154,60 @@ area:hover {
 
 #closeButton:hover {
     background-color: #c0392b;
+}
+
+/* Video Player Styling */
+.video-player-container {
+    display: flex; /* For centering button */
+    flex-direction: column; /* Stack iframe and button */
+    align-items: center; /* Center button */
+}
+
+.video-player-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.25rem;
+}
+
+#closeVideoButton {
+    background-color: #3498db; /* A different color for video close */
+    color: white;
+    border: none;
+    padding: 0.625rem 0.9375rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 0.9375rem;
+    cursor: pointer;
+    border-radius: 0.3125rem;
+    transition: background-color 0.3s ease;
+}
+
+#closeVideoButton:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .interactive-area {
+        flex-direction: column; /* Stack elements on smaller screens */
+        align-items: center;
+        justify-content: flex-start; /* Always start from top on mobile */
+    }
+
+    .interactive-area.showing-info {
+        justify-content: flex-start; /* No change needed on mobile */
+    }
+
+    .image-container, .details-panel {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 600px; /* Maintain reasonable width */
+    }
+
+    .details-panel {
+        margin-top: 1.25rem; /* Add space between image and details */
+    }
 }
 
 footer {
