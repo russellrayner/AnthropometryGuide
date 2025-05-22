@@ -171,15 +171,17 @@ area:hover {
 
 .video-controls {
     display: flex;
-    gap: 1rem;
-    margin-top: 0.9375rem;
+    gap: 1.5rem; /* Increased spacing between buttons */
+    margin-top: 1.25rem; /* Increased top margin */
+    justify-content: center; /* Center the buttons */
+    width: 100%; /* Take full width */
 }
 
 #restartVideoButton {
     background-color: #27ae60; /* Green color for restart */
     color: white;
     border: none;
-    padding: 0.625rem 0.9375rem;
+    padding: 0.75rem 1.25rem; /* Slightly larger padding */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -187,6 +189,7 @@ area:hover {
     cursor: pointer;
     border-radius: 0.3125rem;
     transition: background-color 0.3s ease;
+    min-width: 140px; /* Ensure consistent button width */
 }
 
 #restartVideoButton:hover {
@@ -194,10 +197,10 @@ area:hover {
 }
 
 #closeVideoButton {
-    background-color: #3498db; /* A different color for video close */
+    background-color: #e57373; /* Softer red color */
     color: white;
     border: none;
-    padding: 0.625rem 0.9375rem;
+    padding: 0.75rem 1.25rem; /* Slightly larger padding */
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -205,10 +208,11 @@ area:hover {
     cursor: pointer;
     border-radius: 0.3125rem;
     transition: background-color 0.3s ease;
+    min-width: 140px; /* Ensure consistent button width */
 }
 
 #closeVideoButton:hover {
-    background-color: #2980b9;
+    background-color: #ef5350; /* Slightly darker on hover */
 }
 
 /* Responsive layout for smaller screens */
