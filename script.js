@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
             x: "17.6%",
             y: "33.7%",
             videoId: videoId,
-            startTime: 882,
+            startTime: 883,
             endTime: 889
         },
         iliac_crest: {
