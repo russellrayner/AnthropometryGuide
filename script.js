@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             x: "83.3%",
             y: "35.0%",
             videoId: videoId,
-            startTime: 845,
+            startTime: 846,
             endTime: 864
         },
         subscapular: {
