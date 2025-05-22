@@ -12,7 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const videoPlayerContainer = document.getElementById('videoPlayerContainer');
     const youtubePlayer = document.getElementById('youtubePlayer');
     const closeVideoButton = document.getElementById('closeVideoButton');
+    const restartVideoButton = document.getElementById('restartVideoButton');
     const videoId = "qZtZWQXZ9sI";
+    let currentVideoStartTime = 0;
+    let currentVideoEndTime = 0;
 
 // Database of skinfold site information with coordinates
     const skinfoldData = {
@@ -253,7 +256,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         // Display video
                         if (data.videoId && data.startTime !== undefined && data.endTime !== undefined) {
-                            const embedUrl = `https://www.youtube.com/embed/${data.videoId}?start=${data.startTime}&end=${data.endTime}&autoplay=1&rel=0`;
+                            currentVideoStartTime = data.startTime;
+                            currentVideoEndTime = data.endTime;
+                            const embedUrl = `https://www.youtube.com/embed/${data.videoId}?start=${currentVideoStartTime}&end=${currentVideoEndTime}&autoplay=1&rel=0`;
                             youtubePlayer.src = embedUrl;
                             videoPlayerContainer.style.display = 'block';
                             videoPlayerContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -261,6 +266,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             // If no video data, hide player and clear src
                             videoPlayerContainer.style.display = 'none';
                             youtubePlayer.src = 'about:blank';
+                            currentVideoStartTime = 0;
+                            currentVideoEndTime = 0;
                         }
                     }
                 });
@@ -292,6 +299,15 @@ document.addEventListener('DOMContentLoaded', function() {
         closeVideoButton.addEventListener('click', function() {
             videoPlayerContainer.style.display = 'none';
             youtubePlayer.src = 'about:blank'; // Stop video playback
+        });
+    }
+
+    if (restartVideoButton) {
+        restartVideoButton.addEventListener('click', function() {
+            if (currentVideoStartTime > 0) {
+                const embedUrl = `https://www.youtube.com/embed/${videoId}?start=${currentVideoStartTime}&end=${currentVideoEndTime}&autoplay=1&rel=0`;
+                youtubePlayer.src = embedUrl;
+            }
         });
     }
 

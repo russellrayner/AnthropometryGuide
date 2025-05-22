@@ -169,6 +169,30 @@ area:hover {
     border-radius: 0.25rem;
 }
 
+.video-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.9375rem;
+}
+
+#restartVideoButton {
+    background-color: #27ae60; /* Green color for restart */
+    color: white;
+    border: none;
+    padding: 0.625rem 0.9375rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.3125rem;
+    transition: background-color 0.3s ease;
+}
+
+#restartVideoButton:hover {
+    background-color: #219a52;
+}
+
 #closeVideoButton {
     background-color: #3498db; /* A different color for video close */
     color: white;
@@ -178,7 +202,6 @@ area:hover {
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
-    margin-top: 0.9375rem;
     cursor: pointer;
     border-radius: 0.3125rem;
     transition: background-color 0.3s ease;
