@@ -39,7 +39,7 @@ main {
     width: 100%;
     max-width: 1200px; /* Maximum width for very large screens */
     gap: 1.5rem; /* Space between image and details */
-    transition: justify-content 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .interactive-area.showing-info {
@@ -51,17 +51,22 @@ main {
     width: 45%; /* Takes 45% of the interactive-area width */
     max-width: 600px;
     margin: 0; /* Reset margin */
-    transition: margin 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .details-panel {
     width: 50%; /* Takes 50% of the interactive-area width */
     display: none; /* Hidden by default */
     flex-direction: column;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .details-panel.visible {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #skinfoldImage {
@@ -106,14 +111,14 @@ area:hover {
 /* Info display and video container adjustments */
 .info-display-area, .video-player-container {
     background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem;
-    padding: 1.25rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
     width: 100%; /* Take full width of the details-panel */
     max-width: 100%; /* Remove max-width restriction */
     margin-top: 0; /* Reset margin for stacked elements */
     margin-bottom: 1rem; /* Add space between elements when stacked */
-    box-shadow: 0 0.125rem 0.625rem rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: all 0.3s ease-in-out;
 }
 
@@ -124,40 +129,88 @@ area:hover {
 
 .info-display-area h2 {
     margin-top: 0;
-    color: #35424a;
-    font-size: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.75rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.info-display-area h2::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: teal;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.info-display-area h4 {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    border-left: 4px solid #27ae60;
+    padding-left: 0.75rem;
+}
+
+#infoContent {
+    line-height: 1.7;
+    color: #444;
+}
+
+#infoContent p {
+    margin-bottom: 1rem;
+}
+
+#infoContent p strong {
+    color: #2c3e50;
+    font-weight: 600;
 }
 
 #infoContent ul {
     list-style-type: disc;
-    padding-left: 1.25rem;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 #infoContent li {
-    margin-bottom: 0.625rem;
+    margin-bottom: 0.75rem;
+    position: relative;
 }
 
 #closeButton {
     background-color: #e74c3c;
     color: white;
     border: none;
-    padding: 0.625rem 0.9375rem;
+    padding: 0.75rem 1.25rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
-    margin-top: 0.9375rem;
+    margin-top: 1.25rem;
     cursor: pointer;
-    border-radius: 0.3125rem;
-    transition: background-color 0.3s ease;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-weight: 500;
 }
 
 #closeButton:hover {
     background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* Video Player Styling */
+/* Video Player Styling - Update to match info panel */
 .video-player-container {
+    background-color: #f8f9fa;
     display: flex; /* For centering button */
     flex-direction: column; /* Stack iframe and button */
     align-items: center; /* Center button */
@@ -166,13 +219,14 @@ area:hover {
 .video-player-container iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .video-controls {
     display: flex;
     gap: 1.5rem; /* Increased spacing between buttons */
-    margin-top: 1.25rem; /* Increased top margin */
+    margin-top: 1.5rem; /* Increased top margin */
     justify-content: center; /* Center the buttons */
     width: 100%; /* Take full width */
 }
@@ -187,13 +241,17 @@ area:hover {
     display: inline-block;
     font-size: 1rem;
     cursor: pointer;
-    border-radius: 0.3125rem;
-    transition: background-color 0.3s ease;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
     min-width: 140px; /* Ensure consistent button width */
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 #restartVideoButton:hover {
     background-color: #219a52;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 #closeVideoButton {
@@ -206,13 +264,17 @@ area:hover {
     display: inline-block;
     font-size: 1rem;
     cursor: pointer;
-    border-radius: 0.3125rem;
-    transition: background-color 0.3s ease;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
     min-width: 140px; /* Ensure consistent button width */
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 #closeVideoButton:hover {
     background-color: #ef5350; /* Slightly darker on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 /* Responsive layout for smaller screens */
@@ -243,4 +305,76 @@ footer {
     text-align: center;
     padding: 1rem 0;
     font-size: 0.9rem;
+}
+
+/* Collapsible sections styling */
+.collapsible-header {
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.collapsible-header::after {
+    content: "−";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #27ae60;
+    width: 24px;
+    text-align: center;
+    line-height: 1;
+}
+
+.collapsible-header.collapsed::after {
+    content: "+";
+}
+
+.collapsible-header:hover {
+    color: #27ae60;
+}
+
+.collapsible-content {
+    overflow: hidden;
+    max-height: 1000px; /* Large enough to fit content */
+    transition: max-height 0.4s ease-in-out;
+}
+
+.collapsible-content.collapsed {
+    max-height: 0;
+    transition: max-height 0.2s ease-in-out;
+}
+
+/* Add some spacing after each collapsible section */
+.collapsible-section {
+    margin-bottom: 1rem;
+}
+
+/* Add a hint that the headers are clickable */
+.info-display-area h4.collapsible-header {
+    cursor: pointer;
+    background-color: #f8f9fa;
+    padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+    border-radius: 0.5rem;
+    border-left: 4px solid #27ae60;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.info-display-area h4.collapsible-header:hover {
+    background-color: #edf2f7;
+}
+
+/* Toggle all button */
+.toggle-all-button {
+    display: none;
+}
+
+/* Add some space above the first collapsible section */
+.collapsible-section:first-of-type {
+    margin-top: 0.5rem;
 }
