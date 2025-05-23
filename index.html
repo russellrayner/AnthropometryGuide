@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Skinfold Guide</title>
+    <title>Interactive Anthropometry Guide</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Interactive Skinfold Guide</h1>
-        <p>Click on a marked point on the image to learn how to measure the skinfold at that site.</p>
+        <h1 id="mainTitle">Interactive Anthropometry Guide</h1>
+        <div class="task-selector">
+            <label for="taskSelect">Select Task:</label>
+            <select id="taskSelect">
+                <option value="skinfolds">Skinfolds</option>
+                <option value="landmarks">Landmarks</option>
+                <option value="lengths">Lengths</option>
+                <option value="girths">Girths</option>
+                <option value="breadths">Breadths</option>
+            </select>
+        </div>
+        <p id="taskDescription">Click on a marked point on the image to learn how to measure the skinfold at that site.</p>
     </header>
 
     <main>

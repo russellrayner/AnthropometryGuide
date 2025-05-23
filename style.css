@@ -22,6 +22,48 @@ header h1 {
     font-size: 2rem;
 }
 
+.task-selector {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.task-selector label {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.task-selector select {
+    background-color: #ffffff;
+    border: 2px solid #27ae60;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.task-selector select:hover {
+    border-color: #219a52;
+    box-shadow: 0 2px 8px rgba(39, 174, 96, 0.2);
+}
+
+.task-selector select:focus {
+    outline: none;
+    border-color: #27ae60;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+#taskDescription {
+    margin: 0.5rem 0 0 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
 main {
     flex-grow: 1;
     padding: 20px;
@@ -76,20 +118,63 @@ main {
 }
 
 /* SVG Dot Styling */
-.skinfold-dot {
-    fill: rgba(255, 0, 0, 0.7);
-    stroke: rgba(255, 255, 255, 0.9);
+.measurement-dot {
     stroke-width: 0.3%;
     cursor: pointer;
     transition: fill 0.3s ease, stroke 0.3s ease;
 }
 
-.skinfold-dot:hover {
+.skinfolds-dot {
+    fill: rgba(255, 0, 0, 0.7);
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.skinfolds-dot:hover {
     fill: rgba(255, 0, 0, 1);
     stroke: rgba(255, 255, 255, 1);
 }
 
-.skinfold-dot.skinfold-dot-selected {
+.landmarks-dot {
+    fill: rgba(0, 150, 255, 0.7);
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.landmarks-dot:hover {
+    fill: rgba(0, 150, 255, 1);
+    stroke: rgba(255, 255, 255, 1);
+}
+
+.lengths-dot {
+    fill: rgba(255, 165, 0, 0.7);
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.lengths-dot:hover {
+    fill: rgba(255, 165, 0, 1);
+    stroke: rgba(255, 255, 255, 1);
+}
+
+.girths-dot {
+    fill: rgba(128, 0, 128, 0.7);
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.girths-dot:hover {
+    fill: rgba(128, 0, 128, 1);
+    stroke: rgba(255, 255, 255, 1);
+}
+
+.breadths-dot {
+    fill: rgba(0, 128, 0, 0.7);
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.breadths-dot:hover {
+    fill: rgba(0, 128, 0, 1);
+    stroke: rgba(255, 255, 255, 1);
+}
+
+.measurement-dot.dot-selected {
     fill: teal;
     stroke: none;
 }
