@@ -117,7 +117,98 @@ main {
     display: block;
 }
 
-/* SVG Dot Styling */
+/* SVG Measurement Element Styling */
+.measurement-element {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.measurement-line {
+    stroke-width: 0.5%;
+    transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+.measurement-endpoint {
+    stroke-width: 0.3%;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+.measurement-arc {
+    fill: none;
+    stroke-width: 0.4%;
+    stroke-dasharray: 2% 1%;
+    cursor: pointer;
+    pointer-events: all;
+    transition: stroke 0.3s ease, stroke-width 0.3s ease;
+}
+
+/* Lengths styling */
+.lengths-element .measurement-line {
+    stroke: rgba(255, 165, 0, 0.8);
+}
+
+.lengths-element .measurement-endpoint {
+    fill: rgba(255, 165, 0, 0.7);
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.lengths-element:hover .measurement-line {
+    stroke: rgba(255, 165, 0, 1);
+    stroke-width: 0.7%;
+}
+
+.lengths-element:hover .measurement-endpoint {
+    fill: rgba(255, 165, 0, 1);
+    stroke: rgba(255, 255, 255, 1);
+}
+
+/* Breadths styling */
+.breadths-element .measurement-line {
+    stroke: rgba(0, 128, 0, 0.8);
+}
+
+.breadths-element .measurement-endpoint {
+    fill: rgba(0, 128, 0, 0.7);
+    stroke: rgba(255, 255, 255, 0.9);
+}
+
+.breadths-element:hover .measurement-line {
+    stroke: rgba(0, 128, 0, 1);
+    stroke-width: 0.7%;
+}
+
+.breadths-element:hover .measurement-endpoint {
+    fill: rgba(0, 128, 0, 1);
+    stroke: rgba(255, 255, 255, 1);
+}
+
+/* Girths styling */
+.girths-element .measurement-arc {
+    stroke: rgba(128, 0, 128, 0.8);
+}
+
+.girths-element:hover .measurement-arc {
+    stroke: rgba(128, 0, 128, 1);
+    stroke-width: 0.6%;
+}
+
+/* Selected state for measurement elements */
+.measurement-element.element-selected .measurement-line {
+    stroke: teal;
+    stroke-width: 0.8%;
+}
+
+.measurement-element.element-selected .measurement-endpoint {
+    fill: teal;
+    stroke: white;
+}
+
+.measurement-element.element-selected .measurement-arc {
+    stroke: teal;
+    stroke-width: 0.7%;
+}
+
+/* Original dot styling for skinfolds and landmarks */
 .measurement-dot {
     stroke-width: 0.3%;
     cursor: pointer;

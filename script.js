@@ -398,8 +398,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p><strong>Measurement technique:</strong> Use a large sliding caliper or segmometer to measure the straight-line distance between the two landmarks.</p>
                         </div>
                     </div>`,
-                x: "83.5%",
-                y: "35.0%"
+                startX: "82.0%",
+                startY: "25.0%",
+                endX: "85.0%",
+                endY: "45.0%",
+                type: "line"
             },
             forearm_length: {
                 title: "Forearm Length®",
@@ -412,8 +415,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p><strong>Measurement technique:</strong> Use a large sliding caliper or segmometer to measure the straight-line distance between the two landmarks.</p>
                         </div>
                     </div>`,
-                x: "86.5%",
-                y: "50.0%"
+                startX: "85.0%",
+                startY: "45.0%",
+                endX: "88.0%",
+                endY: "55.0%",
+                type: "line"
             }
         },
         girths: {
@@ -428,8 +434,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p><strong>Measurement technique:</strong> Pass the tape around the arm at the marked level, ensuring it lies in a plane perpendicular to the long axis of the arm.</p>
                         </div>
                     </div>`,
-                x: "82.0%",
-                y: "38.0%"
+                centerX: "82.0%",
+                centerY: "38.0%",
+                radiusX: "3.0%",
+                radiusY: "1.5%",
+                type: "ellipse"
             },
             waist_girth: {
                 title: "Waist Girth®",
@@ -442,8 +451,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p><strong>Measurement technique:</strong> Pass the tape horizontally around the waist at the narrowest point, usually at the end of normal expiration.</p>
                         </div>
                     </div>`,
-                x: "50.0%",
-                y: "48.0%"
+                centerX: "50.0%",
+                centerY: "48.0%",
+                radiusX: "8.0%",
+                radiusY: "3.0%",
+                type: "ellipse"
             }
         },
         breadths: {
@@ -458,8 +470,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p><strong>Measurement technique:</strong> Use a large sliding caliper with the subject's arms relaxed at their sides.</p>
                         </div>
                     </div>`,
-                x: "50.0%",
-                y: "25.0%"
+                startX: "82.0%",
+                startY: "25.0%",
+                endX: "18.0%",
+                endY: "25.0%",
+                type: "line"
             },
             biiliocristal: {
                 title: "Biiliocristal Breadth®",
@@ -472,48 +487,119 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p><strong>Measurement technique:</strong> Use a large sliding caliper, applying firm pressure to compress soft tissues.</p>
                         </div>
                     </div>`,
-                x: "50.0%",
-                y: "45.0%"
+                startX: "77.0%",
+                startY: "45.0%",
+                endX: "23.0%",
+                endY: "45.0%",
+                type: "line"
             }
         }
     };
 
-    function createDot(siteKey, siteData, taskType) {
-        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        circle.setAttribute("cx", siteData.x);
-        circle.setAttribute("cy", siteData.y);
-        circle.setAttribute("r", "1.3%");
-        circle.setAttribute("data-site", siteKey);
-        circle.setAttribute("data-task", taskType);
-        circle.classList.add("measurement-dot", `${taskType}-dot`);
-        svgDotsContainer.appendChild(circle);
-        return circle;
+    function createMeasurementElement(siteKey, siteData, taskType) {
+        const element = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        element.setAttribute("data-site", siteKey);
+        element.setAttribute("data-task", taskType);
+        element.classList.add("measurement-element", `${taskType}-element`);
+
+        if (siteData.type === "line") {
+            // Create line with endpoints for lengths and breadths
+            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            line.setAttribute("x1", siteData.startX);
+            line.setAttribute("y1", siteData.startY);
+            line.setAttribute("x2", siteData.endX);
+            line.setAttribute("y2", siteData.endY);
+            line.classList.add("measurement-line");
+            element.appendChild(line);
+
+            // Create endpoint circles
+            const startCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            startCircle.setAttribute("cx", siteData.startX);
+            startCircle.setAttribute("cy", siteData.startY);
+            startCircle.setAttribute("r", "1.0%");
+            startCircle.classList.add("measurement-endpoint");
+            element.appendChild(startCircle);
+
+            const endCircle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            endCircle.setAttribute("cx", siteData.endX);
+            endCircle.setAttribute("cy", siteData.endY);
+            endCircle.setAttribute("r", "1.0%");
+            endCircle.classList.add("measurement-endpoint");
+            element.appendChild(endCircle);
+
+        } else if (siteData.type === "ellipse") {
+            // Create dashed arc (half-ellipse) for girths - only show front portion
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            
+            // Parse the percentage values
+            const centerX = parseFloat(siteData.centerX);
+            const centerY = parseFloat(siteData.centerY);
+            const radiusX = parseFloat(siteData.radiusX);
+            const radiusY = parseFloat(siteData.radiusY);
+            
+            // Calculate arc endpoints
+            const startX = centerX - radiusX;
+            const startY = centerY;
+            const endX = centerX + radiusX;
+            const endY = centerY;
+            
+            // Create an arc that curves downward (front of body)
+            // Using a more pronounced curve by adjusting the control point  
+            const pathData = `M ${startX} ${startY} Q ${centerX} ${centerY + radiusY} ${endX} ${endY}`;
+            
+            path.setAttribute("d", pathData);
+            path.classList.add("measurement-arc");
+            element.appendChild(path);
+        } else {
+            // Fallback to dot for landmarks and skinfolds
+            const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            circle.setAttribute("cx", siteData.x);
+            circle.setAttribute("cy", siteData.y);
+            circle.setAttribute("r", "1.3%");
+            circle.setAttribute("data-site", siteKey);
+            circle.setAttribute("data-task", taskType);
+            circle.classList.add("measurement-dot", `${taskType}-dot`);
+            element.appendChild(circle);
+        }
+
+        svgDotsContainer.appendChild(element);
+        return element;
     }
 
-    function clearAllDots() {
-        const dots = svgDotsContainer.querySelectorAll('.measurement-dot');
-        dots.forEach(dot => dot.remove());
+    function clearAllElements() {
+        const elements = svgDotsContainer.querySelectorAll('.measurement-element, .measurement-dot');
+        elements.forEach(element => element.remove());
         selectedDot = null;
     }
 
     function loadTaskData(taskType) {
-        clearAllDots();
+        clearAllElements();
         hideInfoPanel();
         
         const data = taskData[taskType];
         if (!data) return;
 
-        // Create dots for the current task
+        // Create elements for the current task
         for (const siteKey in data) {
             if (data.hasOwnProperty(siteKey)) {
                 const site = data[siteKey];
-                if (site.x && site.y) {
-                    const dot = createDot(siteKey, site, taskType);
-                    dot.addEventListener('click', function(event) {
+                let element;
+                
+                if (taskType === 'lengths' || taskType === 'breadths' || taskType === 'girths') {
+                    element = createMeasurementElement(siteKey, site, taskType);
+                } else {
+                    // For skinfolds and landmarks, use the original dot creation
+                    if (site.x && site.y) {
+                        element = createDot(siteKey, site, taskType);
+                    }
+                }
+                
+                if (element) {
+                    element.addEventListener('click', function(event) {
                         if (selectedDot) {
-                            selectedDot.classList.remove('dot-selected');
+                            selectedDot.classList.remove('element-selected');
                         }
-                        this.classList.add('dot-selected');
+                        this.classList.add('element-selected');
                         selectedDot = this;
 
                         const clickedSiteKey = this.dataset.site;
@@ -527,6 +613,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
+    }
+
+    function createDot(siteKey, siteData, taskType) {
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", siteData.x);
+        circle.setAttribute("cy", siteData.y);
+        circle.setAttribute("r", "1.3%");
+        circle.setAttribute("data-site", siteKey);
+        circle.setAttribute("data-task", taskType);
+        circle.classList.add("measurement-dot", `${taskType}-dot`);
+        svgDotsContainer.appendChild(circle);
+        return circle;
     }
 
     function showInfoPanel(data) {
@@ -564,7 +662,7 @@ document.addEventListener('DOMContentLoaded', function() {
         youtubePlayer.src = 'about:blank';
 
         if (selectedDot) {
-            selectedDot.classList.remove('dot-selected');
+            selectedDot.classList.remove('element-selected');
             selectedDot = null;
         }
     }
