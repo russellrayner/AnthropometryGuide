@@ -202,9 +202,9 @@
         "acromiale": {
             "title": "Acromiale®",
             "identification": {
-                "definition": "The most lateral point on the lateral border of the acromial process of the scapula.",
-                "subjectPosition": "The subject assumes a relaxed standing position.",
-                "technique": "Palpate laterally along the spine of the scapula to the acromial process. The landmark is at the most lateral point of the lateral border of the acromion."
+                "definition": "The point on the superior part of the acromion border in line with the most lateral aspect.",
+                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides. The shoulder girdle should be in a mid-position.",
+                "technique": "Standing behind and on the right hand side of the subject, palpate along the spine of the scapula to the corner of the acromion. This represents the start of the lateral border which usually runs anteriorly, slightly superiorly and medially. Apply the straight edge of a pencil to the lateral aspect of the acromion to confirm the location of the most lateral part of the border. Mark this most lateral aspect. The acromion has an associated bone thickness. Palpate superiorly to the top margin of the acromion border in line with the most lateral aspect."
             },
             "x": "82.0%",
             "y": "25.0%"
@@ -212,22 +212,132 @@
         "radiale": {
             "title": "Radiale®",
             "identification": {
-                "definition": "The most proximal and lateral point on the head of the radius.",
-                "subjectPosition": "The subject's elbow is flexed at 90° with the palm facing medially.",
-                "technique": "Palpate in the depression on the posterior/lateral aspect of the extended elbow between the head of the radius and the capitulum of the humerus."
+                "definition": "The point at the proximal and lateral border of the head of the radius.",
+                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides.",
+                "technique": "Palpate downward into the lateral dimple of the right elbow. It should be possible to feel the space between the capitulum of the humerus and the head of the radius. Then move the thumb distally onto the most lateral part of the proximal radial head. Correct location can be confirmed by slight rotation of the forearm which causes the head of the radius to rotate."
             },
             "x": "85.0%",
             "y": "45.0%"
         },
+        "mid_acromiale_radiale": {
+            "title": "Mid-acromiale-radiale®",
+            "identification": {
+                "definition": "The point equidistant from Acromiale® and Radiale®.",
+                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides.",
+                "technique": "Measure the linear distance between the Acromiale® and Radiale® landmarks with the arm relaxed and extended by the side. The best way to measure this is with a segmometer or large sliding caliper. If a tape is used be sure to avoid following the curvature of the surface of the arm. Place a small horizontal mark at the level of the mid-point between these two landmarks. Project this mark around to the posterior and anterior surfaces of the arm as a horizontal line. This is required for locating the Triceps® and Biceps® skinfold sites."
+            },
+            "x": "83.5%",
+            "y": "35.0%"
+        },
         "stylion": {
             "title": "Stylion®",
             "identification": {
-                "definition": "The most distal point on the styloid process of the radius.",
-                "subjectPosition": "The subject's arm is in the anatomical position.",
-                "technique": "Palpate the distal end of the radius on the lateral aspect of the wrist to locate the styloid process."
+                "definition": "The most distal point on the lateral margin of the styloid process of the radius.",
+                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides. The measurer lifts the wrist to locate the landmark.",
+                "technique": "Using a thumb nail the anthropometrist palpates in the triangular space identified by the muscle tendons of the wrist immediately above the thumb. This area is also called the anatomical 'snuff box'. Once the snuff box has been identified, palpate in the space between the distal radius and the scaphoid in order to correctly identify the styloid process."
             },
             "x": "88.0%",
             "y": "55.0%"
+        },
+        "mid_stylion": {
+            "title": "Mid-stylion®",
+            "identification": {
+                "definition": "The midpoint, on the anterior (palmar) surface of the wrist, of the horizontal line at the level of the stylion.",
+                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides. The measurer lifts the wrist to locate the landmark.",
+                "technique": "The tape is aligned with the stylion landmark and a line perpendicular to the long axis of the forearm is drawn close to the mid-point of the wrist. The mid-point is estimated between the medial and lateral edges of the wrist. A line is drawn at this position which intersects the perpendicular line."
+            },
+            "x": "20.0%",
+            "y": "55.0%"
+        },
+        "subscapulare": {
+            "title": "Subscapulare®",
+            "identification": {
+                "definition": "The undermost tip of the inferior angle of the scapula.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides.",
+                "technique": "Palpate the inferior angle of the scapula with the left thumb. If there is difficulty locating the inferior angle of the scapula, the subject should slowly reach behind the back with the right arm. The inferior angle of the scapula should be felt continuously as the hand is again placed by the side of the body. A final check of this landmark should be made with the hand by the side in the relaxed position."
+            },
+            "x": "77.0%",
+            "y": "31.0%"
+        },
+        "mesosternale": {
+            "title": "Mesosternale®",
+            "identification": {
+                "definition": "The midpoint of the corpus sterni at the level of the centre of the articulation of the fourth rib with the sternum (chondrosternal articulation).",
+                "subjectPosition": "The subject assumes either a seated or standing position with the arms hanging by the sides.",
+                "technique": "This landmark is located by palpation beginning from the top of the clavicles. Using the thumb the anthropometrist should roll down from the clavicle to the first intercostal space (i.e. between the first and second ribs). The thumb is then replaced by the index finger and the procedure is then repeated down to the second, third and fourth intercostal spaces. The fourth rib is between the last two spaces. An extra check of rib identification is that the second rib is at the level of the sternal angle which can be felt as a ridge on the sternum."
+            },
+            "x": "50.0%",
+            "y": "32.0%"
+        },
+        "iliocristale": {
+            "title": "Iliocristale®",
+            "identification": {
+                "definition": "The point on the most lateral aspect of the iliac tubercle, which is on the iliac crest.",
+                "subjectPosition": "The subject assumes a relaxed position with the left arm hanging by the side and the right arm abducted to the horizontal.",
+                "technique": "From behind the subject, locate the most lateral edge of the iliac crest on the ilium using the right hand. The left hand is used to stabilise the body by providing resistance on the left side of the pelvis. The landmark is the most lateral point made at the identified edge of the ilium."
+            },
+            "x": "80.0%",
+            "y": "45.0%"
+        },
+        "iliospinale": {
+            "title": "Iliospinale®",
+            "identification": {
+                "definition": "The most inferior or undermost part of the tip of the anterior superior iliac spine.",
+                "subjectPosition": "The subject assumes a standing position with the arms hanging by the sides.",
+                "technique": "Palpate the superior aspect of the ilium and follow anteriorly and inferiorly along the crest to the anterior superior iliac spine and downward until it runs posteriorly. The landmark is the lower margin or edge where the bone can just be felt. Difficulty in appraising the landmark can be assisted by the subject lifting the heel of the right foot and rotating the femur outward. Because the Sartorius muscle originates at the Iliospinale®, this movement of the femur enables palpation of the muscle and tracing to its origin."
+            },
+            "x": "25.0%",
+            "y": "44.0%"
+        },
+        "trochanterion": {
+            "title": "Trochanterion®",
+            "identification": {
+                "definition": "The most superior point on the greater trochanter of the femur, not the most lateral point.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the right arm across the trunk.",
+                "technique": "This site is identified while standing behind the subject by palpating the lateral aspect of the gluteal muscle with the heel of the hand while standing behind the subject. It is advisable to support the left side of the subject's pelvis with the left hand while applying pressure with the right hand. Once the greater trochanter has been identified, the measurer should palpate upward to locate the highest point of the trochanter where the bone can still be felt when strong downward pressure is applied. Note: This site is difficult to locate in persons with thick adipose tissue over the greater trochanter."
+            },
+            "x": "78.0%",
+            "y": "50.0%"
+        },
+        "tibiale_laterale": {
+            "title": "Tibiale laterale®",
+            "identification": {
+                "definition": "The most superior point on the lateral border of the head of the tibia.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides.",
+                "technique": "This is often a difficult landmark to correctly locate due to thick lateral ligaments that run across the knee joint. Palpate the site using a thumb nail and the following guidelines. Locate the joint space bounded by the lateral condyle of the femur and the antero-lateral portion of the lateral tibial condyle. Press inwards firmly in order to locate the superior and lateral border of the head of the tibia. It is often useful to have the subject flex and extend the knee several times to ensure that the correct position has been located. The mark should be made approximately one-third of the distance along the border moving in an anterior-posterior direction."
+            },
+            "x": "75.0%",
+            "y": "66.0%"
+        },
+        "mid_trochanterion_tibiale_laterale": {
+            "title": "Mid-trochanterion-tibiale laterale®",
+            "identification": {
+                "definition": "The point equidistant from trochanterion and tibiale laterale.",
+                "subjectPosition": "The subject assumes a relaxed position with the left arm hanging by the side and the right forearm across the trunk.",
+                "technique": "Measure the linear distance between the Trochanterion and Tibiale laterale landmarks. The best way to measure this is with a segmometer or large sliding caliper. If a tape is used be sure to avoid following the curvature of the surface of the thigh. Place a small horizontal mark at the level of the mid-point between these two landmarks."
+            },
+            "x": "76.5%",
+            "y": "58.0%"
+        },
+        "tibiale_mediale": {
+            "title": "Tibiale mediale®",
+            "identification": {
+                "definition": "The most superior point on the medial border of the head of the tibia.",
+                "subjectPosition": "The subject is seated with the right leg resting over the left knee so that the medial aspect of the leg is able to be marked.",
+                "technique": "The Tibiale mediale is approximately in the same transverse plane as the Tibiale laterale. Palpate the joint space bounded by the medial femoral condyle and the medial tibial condyle. The most superior point should be marked on the proximal medial border while the leg is held in this position."
+            },
+            "x": "25.0%",
+            "y": "66.0%"
+        },
+        "sphyrion_tibiale": {
+            "title": "Sphyrion tibiale®",
+            "identification": {
+                "definition": "The most distal tip of the medial malleolus.",
+                "subjectPosition": "The subject is seated with the right leg resting over the left knee so that the medial aspect of the leg is able to be marked.",
+                "technique": "This landmark may be located most easily by palpation with the thumb nail from beneath and dorsally. It is the distal tip, not the most medial aspect, of the medial malleolus."
+            },
+            "x": "26.0%",
+            "y": "85.0%"
         }
     },
     "lengths": {
