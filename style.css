@@ -62,6 +62,7 @@ header h1 {
     margin: 0.5rem 0 0 0;
     font-size: 1rem;
     opacity: 0.9;
+    color: #555;
 }
 
 main {
@@ -553,4 +554,68 @@ footer {
 /* Add some space above the first collapsible section */
 .collapsible-section:first-of-type {
     margin-top: 0.5rem;
+}
+
+/* Task Selector Buttons */
+.task-buttons-container {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 15px; /* Space below the button group */
+    justify-content: center; /* Center the buttons */
+}
+
+.task-button {
+    padding: 10px 20px; /* Slightly more horizontal padding */
+    border: 1px solid transparent; /* Start with a transparent border */
+    background-color: #e9ecef; /* Lighter, more neutral background for inactive */
+    color: #495057; /* Darker grey for better contrast on light bg */
+    cursor: pointer;
+    border-radius: 20px; /* More rounded corners for a pill-like shape */
+    font-size: 0.95em; /* Slightly smaller font for a cleaner look */
+    font-weight: 500; /* Medium weight */
+    transition: all 0.2s ease-in-out; /* Faster, smoother transition */
+    outline: none; /* Remove default browser outline */
+}
+
+.task-button:hover {
+    background-color: #dee2e6; /* Slightly darker on hover */
+    border-color: #ced4da; /* Subtle border on hover */
+    color: #343a40;
+    transform: translateY(-1px); /* Slight lift on hover */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow on hover */
+}
+
+.task-button.active {
+    background-color: #007bff; /* Bootstrap primary blue - or your preferred accent */
+    color: white;
+    border-color: #007bff;
+    font-weight: 600; /* Bolder for active state */
+    box-shadow: 0 3px 6px rgba(0, 123, 255, 0.25); /* Shadow for active button */
+}
+
+.task-button.active:hover {
+    background-color: #0069d9; /* Darker shade of blue on hover for active button */
+    border-color: #0062cc;
+    transform: translateY(0); /* Reset transform if already lifted by general hover */
+}
+
+.task-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Ensure header elements are centered nicely */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light background for the header */
+    border-bottom: 1px solid #ddd;
+    color: #333; /* Ensure text in header has good contrast */
+}
+
+header h1 {
+    margin-bottom: 15px;
 }

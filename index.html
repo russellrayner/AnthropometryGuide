@@ -11,15 +11,15 @@
         <h1 id="mainTitle">Interactive Anthropometry Guide</h1>
         <div class="task-selector">
             <label for="taskSelect">Select Task:</label>
-            <select id="taskSelect">
-                <option value="skinfolds">Skinfolds</option>
-                <option value="landmarks">Landmarks</option>
-                <option value="lengths">Lengths</option>
-                <option value="girths">Girths</option>
-                <option value="breadths">Breadths</option>
-            </select>
+            <div id="taskSelectContainer" class="task-buttons-container">
+                <button data-task="landmarks" class="task-button active">Landmarks</button>
+                <button data-task="skinfolds" class="task-button">Skinfolds</button>
+                <button data-task="girths" class="task-button">Girths</button>
+                <button data-task="lengths" class="task-button">Lengths</button>
+                <button data-task="breadths" class="task-button">Breadths</button>
+            </div>
         </div>
-        <p id="taskDescription">Click on a marked point on the image to learn how to measure the skinfold at that site.</p>
+        <p id="taskDescription">Click on a marked point on the image to learn how to locate the anatomical landmark.</p>
     </header>
 
     <main>

@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeButton = document.getElementById('closeButton');
     const interactiveArea = document.querySelector('.interactive-area');
     const detailsPanel = document.querySelector('.details-panel');
-    const taskSelect = document.getElementById('taskSelect');
+    const taskSelectContainer = document.getElementById('taskSelectContainer');
     const mainTitle = document.getElementById('mainTitle');
     const taskDescription = document.getElementById('taskDescription');
     let selectedDot = null;
-    let currentTask = 'skinfolds';
+    let currentTask = 'landmarks';
 
     const videoPlayerContainer = document.getElementById('videoPlayerContainer');
     const youtubePlayer = document.getElementById('youtubePlayer');
@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
             taskData = await response.json();
             console.log('Anatomical data loaded successfully');
             
-            // Initialize with skinfolds after data is loaded
-            loadTaskData('skinfolds');
+            // Initialize with the new default task after data is loaded
+            loadTaskData(currentTask);
         } catch (error) {
             console.error('Error loading anatomical data:', error);
             // You could show a user-friendly error message here
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Generate HTML based on the data structure
         if (data.identification) {
             // For skinfolds and landmarks - they have identification sections
-            const sectionType = currentTask === 'skinfolds' ? 'Skinfold Site® Identification' : 'Landmark Identification';
+            const sectionType = currentTask === 'skinfolds' ? 'Site Identification' : 'Landmark Identification';
             const isCollapsed = currentTask === 'skinfolds' ? ' collapsed' : '';
             
             html += `<div class="collapsible-section">`;
@@ -355,11 +355,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Task selector event listener
-    taskSelect.addEventListener('change', function() {
-        currentTask = this.value;
-        taskDescription.textContent = taskDescriptions[currentTask];
-        loadTaskData(currentTask);
+    // New event listener for task buttons
+    taskSelectContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains('task-button')) {
+            const selectedTask = event.target.dataset.task;
+            if (selectedTask === currentTask) return; // Do nothing if the same task is clicked
+
+            // Update active button
+            const currentActiveButton = taskSelectContainer.querySelector('.task-button.active');
+            if (currentActiveButton) {
+                currentActiveButton.classList.remove('active');
+            }
+            event.target.classList.add('active');
+
+            currentTask = selectedTask;
+            taskDescription.textContent = taskDescriptions[currentTask];
+            loadTaskData(currentTask);
+        }
     });
 
     // Event listeners for buttons
