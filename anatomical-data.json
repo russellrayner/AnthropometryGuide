@@ -3,18 +3,18 @@
         "triceps": {
             "title": "Triceps Skinfold®",
             "identification": {
-                "definition": "The most posterior part of the Triceps when viewed from the side at the marked Mid-acromiale-radiale® level.",
-                "subjectPosition": "When marking the sites for the Triceps skinfold the subject assumes the anatomical position.",
-                "location": "The Triceps® skinfold site is marked over the most posterior part of the Triceps when viewed from the side at the marked Mid-acromiale-radialeⓇ level."
+                "definition": "A vertical skinfold raised on the posterior aspect of the arm, over the triceps muscle, at the level of the marked Mid-acromiale-radiale® landmark.",
+                "subjectPosition": "For site marking, the subject assumes the standard anatomical position (standing erect, upper limbs by the sides, palms facing anteriorly).",
+                "location": "The Triceps® skinfold site is marked on the posterior midline of the arm, directly superior to the olecranon process, at the level of the Mid-acromiale-radiale® landmark."
             },
             "measurement": {
-                "subjectPosition": "The subject assumes a relaxed standing position with the left arm hanging by the side. The right arm should be relaxed with the shoulder joint slightly externally rotated and elbow extended by the side of the body.",
-                "method": "The fold is parallel to the long axis of the arm.",
+                "subjectPosition": "The subject stands relaxed with the left arm hanging by the side. The right arm is relaxed with the shoulder joint slightly externally rotated and the elbow extended by the side of the body.",
+                "method": "The skinfold is lifted parallel to the long axis of the arm.",
                 "techniques": [
-                    "The skinfold is picked up at the marked line. It should be grasped and lifted (raised) so that a double fold of skin plus the underlying subcutaneous adipose tissue is held between the thumb and index finger of the left hand.",
-                    "The nearest edge of the contact faces of the caliper are applied 1 cm away from the edge of the thumb and finger.",
-                    "The caliper is held at 90° to the surface of the skinfold site at all times.",
-                    "Measurement is recorded two seconds after the full pressure of the caliper is applied."
+                    "At the marked level, grasp a double fold of skin and subcutaneous adipose tissue between the thumb and index finger of the left hand.",
+                    "Apply the caliper faces 1 cm distal to the fingers, perpendicular to the skinfold.",
+                    "Maintain the caliper at a 90° angle to the surface of the skinfold throughout the measurement.",
+                    "Record the measurement 2 seconds after full caliper pressure is applied."
                 ]
             },
             "x": "83.3%",
@@ -26,18 +26,18 @@
         "subscapular": {
             "title": "Subscapular Skinfold®",
             "identification": {
-                "definition": "The site 2 cm along a line running laterally and obliquely downward from the Subscapulare® landmark at a 45° angle.",
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides.",
-                "location": "Use a tape measure to locate the point 2 cm from the Subscapulare® in a line 45° laterally downward."
+                "definition": "The site is located 2 cm infero-laterally (downwards and outwards) from the Subscapulare® landmark, along a line oriented at a 45° angle.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the upper limbs hanging by the sides.",
+                "location": "Use a tape measure to identify the point 2 cm from the Subscapulare® landmark, following a line running infero-laterally at 45°."
             },
             "measurement": {
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides.",
-                "method": "The line of the skinfold is determined by the natural fold lines of the skin (running laterally and obliquely downward at a 45° angle).",
+                "subjectPosition": "The subject assumes a relaxed standing position with the upper limbs hanging by the sides.",
+                "method": "The skinfold is aligned with the natural cleavage lines of the skin, typically running infero-laterally at a 45° angle.",
                 "techniques": [
-                    "The skinfold is picked up at the marked line. It should be grasped and lifted (raised) so that a double fold of skin plus the underlying subcutaneous adipose tissue is held between the thumb and index finger of the left hand.",
-                    "The nearest edge of the contact faces of the caliper are applied 1 cm away from the edge of the thumb and finger.",
-                    "The caliper is held at 90° to the surface of the skinfold site at all times.",
-                    "Measurement is recorded two seconds after the full pressure of the caliper is applied."
+                    "Grasp the skinfold at the marked site. The fold should be lifted so that a double fold of skin plus the underlying subcutaneous adipose tissue is held between the thumb and index finger of the left hand.",
+                    "Apply the caliper faces 1 cm distal or medial to the fingers, perpendicular to the skinfold.",
+                    "Maintain the caliper at a 90° angle to the surface of the skinfold throughout the measurement.",
+                    "Record the measurement 2 seconds after full caliper pressure is applied."
                 ]
             },
             "x": "78.2%",
@@ -49,18 +49,18 @@
         "biceps": {
             "title": "Biceps Skinfold®",
             "identification": {
-                "definition": "The most anterior part of the Biceps.",
-                "subjectPosition": "When marking the sites for the Biceps® skinfold the subject assumes the anatomical position.",
-                "location": "The Biceps® skinfold site is marked over the most anterior part of the Biceps when viewed from the side at the marked Mid-acromiale-radialeⓇ level."
+                "definition": "A vertical skinfold raised on the anterior aspect of the arm, over the belly of the biceps brachii muscle.",
+                "subjectPosition": "For site marking, the subject assumes the standard anatomical position.",
+                "location": "The Biceps® skinfold site is marked on the anterior midline of the arm, at the level of the Mid-acromiale-radiale® landmark, over the most prominent part of the biceps brachii."
             },
             "measurement": {
-                "subjectPosition": "The subject assumes a relaxed standing position with the left arm hanging by the side. The right arm should be relaxed with the shoulder joint slightly externally rotated and elbow extended by the side of the body.",
-                "method": "This skinfold is parallel to the long axis of the arm.",
+                "subjectPosition": "The subject stands relaxed with the left arm hanging by the side. The right arm is relaxed with the shoulder joint slightly externally rotated and elbow extended by the side of the body.",
+                "method": "This skinfold is lifted parallel to the long axis of the arm.",
                 "techniques": [
-                    "The skinfold is picked up at the marked line. Grasp a double fold of skin plus underlying subcutaneous adipose tissue between the thumb and index finger of the left hand.",
-                    "Apply caliper faces 1 cm away from thumb and finger, at approximately mid-fingernail depth.",
-                    "Caliper at 90° to skinfold surface. Maintain grasp during measurement.",
-                    "Record measurement 2 seconds after full caliper pressure is applied."
+                    "Grasp a double fold of skin and underlying subcutaneous adipose tissue between the thumb and index finger of the left hand at the marked site.",
+                    "Apply caliper faces 1 cm distal to the fingers, at approximately mid-fingernail depth.",
+                    "Maintain the caliper at a 90° angle to the skinfold surface. Maintain the grasp during measurement.",
+                    "Record the measurement 2 seconds after full caliper pressure is applied."
                 ]
             },
             "x": "17.0%",
@@ -72,18 +72,18 @@
         "iliac_crest": {
             "title": "Iliac Crest Skinfold®",
             "identification": {
-                "definition": "The site at the centre of the skinfold raised immediately above the marked Iliocristale®.",
-                "subjectPosition": "The subject assumes a relaxed position with the left arm hanging by the side and the right arm abducted to the horizontal.",
-                "location": "This skinfold is raised immediately superior to the Iliocristale®. Align the fingers of the left hand on the Iliocristale® landmark and exert pressure inwards so that the fingers roll over the iliac crest. Substitute the left thumb for these fingers and relocate the index finger a sufficient distance superior to the thumb so that this grasp becomes the skinfold to be measured. Mark the centre of the raised skinfold. The fold runs slightly downwards anteriorly as determined by the natural fold of the skin."
+                "definition": "The site at the centre of a skinfold raised immediately superior to the marked Iliocristale® landmark.",
+                "subjectPosition": "The subject stands relaxed with the left upper limb hanging by the side and the right upper limb abducted to the horizontal plane.",
+                "location": "This skinfold is raised immediately superior to the Iliocristale®. Align the fingers of the left hand on the Iliocristale® landmark and exert pressure medially so that the fingers roll over the iliac crest. Substitute the left thumb for these fingers and relocate the index finger sufficiently superior to the thumb to grasp the skinfold. Mark the centre of this raised skinfold. The fold typically runs slightly antero-inferiorly, following the natural cleavage lines of the skin."
             },
             "measurement": {
-                "subjectPosition": "The subject assumes a relaxed standing position with the left arm hanging by the side. The right arm should be either abducted or placed across the trunk.",
-                "method": "The line of the skinfold generally runs slightly downward posterior-anterior, as determined by the natural fold lines of the skin.",
-                "notes": "Over the years there has been a lot of confusion about the nomenclature of skinfold sites over the ilioabdominal region. ISAK identifies the Iliac crest® and Supraspinale® skinfold sites. ISAK's Iliac crest site is very similar to the site that Durnin & Womersley (1974) called the suprailiac skinfold.",
+                "subjectPosition": "The subject stands relaxed with the left upper limb hanging by the side. The right upper limb should be either abducted or placed across the trunk.",
+                "method": "The skinfold generally runs slightly antero-inferiorly, as determined by the natural cleavage lines of the skin.",
+                "notes": "Nomenclature for skinfolds in the ilioabdominal region can be confusing. ISAK identifies the Iliac crest® and Supraspinale® skinfold sites. The ISAK Iliac crest site is very similar to the site Durnin & Womersley (1974) termed the suprailiac skinfold.",
                 "techniques": [
-                    "Grasp skinfold at marked site.",
-                    "Apply caliper 1 cm from fingers, perpendicular to fold.",
-                    "Record after 2 seconds."
+                    "Grasp the skinfold at the marked site.",
+                    "Apply the caliper 1 cm from the fingers, perpendicular to the fold.",
+                    "Record the measurement after 2 seconds."
                 ]
             },
             "x": "80.8%",
@@ -95,19 +95,19 @@
         "supraspinale": {
             "title": "Supraspinale Skinfold®",
             "identification": {
-                "definition": "The site at the intersection of two lines: (1) the line from the marked Iliospinale® to the anterior axillary border, and (2) the horizontal line at the level of the marked Iliocristale®.",
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides. The right arm may be abducted to the horizontal after the anterior axillary border has been identified.",
-                "location": "The fold runs slightly downwards and anteriorly as determined by the natural fold of the skin.",
+                "definition": "The site at the intersection of: 1) a line from the marked Iliospinale® to the anterior axillary border, and 2) a horizontal line at the level of the marked Iliocristale®.",
+                "subjectPosition": "The subject stands relaxed with the upper limbs hanging by the sides. The right upper limb may be abducted to the horizontal plane after the anterior axillary border has been identified.",
+                "location": "The fold runs slightly antero-inferiorly, following the natural cleavage lines of the skin.",
                 "nomenclatureNote": "This skinfold was originally named \"suprailiac\" by Parnell (1958) and Heath and Carter (1967), but since 1982 it has been known as the \"supraspinale\"."
             },
             "measurement": {
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides.",
-                "method": "The fold runs medially downward at about a 45° angle as determined by the natural fold of the skin.",
-                "notes": "ISAK's Supraspinale site was termed the suprailiac by Parnell (1958) and Tanner (1964). ISAK'S Supraspinale skinfold site is a site used in the Heath-Carter somatotype system.",
+                "subjectPosition": "The subject stands relaxed with the upper limbs hanging by the sides.",
+                "method": "The fold runs infero-medially at approximately a 45° angle, as determined by the natural cleavage lines of the skin.",
+                "notes": "ISAK's Supraspinale site was termed the suprailiac by Parnell (1958) and Tanner (1964). ISAK'S Supraspinale skinfold site is used in the Heath-Carter somatotype system.",
                 "techniques": [
-                    "Grasp skinfold at marked site following its natural line.",
-                    "Apply caliper 1 cm from fingers, perpendicular to fold.",
-                    "Record after 2 seconds."
+                    "Grasp the skinfold at the marked site, following its natural cleavage line.",
+                    "Apply the caliper 1 cm from the fingers, perpendicular to the fold.",
+                    "Record the measurement after 2 seconds."
                 ]
             },
             "x": "22.9%",
@@ -119,17 +119,17 @@
         "abdominal": {
             "title": "Abdominal Skinfold®",
             "identification": {
-                "definition": "The site 5 cm to the right hand side of the omphalion (midpoint of the navel).",
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides.",
-                "location": "This is a vertical fold raised 5 cm from the right hand side of the omphalion."
+                "definition": "A vertical skinfold raised 5 cm lateral to the right of the omphalion (midpoint of the navel).",
+                "subjectPosition": "The subject stands relaxed with the upper limbs hanging by the sides.",
+                "location": "This is a vertical fold raised 5 cm lateral to the right side of the omphalion."
             },
             "measurement": {
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides.",
-                "method": "This is a vertical fold. It is particularly important at this site that the measurer is sure the initial grasp is firm and broad since often the underlying musculature is poorly developed. This may result in an underestimation of the thickness of the subcutaneous layer of tissue. (Note: Do not place the fingers or caliper inside the navel.)",
+                "subjectPosition": "The subject stands relaxed with the upper limbs hanging by the sides.",
+                "method": "This is a vertical fold. It is particularly important at this site that the measurer ensures the initial grasp is firm and broad, as the underlying musculature may be poorly developed. This could result in an underestimation of the subcutaneous adipose tissue thickness. (Note: Do not place fingers or caliper tines within the navel.)",
                 "techniques": [
                     "Grasp a firm, broad, vertical fold at the marked site.",
-                    "Apply caliper 1 cm from fingers, perpendicular to fold.",
-                    "Record after 2 seconds."
+                    "Apply the caliper 1 cm lateral or medial to the fingers, perpendicular to the fold.",
+                    "Record the measurement after 2 seconds."
                 ]
             },
             "x": "25.4%",
@@ -141,32 +141,32 @@
         "front_thigh": {
             "title": "Front Thigh Skinfold®",
             "identification": {
-                "definition": "The site at the mid-point of the distance between the Inguinal fold® and the anterior surface of the patella (Anterior patella®) on the midline of the thigh.",
-                "subjectPosition": "The subject assumes a seated position with the torso erect and the arms hanging by the sides. The knee of the right leg should be bent at a right angle.",
-                "location": "The measurer stands facing the right side of the seated subject on the lateral side of the thigh. The site is marked parallel to the long axis of the thigh at the mid-point of the distance between the Inguinal fold® and the superior margin of the anterior surface of the patella (while the leg is bent). If there is difficulty locating the Inguinal fold® the subject should flex the hip to make a fold. Place a small horizontal mark at the level of the mid-point between the two landmarks. Now draw a perpendicular line to intersect the horizontal line. This perpendicular line is located in the midline of the thigh. If a tape is used be sure to avoid following the curvature of the surface of the skin."
+                "definition": "The site on the anterior midline of the thigh, at the midpoint of the distance between the Inguinal fold® (proximal) and the superior border of the patella (distal).",
+                "subjectPosition": "The subject is seated with the torso erect and upper limbs hanging by the sides. The knee of the right lower limb should be flexed at a 90° angle.",
+                "location": "The measurer stands facing the lateral aspect of the seated subject's right thigh. The site is marked parallel to the long axis of the thigh at the midpoint of the distance between the Inguinal fold® and the superior border of the anterior surface of the patella (while the knee is flexed). If difficulty arises in locating the Inguinal fold®, the subject should flex the hip to accentuate the fold. Place a small horizontal mark at the level of the midpoint. Then draw a perpendicular line intersecting this horizontal mark on the anterior midline of the thigh. If a tape is used, ensure it does not follow the curvature of the skin surface."
             },
             "measurement": {
-                "subjectPosition": "The subject assumes a seated position at the front edge of the box with the torso erect and the arms hanging by the sides. The knee of the right leg is usually bent at a right angle. In some subjects, this skinfold may be easier to take with the knee extended.",
-                "method": "Because of difficulties with this skinfold, three methods are recommended (record method A, B, or C).",
+                "subjectPosition": "The subject is seated at the anterior edge of a box/chair with the torso erect and upper limbs by the sides. The knee of the right lower limb is usually flexed at 90°. In some subjects, this skinfold may be easier to measure with the knee extended.",
+                "method": "Due to potential difficulties, three methods are recommended (record method A, B, or C).",
                 "methods": [
                     {
                         "name": "Method A (Standard and Preferred)",
-                        "description": "The measurer stands facing the right side of the subject on the lateral side of the thigh. The skinfold is raised at the marked site. The skinfold measurement is taken while the knee is bent."
+                        "description": "The measurer stands facing the lateral aspect of the subject's right thigh. The skinfold is raised at the marked site. The measurement is taken while the knee is flexed."
                     },
                     {
                         "name": "Method B",
-                        "description": "If the fold is difficult to raise the subject is asked to assist by lifting with both hands the underside of the thigh to relieve the tension of the skin."
+                        "description": "If the fold is difficult to raise, the subject is asked to assist by lifting the posterior aspect of the thigh with both hands to relieve skin tension."
                     },
                     {
                         "name": "Method C",
-                        "description": "For subjects with particularly tight skinfolds, the subject is asked to assist by lifting the underside of the thigh as in (b). The recorder (standing on the medial aspect of the subject's thigh) assists by raising a fold with both hands at about 6 cm either side of the landmark. The measurer then raises the skinfold at the marked site."
+                        "description": "For subjects with particularly taut skin, the subject assists as in (B). The recorder (standing on the medial aspect of the subject's thigh) assists by raising a fold with both hands approximately 6 cm on either side of the landmark. The measurer then raises the skinfold at the marked site."
                     }
                 ],
-                "additionalNotes": "If the skinfold is difficult to take with the knee flexed, ask the subject to extend the knee. Any of the three methods (A, B and C) may be used with the knee extended if necessary. The skinfold is parallel to the long axis of the thigh.",
+                "additionalNotes": "If the skinfold is difficult to measure with the knee flexed, ask the subject to extend the knee. Any of the three methods (A, B, C) may be used with the knee extended if necessary. The skinfold is parallel to the long axis of the thigh.",
                 "techniques": [
-                    "Grasp skinfold at marked site, parallel to long axis of thigh.",
-                    "Apply caliper 1 cm from fingers, perpendicular to fold.",
-                    "Record after 2 seconds."
+                    "Grasp the skinfold at the marked site, parallel to the long axis of the thigh.",
+                    "Apply the caliper 1 cm distal to the fingers, perpendicular to the fold.",
+                    "Record the measurement after 2 seconds."
                 ]
             },
             "x": "23.2%",
@@ -178,17 +178,17 @@
         "medial_calf": {
             "title": "Medial Calf Skinfold®",
             "identification": {
-                "definition": "The site on the most medial aspect of the calf at the level of the maximal girth.",
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides. The subject's feet should be separated with the weight evenly distributed.",
-                "location": "The level of the maximum girth is determined and marked with a small horizontal line on the medial aspect of the calf. The maximal girth is found by using the middle fingers to manipulate the position of the tape in a series of up or down measurements to determine the maximum girth. View the marked site from the front to locate the most medial point and mark this with an intersecting vertical line."
+                "definition": "A vertical skinfold on the medial aspect of the calf, at the level of its maximal girth.",
+                "subjectPosition": "The subject stands relaxed with upper limbs by the sides. Feet should be separated with weight evenly distributed.",
+                "location": "The level of maximum calf girth is determined and marked with a small horizontal line on the medial aspect of the calf. Maximal girth is found by manipulating a tape measure superiorly and inferiorly. View the marked site from the anterior aspect to locate the most medial point; mark this with an intersecting vertical line."
             },
             "measurement": {
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides and the right foot placed on the box. The right knee is bent at about 90°.",
-                "method": "The subject's right foot is placed on a box with the calf relaxed. The fold is parallel to the long axis of the leg.",
+                "subjectPosition": "The subject stands relaxed, upper limbs by sides, with the right foot placed on a box so the knee is flexed at approximately 90° and the calf muscles are relaxed.",
+                "method": "With the subject's right foot on a box and calf relaxed, the vertical skinfold is raised parallel to the long axis of the leg.",
                 "techniques": [
-                    "Grasp vertical skinfold at marked site (most medial point at maximum girth).",
-                    "Apply caliper 1 cm from fingers, perpendicular to fold.",
-                    "Record after 2 seconds."
+                    "Grasp a vertical skinfold at the marked site (most medial point at maximum girth).",
+                    "Apply the caliper 1 cm from the fingers, perpendicular to the fold.",
+                    "Record the measurement after 2 seconds."
                 ]
             },
             "x": "26.3%",
@@ -202,9 +202,9 @@
         "acromiale": {
             "title": "Acromiale®",
             "identification": {
-                "definition": "The point on the superior part of the acromion border in line with the most lateral aspect.",
-                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides. The shoulder girdle should be in a mid-position.",
-                "technique": "Standing behind and on the right hand side of the subject, palpate along the spine of the scapula to the corner of the acromion. This represents the start of the lateral border which usually runs anteriorly, slightly superiorly and medially. Apply the straight edge of a pencil to the lateral aspect of the acromion to confirm the location of the most lateral part of the border. Mark this most lateral aspect. The acromion has an associated bone thickness. Palpate superiorly to the top margin of the acromion border in line with the most lateral aspect."
+                "definition": "The most superior and lateral point on the acromion border, in line with its most lateral aspect.",
+                "subjectPosition": "The subject assumes a relaxed position, upper limbs hanging by sides. The shoulder girdle should be in a neutral (mid-line) position.",
+                "technique": "Standing posterior and to the right of the subject, palpate along the spine of the scapula to the acromial angle. This marks the commencement of the lateral border, which typically courses anteriorly, slightly superiorly, and medially. Apply a straight edge (e.g., pencil) to the lateral aspect of the acromion to confirm the most lateral point of the border. Mark this. The acromion has notable thickness; palpate superiorly to the superior margin of the acromion border in line with this most lateral aspect."
             },
             "x": "83.9%",
             "y": "23.4%"
@@ -212,9 +212,9 @@
         "radiale": {
             "title": "Radiale®",
             "identification": {
-                "definition": "The point at the proximal and lateral border of the head of the radius.",
-                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides.",
-                "technique": "Palpate downward into the lateral dimple of the right elbow. It should be possible to feel the space between the capitulum of the humerus and the head of the radius. Then move the thumb distally onto the most lateral part of the proximal radial head. Correct location can be confirmed by slight rotation of the forearm which causes the head of the radius to rotate."
+                "definition": "The most proximal and lateral point on the head of the radius.",
+                "subjectPosition": "The subject assumes a relaxed position, upper limbs hanging by sides.",
+                "technique": "Palpate inferiorly into the lateral dimple of the right elbow (cubital fossa). Identify the space between the capitulum of the humerus and the head of the radius. Move the thumb distally onto the most lateral part of the proximal radial head. Confirmation of the correct location is achieved by slight supination and pronation of the forearm, causing the radial head to rotate."
             },
             "x": "85.4%",
             "y": "39.5%"
@@ -222,9 +222,9 @@
         "mid_acromiale_radiale": {
             "title": "Mid-acromiale-radiale®",
             "identification": {
-                "definition": "The point equidistant from Acromiale® and Radiale®.",
-                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides.",
-                "technique": "Measure the linear distance between the Acromiale® and Radiale® landmarks with the arm relaxed and extended by the side. The best way to measure this is with a segmometer or large sliding caliper. If a tape is used be sure to avoid following the curvature of the surface of the arm. Place a small horizontal mark at the level of the mid-point between these two landmarks. Project this mark around to the posterior and anterior surfaces of the arm as a horizontal line. This is required for locating the Triceps® and Biceps® skinfold sites."
+                "definition": "The midpoint on a straight line between the Acromiale® and Radiale® landmarks.",
+                "subjectPosition": "The subject assumes a relaxed position, upper limbs extended and hanging by sides.",
+                "technique": "Measure the linear distance between Acromiale® and Radiale® with the arm relaxed and extended. A segmometer or large sliding caliper is preferred. If a tape is used, avoid following the arm's surface curvature. Place a small horizontal mark at the midpoint. Project this mark as a horizontal line around to the posterior and anterior surfaces of the arm; this line is crucial for locating the Triceps® and Biceps® skinfold sites."
             },
             "x": "83.9%",
             "y": "31.7%"
@@ -233,8 +233,8 @@
             "title": "Stylion®",
             "identification": {
                 "definition": "The most distal point on the lateral margin of the styloid process of the radius.",
-                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides. The measurer lifts the wrist to locate the landmark.",
-                "technique": "Using a thumb nail the anthropometrist palpates in the triangular space identified by the muscle tendons of the wrist immediately above the thumb. This area is also called the anatomical 'snuff box'. Once the snuff box has been identified, palpate in the space between the distal radius and the scaphoid in order to correctly identify the styloid process."
+                "subjectPosition": "The subject assumes a relaxed position, upper limbs hanging by sides. The measurer may lift the wrist to aid landmark location.",
+                "technique": "Using a thumbnail, palpate the triangular depression (anatomical 'snuff box') on the dorsolateral aspect of the wrist, immediately proximal to the base of the thumb, between the tendons of extensor pollicis longus and extensor pollicis brevis. Once identified, palpate within this space between the distal radius and the scaphoid bone to correctly identify the radial styloid process."
             },
             "x": "88.7%",
             "y": "51.3%"
@@ -242,9 +242,9 @@
         "mid_stylion": {
             "title": "Mid-stylion®",
             "identification": {
-                "definition": "The midpoint, on the anterior (palmar) surface of the wrist, of the horizontal line at the level of the stylion.",
-                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides. The measurer lifts the wrist to locate the landmark.",
-                "technique": "The tape is aligned with the stylion landmark and a line perpendicular to the long axis of the forearm is drawn close to the mid-point of the wrist. The mid-point is estimated between the medial and lateral edges of the wrist. A line is drawn at this position which intersects the perpendicular line."
+                "definition": "The midpoint on the anterior (palmar) surface of the wrist, on a horizontal line level with the Stylion® landmark.",
+                "subjectPosition": "The subject assumes a relaxed position, upper limbs hanging by sides. The measurer may lift the wrist.",
+                "technique": "Align a tape with the Stylion® landmark. Draw a line perpendicular to the long axis of the forearm, close to the wrist's midpoint. Estimate the midpoint between the medial and lateral borders of the wrist. Mark this position with a line intersecting the perpendicular line."
             },
             "x": "12.8%",
             "y": "51.0%"
@@ -252,9 +252,9 @@
         "subscapulare": {
             "title": "Subscapulare®",
             "identification": {
-                "definition": "The undermost tip of the inferior angle of the scapula.",
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides.",
-                "technique": "Palpate the inferior angle of the scapula with the left thumb. If there is difficulty locating the inferior angle of the scapula, the subject should slowly reach behind the back with the right arm. The inferior angle of the scapula should be felt continuously as the hand is again placed by the side of the body. A final check of this landmark should be made with the hand by the side in the relaxed position."
+                "definition": "The most inferior point of the inferior angle of the scapula.",
+                "subjectPosition": "The subject assumes a relaxed standing position, upper limbs hanging by sides.",
+                "technique": "Palpate the inferior angle of the scapula with the left thumb. If difficult to locate, instruct the subject to slowly reach the right arm posteriorly towards the contralateral scapula. The inferior angle should be palpated continuously as the arm is returned to the relaxed position by the side. Re-verify the landmark with the arm relaxed."
             },
             "x": "77.2%",
             "y": "28.9%"
@@ -262,9 +262,9 @@
         "mesosternale": {
             "title": "Mesosternale®",
             "identification": {
-                "definition": "The midpoint of the corpus sterni at the level of the centre of the articulation of the fourth rib with the sternum (chondrosternal articulation).",
-                "subjectPosition": "The subject assumes either a seated or standing position with the arms hanging by the sides.",
-                "technique": "This landmark is located by palpation beginning from the top of the clavicles. Using the thumb the anthropometrist should roll down from the clavicle to the first intercostal space (i.e. between the first and second ribs). The thumb is then replaced by the index finger and the procedure is then repeated down to the second, third and fourth intercostal spaces. The fourth rib is between the last two spaces. An extra check of rib identification is that the second rib is at the level of the sternal angle which can be felt as a ridge on the sternum."
+                "definition": "The midpoint of the body of the sternum (corpus sterni) at the level of the centre of the articulation of the fourth rib (chondrosternal articulation).",
+                "subjectPosition": "The subject may be seated or standing, upper limbs hanging by sides.",
+                "technique": "Palpation begins superiorly from the clavicles. Using the thumb, roll inferiorly from the clavicle to the first intercostal space (between first and second ribs). Replace the thumb with the index finger and repeat the process to palpate the second, third, and fourth intercostal spaces. The fourth rib is located between the third and fourth intercostal spaces. The second rib articulation (sternal angle, or Angle of Louis) serves as a useful reference, often felt as a transverse ridge on the sternum."
             },
             "x": "27.8%",
             "y": "29.9%"
@@ -272,9 +272,9 @@
         "iliocristale": {
             "title": "Iliocristale®",
             "identification": {
-                "definition": "The point on the most lateral aspect of the iliac tubercle, which is on the iliac crest.",
-                "subjectPosition": "The subject assumes a relaxed position with the left arm hanging by the side and the right arm abducted to the horizontal.",
-                "technique": "From behind the subject, locate the most lateral edge of the iliac crest on the ilium using the right hand. The left hand is used to stabilise the body by providing resistance on the left side of the pelvis. The landmark is the most lateral point made at the identified edge of the ilium."
+                "definition": "The point on the most lateral aspect of the iliac tubercle, located on the iliac crest.",
+                "subjectPosition": "The subject assumes a relaxed position with the left upper limb hanging by the side and the right upper limb abducted to the horizontal plane.",
+                "technique": "From a position posterior to the subject, locate the most lateral margin of the iliac crest on the ilium using the right hand. The left hand stabilizes the torso by providing counter-pressure on the contralateral side of the pelvis. The landmark is the most lateral point marked on this identified margin of the ilium."
             },
             "x": "18.5%",
             "y": "47.6%"
@@ -282,9 +282,9 @@
         "iliospinale": {
             "title": "Iliospinale®",
             "identification": {
-                "definition": "The most inferior or undermost part of the tip of the anterior superior iliac spine.",
-                "subjectPosition": "The subject assumes a standing position with the arms hanging by the sides.",
-                "technique": "Palpate the superior aspect of the ilium and follow anteriorly and inferiorly along the crest to the anterior superior iliac spine and downward until it runs posteriorly. The landmark is the lower margin or edge where the bone can just be felt. Difficulty in appraising the landmark can be assisted by the subject lifting the heel of the right foot and rotating the femur outward. Because the Sartorius muscle originates at the Iliospinale®, this movement of the femur enables palpation of the muscle and tracing to its origin."
+                "definition": "The most inferior aspect of the tip of the anterior superior iliac spine (ASIS).",
+                "subjectPosition": "The subject stands with upper limbs hanging by sides.",
+                "technique": "Palpate the superior margin of the ilium and follow it antero-inferiorly along the crest to the ASIS. Continue inferiorly until the bone begins to curve posteriorly. The landmark is the inferior-most bony margin that can be palpated. If difficult, ask the subject to lift the heel of the right foot and externally rotate the femur. This action tenses the Sartorius muscle, which originates at the Iliospinale®, aiding palpation of the muscle and tracing it to its origin."
             },
             "x": "20.2%",
             "y": "52.3%"
@@ -292,9 +292,9 @@
         "trochanterion": {
             "title": "Trochanterion®",
             "identification": {
-                "definition": "The most superior point on the greater trochanter of the femur, not the most lateral point.",
-                "subjectPosition": "The subject assumes a relaxed standing position with the right arm across the trunk.",
-                "technique": "This site is identified while standing behind the subject by palpating the lateral aspect of the gluteal muscle with the heel of the hand while standing behind the subject. It is advisable to support the left side of the subject's pelvis with the left hand while applying pressure with the right hand. Once the greater trochanter has been identified, the measurer should palpate upward to locate the highest point of the trochanter where the bone can still be felt when strong downward pressure is applied. Note: This site is difficult to locate in persons with thick adipose tissue over the greater trochanter."
+                "definition": "The most superior point on the greater trochanter of the femur (not the most lateral point).",
+                "subjectPosition": "The subject stands relaxed, with the right upper limb placed across the trunk.",
+                "technique": "Identify this site by standing posterior to the subject and palpating the lateral aspect of the gluteal region with the heel of the hand. Support the contralateral side of the subject's pelvis with the left hand while applying pressure with the right. Once the greater trochanter is identified, palpate superiorly to locate its highest point where bone can still be felt under firm downward pressure. Note: This site can be difficult to locate in individuals with significant adipose tissue over the greater trochanter."
             },
             "x": "82.0%",
             "y": "54.3%"
@@ -303,8 +303,8 @@
             "title": "Tibiale laterale®",
             "identification": {
                 "definition": "The most superior point on the lateral border of the head of the tibia.",
-                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides.",
-                "technique": "This is often a difficult landmark to correctly locate due to thick lateral ligaments that run across the knee joint. Palpate the site using a thumb nail and the following guidelines. Locate the joint space bounded by the lateral condyle of the femur and the antero-lateral portion of the lateral tibial condyle. Press inwards firmly in order to locate the superior and lateral border of the head of the tibia. It is often useful to have the subject flex and extend the knee several times to ensure that the correct position has been located. The mark should be made approximately one-third of the distance along the border moving in an anterior-posterior direction."
+                "subjectPosition": "The subject stands relaxed, upper limbs hanging by sides.",
+                "technique": "This landmark can be challenging due to thick lateral knee ligaments. Palpate using a thumbnail. Locate the joint space between the lateral condyle of the femur and the antero-lateral portion of the lateral tibial condyle. Press medially and firmly to identify the superior and lateral border of the tibial head. Having the subject flex and extend the knee several times can help confirm the correct location. Mark approximately one-third of the distance along this border in an anterior-to-posterior direction."
             },
             "x": "20.7%",
             "y": "72.1%"
@@ -312,9 +312,9 @@
         "mid_trochanterion_tibiale_laterale": {
             "title": "Mid-trochanterion-tibiale laterale®",
             "identification": {
-                "definition": "The point equidistant from trochanterion and tibiale laterale.",
-                "subjectPosition": "The subject assumes a relaxed position with the left arm hanging by the side and the right forearm across the trunk.",
-                "technique": "Measure the linear distance between the Trochanterion and Tibiale laterale landmarks. The best way to measure this is with a segmometer or large sliding caliper. If a tape is used be sure to avoid following the curvature of the surface of the thigh. Place a small horizontal mark at the level of the mid-point between these two landmarks."
+                "definition": "The midpoint on a straight line between the Trochanterion® and Tibiale laterale® landmarks.",
+                "subjectPosition": "The subject stands relaxed, left upper limb by the side, right forearm across the trunk.",
+                "technique": "Measure the linear distance between Trochanterion® and Tibiale laterale®. A segmometer or large sliding caliper is preferred. If a tape is used, avoid following the thigh's surface curvature. Place a small horizontal mark at the midpoint level."
             },
             "x": "18.5%",
             "y": "61.9%"
@@ -323,8 +323,8 @@
             "title": "Tibiale mediale®",
             "identification": {
                 "definition": "The most superior point on the medial border of the head of the tibia.",
-                "subjectPosition": "The subject is seated with the right leg resting over the left knee so that the medial aspect of the leg is able to be marked.",
-                "technique": "The Tibiale mediale is approximately in the same transverse plane as the Tibiale laterale. Palpate the joint space bounded by the medial femoral condyle and the medial tibial condyle. The most superior point should be marked on the proximal medial border while the leg is held in this position."
+                "subjectPosition": "The subject is seated with the right lower limb resting over the left knee, allowing access to the medial aspect of the leg.",
+                "technique": "The Tibiale mediale is approximately in the same transverse plane as Tibiale laterale®. Palpate the joint space between the medial femoral condyle and the medial tibial condyle. Mark the most superior point on the proximal medial border of the tibia while the leg is in this position."
             },
             "x": "25.4%",
             "y": "73.4%"
@@ -332,9 +332,9 @@
         "sphyrion_tibiale": {
             "title": "Sphyrion tibiale®",
             "identification": {
-                "definition": "The most distal tip of the medial malleolus.",
-                "subjectPosition": "The subject is seated with the right leg resting over the left knee so that the medial aspect of the leg is able to be marked.",
-                "technique": "This landmark may be located most easily by palpation with the thumb nail from beneath and dorsally. It is the distal tip, not the most medial aspect, of the medial malleolus."
+                "definition": "The most distal tip of the medial malleolus of the tibia.",
+                "subjectPosition": "The subject is seated with the right lower limb resting over the left knee, allowing access to the medial aspect of the ankle.",
+                "technique": "This landmark is often located most easily by palpation with the thumbnail from an inferior and posterior direction. It is the distal tip, not the most medial aspect, of the medial malleolus."
             },
             "x": "25.9%",
             "y": "91.9%"
@@ -344,9 +344,9 @@
         "arm_length": {
             "title": "Arm Length®",
             "measurement": {
-                "definition": "The distance from Acromiale® to Radiale® landmarks.",
-                "subjectPosition": "Standing with arms relaxed at sides.",
-                "technique": "Use a large sliding caliper or segmometer to measure the straight-line distance between the two landmarks."
+                "definition": "The linear distance between the Acromiale® (superior-lateral aspect of acromion) and Radiale® (proximal-lateral head of radius) landmarks.",
+                "subjectPosition": "Subject stands with upper limbs relaxed by sides.",
+                "technique": "Use a large sliding caliper or segmometer to measure the direct distance between the two landmarks."
             },
             "startX": "82.0%",
             "startY": "25.0%",
@@ -357,9 +357,9 @@
         "forearm_length": {
             "title": "Forearm Length®",
             "measurement": {
-                "definition": "The distance from Radiale® to Stylion® landmarks.",
-                "subjectPosition": "Standing with arms relaxed at sides.",
-                "technique": "Use a large sliding caliper or segmometer to measure the straight-line distance between the two landmarks."
+                "definition": "The linear distance between the Radiale® (proximal-lateral head of radius) and Stylion® (distal tip of radial styloid process) landmarks.",
+                "subjectPosition": "Subject stands with upper limbs relaxed by sides.",
+                "technique": "Use a large sliding caliper or segmometer to measure the direct distance between the two landmarks."
             },
             "startX": "85.0%",
             "startY": "45.0%",
@@ -372,9 +372,9 @@
         "arm_girth": {
             "title": "Arm Girth (Relaxed)®",
             "measurement": {
-                "definition": "The girth of the arm at the marked Mid-acromiale-radiale® level with the arm relaxed.",
-                "subjectPosition": "Standing with arms relaxed at sides.",
-                "technique": "Pass the tape around the arm at the marked level, ensuring it lies in a plane perpendicular to the long axis of the arm."
+                "definition": "The circumference of the arm at the marked Mid-acromiale-radiale® level, with the arm relaxed.",
+                "subjectPosition": "Subject stands with upper limbs relaxed by sides.",
+                "technique": "Pass a flexible tape around the arm at the marked level, ensuring the tape is in a plane perpendicular to the long axis of the arm and applies minimal compression to the skin."
             },
             "centerX": "82.0%",
             "centerY": "38.0%",
@@ -385,9 +385,9 @@
         "waist_girth": {
             "title": "Waist Girth®",
             "measurement": {
-                "definition": "The girth at the narrowest point between the lower costal border and the iliac crest.",
-                "subjectPosition": "Standing with arms relaxed at sides.",
-                "technique": "Pass the tape horizontally around the waist at the narrowest point, usually at the end of normal expiration."
+                "definition": "The circumference at the narrowest point between the inferior costal (rib) border and the superior border of the iliac crest.",
+                "subjectPosition": "Subject stands with upper limbs relaxed by sides, abdomen relaxed.",
+                "technique": "Pass a flexible tape horizontally around the waist at the narrowest point, typically measured at the end of a normal expiration. Ensure the tape is snug but does not compress the skin."
             },
             "centerX": "50.0%",
             "centerY": "48.0%",
@@ -400,9 +400,9 @@
         "biacromial": {
             "title": "Biacromial Breadth®",
             "measurement": {
-                "definition": "The straight-line distance between the most lateral points on the acromial processes.",
-                "subjectPosition": "Standing in the anatomical position.",
-                "technique": "Use a large sliding caliper with the subject's arms relaxed at their sides."
+                "definition": "The linear distance between the most lateral points of the two Acromiale® landmarks.",
+                "subjectPosition": "Subject stands in the standard anatomical position.",
+                "technique": "Use a large sliding caliper (anthropometer). The subject's arms should be relaxed at their sides. The caliper blades are placed over the Acromiale® landmarks."
             },
             "startX": "82.0%",
             "startY": "25.0%",
@@ -413,9 +413,9 @@
         "biiliocristal": {
             "title": "Biiliocristal Breadth®",
             "measurement": {
-                "definition": "The straight-line distance between the most lateral points on the iliac crests.",
-                "subjectPosition": "Standing in the anatomical position.",
-                "technique": "Use a large sliding caliper, applying firm pressure to compress soft tissues."
+                "definition": "The linear distance between the most lateral points of the two Iliocristale® landmarks.",
+                "subjectPosition": "Subject stands in the standard anatomical position.",
+                "technique": "Use a large sliding caliper (anthropometer). Apply firm pressure to the caliper blades over the Iliocristale® landmarks to compress any intervening soft tissue."
             },
             "startX": "77.0%",
             "startY": "45.0%",
