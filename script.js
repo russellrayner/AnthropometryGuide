@@ -62,7 +62,26 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             coordinateFindingMode = !coordinateFindingMode;
             document.body.style.cursor = coordinateFindingMode ? 'crosshair' : 'default';
-            console.log('Coordinate finding mode:', coordinateFindingMode ? 'ON' : 'OFF');
+            
+            // Hide/show measurement elements when coordinate finding mode is toggled
+            const allMeasurementElements = svgDotsContainer.querySelectorAll('.measurement-element, .measurement-dot');
+            allMeasurementElements.forEach(element => {
+                if (coordinateFindingMode) {
+                    element.style.display = 'none';
+                } else {
+                    element.style.display = '';
+                }
+            });
+            
+            // Add visual feedback to indicate coordinate finding mode is active
+            if (coordinateFindingMode) {
+                // Add a subtle overlay or indicator
+                document.body.classList.add('coordinate-finding-active');
+                console.log('Coordinate finding mode: ON - All measurement elements hidden');
+            } else {
+                document.body.classList.remove('coordinate-finding-active');
+                console.log('Coordinate finding mode: OFF - Measurement elements restored');
+            }
         }
     });
 

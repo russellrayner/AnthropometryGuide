@@ -619,3 +619,34 @@ header {
 header h1 {
     margin-bottom: 15px;
 }
+
+/* Coordinate Finding Mode Styles */
+.coordinate-finding-active {
+    position: relative;
+}
+
+.coordinate-finding-active::before {
+    content: "⌖ COORDINATE FINDING MODE ACTIVE - Click anywhere on the image to get coordinates";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 193, 7, 0.95); /* Amber background */
+    color: #212529;
+    text-align: center;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse-border {
+    0%, 100% {
+        border-bottom: 3px solid #ffc107;
+    }
+    50% {
+        border-bottom: 3px solid #ff8c00;
+    }
+}
