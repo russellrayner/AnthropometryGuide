@@ -242,12 +242,85 @@ document.addEventListener('DOMContentLoaded', function() {
         return circle;
     }
 
+    function generateInstructionsHTML(data) {
+        let html = '';
+        
+        // Generate HTML based on the data structure
+        if (data.identification) {
+            // For skinfolds and landmarks - they have identification sections
+            const sectionType = currentTask === 'skinfolds' ? 'Skinfold Site® Identification' : 'Landmark Identification';
+            const isCollapsed = currentTask === 'skinfolds' ? ' collapsed' : '';
+            
+            html += `<div class="collapsible-section">`;
+            html += `<h4 class="collapsible-header${isCollapsed}">${data.title} ${sectionType}</h4>`;
+            html += `<div class="collapsible-content${isCollapsed}">`;
+            html += `<p><strong>Definition:</strong> ${data.identification.definition}</p>`;
+            html += `<p><strong>Subject position${currentTask === 'skinfolds' ? ' for site marking' : ''}:</strong> ${data.identification.subjectPosition}</p>`;
+            
+            if (data.identification.location) {
+                html += `<p><strong>Location of ${currentTask === 'skinfolds' ? 'skinfold site' : 'landmark'}:</strong> ${data.identification.location}</p>`;
+            }
+            if (data.identification.technique) {
+                html += `<p><strong>Palpation technique:</strong> ${data.identification.technique}</p>`;
+            }
+            if (data.identification.nomenclatureNote) {
+                html += `<p><strong>Nomenclature Note:</strong> ${data.identification.nomenclatureNote}</p>`;
+            }
+            
+            html += `</div></div>`;
+        }
+        
+        if (data.measurement) {
+            // For anything with measurement procedures
+            const sectionTitle = currentTask === 'skinfolds' ? 'Measurement Procedure' : 
+                                currentTask === 'lengths' ? 'Length Measurement' :
+                                currentTask === 'girths' ? 'Girth Measurement' :
+                                currentTask === 'breadths' ? 'Breadth Measurement' : 'Measurement';
+            
+            html += `<div class="collapsible-section">`;
+            html += `<h4 class="collapsible-header">${sectionTitle}</h4>`;
+            html += `<div class="collapsible-content">`;
+            html += `<p><strong>Definition:</strong> ${data.measurement.definition}</p>`;
+            html += `<p><strong>Subject position${currentTask === 'skinfolds' ? ' for measurement' : ''}:</strong> ${data.measurement.subjectPosition}</p>`;
+            
+            if (data.measurement.method) {
+                html += `<p><strong>Method:</strong> ${data.measurement.method}</p>`;
+            }
+            if (data.measurement.technique) {
+                html += `<p><strong>Measurement technique:</strong> ${data.measurement.technique}</p>`;
+            }
+            if (data.measurement.notes) {
+                html += `<p><strong>Note${currentTask === 'skinfolds' ? ' on nomenclature' : ''}:</strong> ${data.measurement.notes}</p>`;
+            }
+            if (data.measurement.methods) {
+                // Special handling for front thigh skinfold multiple methods
+                data.measurement.methods.forEach(method => {
+                    html += `<p><strong>${method.name}:</strong> ${method.description}</p>`;
+                });
+                if (data.measurement.additionalNotes) {
+                    html += `<p>${data.measurement.additionalNotes}</p>`;
+                }
+            }
+            if (data.measurement.techniques) {
+                html += `<p><strong>General Technique Notes:</strong></p><ul>`;
+                data.measurement.techniques.forEach(technique => {
+                    html += `<li>${technique}</li>`;
+                });
+                html += `</ul>`;
+            }
+            
+            html += `</div></div>`;
+        }
+        
+        return html;
+    }
+
     function showInfoPanel(data) {
         detailsPanel.classList.add('visible');
         interactiveArea.classList.add('showing-info');
 
         infoTitle.textContent = data.title;
-        infoContent.innerHTML = data.instructions;
+        infoContent.innerHTML = generateInstructionsHTML(data);
         
         setupCollapsibleSections();
         infoDisplay.style.display = 'block';
