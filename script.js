@@ -181,6 +181,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             path.setAttribute("d", pathData);
             path.classList.add("measurement-arc");
+
+            // Apply rotation if specified
+            if (siteData.rotationAngle !== undefined) {
+                path.setAttribute("transform", `rotate(${siteData.rotationAngle} ${centerX} ${centerY})`);
+            }
+
             element.appendChild(path);
         } else {
             // Fallback to dot for landmarks and skinfolds

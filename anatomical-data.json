@@ -370,28 +370,29 @@
     },
     "girths": {
         "arm_girth": {
-            "title": "Arm Girth (Relaxed)®",
+            "title": "Arm (Relaxed)®",
             "measurement": {
                 "definition": "The circumference of the arm at the marked Mid-acromiale-radiale® level, with the arm relaxed.",
                 "subjectPosition": "Subject stands with upper limbs relaxed by sides.",
                 "technique": "Pass a flexible tape around the arm at the marked level, ensuring the tape is in a plane perpendicular to the long axis of the arm and applies minimal compression to the skin."
             },
-            "centerX": "82.0%",
-            "centerY": "38.0%",
-            "radiusX": "3.0%",
+            "centerX": "16.9%",
+            "centerY": "35.0%",
+            "radiusX": "2.3%",
             "radiusY": "1.5%",
+            "rotationAngle": 15,
             "type": "ellipse"
         },
         "waist_girth": {
-            "title": "Waist Girth®",
+            "title": "Waist®",
             "measurement": {
                 "definition": "The circumference at the narrowest point between the inferior costal (rib) border and the superior border of the iliac crest.",
                 "subjectPosition": "Subject stands with upper limbs relaxed by sides, abdomen relaxed.",
                 "technique": "Pass a flexible tape horizontally around the waist at the narrowest point, typically measured at the end of a normal expiration. Ensure the tape is snug but does not compress the skin."
             },
-            "centerX": "50.0%",
-            "centerY": "48.0%",
-            "radiusX": "8.0%",
+            "centerX": "27.8%",
+            "centerY": "40.4%",
+            "radiusX": "7.6%",
             "radiusY": "3.0%",
             "type": "ellipse"
         }
