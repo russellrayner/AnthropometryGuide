@@ -405,10 +405,10 @@
                 "subjectPosition": "Subject stands in the standard anatomical position.",
                 "technique": "Use a large sliding caliper (anthropometer). The subject's arms should be relaxed at their sides. The caliper blades are placed over the Acromiale® landmarks."
             },
-            "startX": "82.0%",
-            "startY": "25.0%",
-            "endX": "18.0%",
-            "endY": "25.0%",
+            "startX": "61.1%",
+            "startY": "22.6%",
+            "endX": "83.5%",
+            "endY": "22.6%",
             "type": "line"
         },
         "biiliocristal": {
@@ -418,10 +418,62 @@
                 "subjectPosition": "Subject stands in the standard anatomical position.",
                 "technique": "Use a large sliding caliper (anthropometer). Apply firm pressure to the caliper blades over the Iliocristale® landmarks to compress any intervening soft tissue."
             },
-            "startX": "77.0%",
-            "startY": "45.0%",
-            "endX": "23.0%",
-            "endY": "45.0%",
+            "startX": "18.7%",
+            "startY": "47.8%",
+            "endX": "37%",
+            "endY": "47.8%",
+            "type": "line"
+        },
+        "transverse_chest_breadth": {
+            "title": "Transverse Chest Breadth®",
+            "measurement": {
+                "definition": "The distance between the most lateral aspects of the rib cage, measured at the level of the Mesosternale® landmark with caliper blades angled 30° downwards.",
+                "subjectPosition": "The subject assumes a relaxed standing or seated position, with arms abducted sufficiently to allow caliper access to the lateral rib cage.",
+                "technique": "The measurer stands facing the subject. Align the superior aspect of the caliper with the Mesosternale® landmark. Angle the caliper blades 30° downwards from horizontal to contact the most lateral points of the rib cage, preventing slippage between ribs. Avoid including Pectoralis Major or Latissimus Dorsi muscles. Take the measurement at the end of a normal exhalation."
+            },
+            "startX": "19.5%",
+            "startY": "29.9%",
+            "endX": "36.0%",
+            "endY": "29.9%",
+            "type": "line"
+        },
+        "anterior_posterior_chest_depth": {
+            "title": "Anterior-Posterior Chest Depth®",
+            "measurement": {
+                "definition": "The anterior-posterior distance of the thorax, measured at the level of the Mesosternale® landmark.",
+                "subjectPosition": "The subject assumes a seated position with the torso erect and palms resting on the thighs.",
+                "technique": "The measurer applies the caliper over the subject's right shoulder. Position the posterior branch of the caliper on the spinous process of the vertebra at the horizontal level of the Mesosternale®. Place the anterior branch on the Mesosternale®. Apply very light pressure. The subject should breathe normally; take the measurement at the end of a normal exhalation."
+            },
+            "startX": "28.5%",
+            "startY": "29.9%",
+            "endX": "32.5%",
+            "endY": "29.9%",
+            "type": "line"
+        },
+        "biepicondylar_humerus_breadth": {
+            "title": "Biepicondylar Humerus Breadth®",
+            "measurement": {
+                "definition": "The distance between the medial and lateral epicondyles of the humerus.",
+                "subjectPosition": "The subject assumes a relaxed standing or seated position. The right arm is raised anteriorly to the horizontal, and the forearm is flexed at a 90° angle to the arm.",
+                "technique": "Palpate the medial and lateral epicondyles of the humerus, starting proximally. Place the caliper faces on these identified epicondyles. Maintain firm pressure with the index fingers while reading the measurement. Note: The measured distance may be somewhat oblique as the medial epicondyle is typically lower than the lateral epicondyle."
+            },
+            "startX": "84.0%",
+            "startY": "39.0%",
+            "endX": "86.8%",
+            "endY": "40.0%",
+            "type": "line"
+        },
+        "biepicondylar_femur_breadth": {
+            "title": "Biepicondylar Femur Breadth®",
+            "measurement": {
+                "definition": "The distance between the medial and lateral epicondyles of the femur.",
+                "subjectPosition": "The subject assumes a relaxed seated position with palms resting on the thighs. The right leg is flexed at the knee to form a 90° angle with the thigh.",
+                "technique": "Palpate the medial and lateral epicondyles of the femur, starting proximally to the sites. Place the caliper faces on these identified epicondyles. Maintain firm pressure with the index fingers while reading the measurement."
+            },
+            "startX": "20.0%",
+            "startY": "72.5%",
+            "endX": "26.0%",
+            "endY": "73.0%",
             "type": "line"
         }
     }
