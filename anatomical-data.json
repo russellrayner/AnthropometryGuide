@@ -207,7 +207,10 @@
                 "technique": "Standing posterior and to the right of the subject, palpate along the spine of the scapula to the acromial angle. This marks the commencement of the lateral border, which typically courses anteriorly, slightly superiorly, and medially. Apply a straight edge (e.g., pencil) to the lateral aspect of the acromion to confirm the most lateral point of the border. Mark this. The acromion has notable thickness; palpate superiorly to the superior margin of the acromion border in line with this most lateral aspect."
             },
             "x": "83.9%",
-            "y": "23.4%"
+            "y": "23.4%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 30,
+            "endTime": 59
         },
         "radiale": {
             "title": "Radiale®",
@@ -217,7 +220,10 @@
                 "technique": "Palpate inferiorly into the lateral dimple of the right elbow (cubital fossa). Identify the space between the capitulum of the humerus and the head of the radius. Move the thumb distally onto the most lateral part of the proximal radial head. Confirmation of the correct location is achieved by slight supination and pronation of the forearm, causing the radial head to rotate."
             },
             "x": "85.4%",
-            "y": "39.5%"
+            "y": "39.5%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 61,
+            "endTime": 84
         },
         "mid_acromiale_radiale": {
             "title": "Mid-acromiale-radiale®",
@@ -227,7 +233,10 @@
                 "technique": "Measure the linear distance between Acromiale® and Radiale® with the arm relaxed and extended. A segmometer or large sliding caliper is preferred. If a tape is used, avoid following the arm's surface curvature. Place a small horizontal mark at the midpoint. Project this mark as a horizontal line around to the posterior and anterior surfaces of the arm; this line is crucial for locating the Triceps® and Biceps® skinfold sites."
             },
             "x": "83.9%",
-            "y": "31.7%"
+            "y": "31.7%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 85,
+            "endTime": 108
         },
         "stylion": {
             "title": "Stylion®",
@@ -237,7 +246,10 @@
                 "technique": "Using a thumbnail, palpate the triangular depression (anatomical 'snuff box') on the dorsolateral aspect of the wrist, immediately proximal to the base of the thumb, between the tendons of extensor pollicis longus and extensor pollicis brevis. Once identified, palpate within this space between the distal radius and the scaphoid bone to correctly identify the radial styloid process."
             },
             "x": "88.7%",
-            "y": "51.3%"
+            "y": "51.3%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 171,
+            "endTime": 190
         },
         "mid_stylion": {
             "title": "Mid-stylion®",
@@ -247,7 +259,10 @@
                 "technique": "Align a tape with the Stylion® landmark. Draw a line perpendicular to the long axis of the forearm, close to the wrist's midpoint. Estimate the midpoint between the medial and lateral borders of the wrist. Mark this position with a line intersecting the perpendicular line."
             },
             "x": "12.8%",
-            "y": "51.0%"
+            "y": "51.0%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 192,
+            "endTime": 210
         },
         "subscapulare": {
             "title": "Subscapulare®",
@@ -257,7 +272,10 @@
                 "technique": "Palpate the inferior angle of the scapula with the left thumb. If difficult to locate, instruct the subject to slowly reach the right arm posteriorly towards the contralateral scapula. The inferior angle should be palpated continuously as the arm is returned to the relaxed position by the side. Re-verify the landmark with the arm relaxed."
             },
             "x": "77.2%",
-            "y": "28.9%"
+            "y": "28.9%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 214,
+            "endTime": 238
         },
         "mesosternale": {
             "title": "Mesosternale®",
@@ -267,7 +285,10 @@
                 "technique": "Palpation begins superiorly from the clavicles. Using the thumb, roll inferiorly from the clavicle to the first intercostal space (between first and second ribs). Replace the thumb with the index finger and repeat the process to palpate the second, third, and fourth intercostal spaces. The fourth rib is located between the third and fourth intercostal spaces. The second rib articulation (sternal angle, or Angle of Louis) serves as a useful reference, often felt as a transverse ridge on the sternum."
             },
             "x": "27.8%",
-            "y": "29.9%"
+            "y": "29.9%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 265,
+            "endTime": 285
         },
         "iliocristale": {
             "title": "Iliocristale®",
@@ -277,7 +298,10 @@
                 "technique": "From a position posterior to the subject, locate the most lateral margin of the iliac crest on the ilium using the right hand. The left hand stabilizes the torso by providing counter-pressure on the contralateral side of the pelvis. The landmark is the most lateral point marked on this identified margin of the ilium."
             },
             "x": "18.5%",
-            "y": "47.6%"
+            "y": "47.6%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 288,
+            "endTime": 310
         },
         "iliospinale": {
             "title": "Iliospinale®",
@@ -287,7 +311,10 @@
                 "technique": "Palpate the superior margin of the ilium and follow it antero-inferiorly along the crest to the ASIS. Continue inferiorly until the bone begins to curve posteriorly. The landmark is the inferior-most bony margin that can be palpated. If difficult, ask the subject to lift the heel of the right foot and externally rotate the femur. This action tenses the Sartorius muscle, which originates at the Iliospinale®, aiding palpation of the muscle and tracing it to its origin."
             },
             "x": "20.2%",
-            "y": "52.3%"
+            "y": "52.3%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 330,
+            "endTime": 364
         },
         "trochanterion": {
             "title": "Trochanterion®",
@@ -297,7 +324,10 @@
                 "technique": "Identify this site by standing posterior to the subject and palpating the lateral aspect of the gluteal region with the heel of the hand. Support the contralateral side of the subject's pelvis with the left hand while applying pressure with the right. Once the greater trochanter is identified, palpate superiorly to locate its highest point where bone can still be felt under firm downward pressure. Note: This site can be difficult to locate in individuals with significant adipose tissue over the greater trochanter."
             },
             "x": "82.0%",
-            "y": "54.3%"
+            "y": "54.3%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 443,
+            "endTime": 472
         },
         "tibiale_laterale": {
             "title": "Tibiale laterale®",
@@ -307,7 +337,10 @@
                 "technique": "This landmark can be challenging due to thick lateral knee ligaments. Palpate using a thumbnail. Locate the joint space between the lateral condyle of the femur and the antero-lateral portion of the lateral tibial condyle. Press medially and firmly to identify the superior and lateral border of the tibial head. Having the subject flex and extend the knee several times can help confirm the correct location. Mark approximately one-third of the distance along this border in an anterior-to-posterior direction."
             },
             "x": "20.7%",
-            "y": "72.1%"
+            "y": "72.1%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 474,
+            "endTime": 508
         },
         "mid_trochanterion_tibiale_laterale": {
             "title": "Mid-trochanterion-tibiale laterale®",
@@ -327,17 +360,23 @@
                 "technique": "The Tibiale mediale is approximately in the same transverse plane as Tibiale laterale®. Palpate the joint space between the medial femoral condyle and the medial tibial condyle. Mark the most superior point on the proximal medial border of the tibia while the leg is in this position."
             },
             "x": "25.4%",
-            "y": "73.4%"
+            "y": "73.4%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 647,
+            "endTime": 666
         },
         "sphyrion_tibiale": {
             "title": "Sphyrion tibiale®",
             "identification": {
                 "definition": "The most distal tip of the medial malleolus of the tibia.",
                 "subjectPosition": "The subject is seated with the right lower limb resting over the left knee, allowing access to the medial aspect of the ankle.",
-                "technique": "This landmark is often located most easily by palpation with the thumbnail from an inferior and posterior direction. It is the distal tip, not the most medial aspect, of the medial malleolus."
+                "technique": "This landmark is often located most easily by palpation with the thumbnail from an inferior and posterior direction. It is the distal tip, not the most medial aspect, of the medial malleleolus."
             },
             "x": "25.9%",
-            "y": "91.9%"
+            "y": "91.9%",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 668,
+            "endTime": 682
         }
     },
     "lengths": {

@@ -351,8 +351,8 @@ document.addEventListener('DOMContentLoaded', function() {
         infoDisplay.style.display = 'block';
         infoDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        // Handle video for skinfolds
-        if (currentTask === 'skinfolds' && data.videoId && data.startTime !== undefined && data.endTime !== undefined) {
+        // Handle video for skinfolds and landmarks
+        if ((currentTask === 'skinfolds' || currentTask === 'landmarks') && data.videoId && data.startTime !== undefined && data.endTime !== undefined) {
             currentVideoStartTime = data.startTime;
             currentVideoEndTime = data.endTime;
             const embedUrl = `https://www.youtube.com/embed/${data.videoId}?start=${currentVideoStartTime}&end=${currentVideoEndTime}&autoplay=1&rel=0`;
