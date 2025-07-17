@@ -47,12 +47,7 @@ SkinfoldToolMockup/
 4. Push to the branch
 5. Create a Pull Request
 
-## License
-
-This project is for educational purposes. Please respect video content licensing and attribution requirements.
-
 ## Acknowledgments
 
 - ISAK for standardised anthropometric protocols
 - ISAK for educational video content
-- Open source community
