@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainTitle = document.getElementById('mainTitle');
     const taskDescription = document.getElementById('taskDescription');
     let selectedDot = null;
-    let currentTask = 'landmarks';
+    let currentTask = 'basic';
 
     const videoPlayerContainer = document.getElementById('videoPlayerContainer');
     const youtubePlayer = document.getElementById('youtubePlayer');
@@ -47,10 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Task descriptions for each type
     const taskDescriptions = {
-        skinfolds: "Click on a marked point on the image to learn how to measure the skinfold at that site.",
+        basic: "Learn the fundamental anthropometric measurements used in body composition assessment.",
         landmarks: "Click on a marked point on the image to learn how to locate the anatomical landmark.",
-        lengths: "Click on a marked point on the image to learn how to measure body lengths.",
+        skinfolds: "Click on a marked point on the image to learn how to measure the skinfold at that site.",
         girths: "Click on a marked point on the image to learn how to measure body girths.",
+        lengths: "Click on a marked point on the image to learn how to measure body lengths.",
         breadths: "Click on a marked point on the image to learn how to measure body breadths."
     };
 
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Anatomical data loaded successfully');
             
             // Initialize with the new default task after data is loaded
+            taskDescription.textContent = taskDescriptions[currentTask];
             loadTaskData(currentTask);
         } catch (error) {
             console.error('Error loading anatomical data:', error);
@@ -337,12 +339,32 @@ document.addEventListener('DOMContentLoaded', function() {
     function clearAllElements() {
         const elements = svgDotsContainer.querySelectorAll('.measurement-element, .measurement-dot');
         elements.forEach(element => element.remove());
+        
+        // Remove basic measurements container if it exists
+        const basicContainer = document.getElementById('basicMeasurementsList');
+        if (basicContainer) {
+            basicContainer.remove();
+        }
+        
+        // Gap spacing
+        interactiveArea.style.gap = '1.5rem';
+        
+        // Show silhouette image and SVG container (will be hidden again if switching to basic tab)
+        skinfoldImage.style.display = 'block';
+        svgDotsContainer.style.display = 'block';
+        
         selectedDot = null;
     }
 
     function loadTaskData(taskType) {
         clearAllElements();
         hideInfoPanel();
+        
+        // Handle basic measurements differently - no silhouette needed
+        if (taskType === 'basic') {
+            handleBasicMeasurements();
+            return;
+        }
         
         if (taskType === 'breadths') {
             skinfoldImage.src = 'Blank-Sillouette-With-Side.png';
@@ -391,6 +413,115 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function handleBasicMeasurements() {
+        // Hide the silhouette image and show a list of basic measurements instead
+        if (skinfoldImage) {
+            skinfoldImage.style.display = 'none';
+        }
+        
+        // Hide SVG container to prevent interference
+        if (svgDotsContainer) {
+            svgDotsContainer.style.display = 'none';
+        }
+        
+        // Keep the same proportions as landmarks tab (45% width)
+        // Don't modify the imageContainer styling - keep it as is
+        
+        // Add extra spacing for basic measurements only
+        interactiveArea.style.gap = '4rem';
+        
+        // Create a list container for basic measurements
+        let basicContainer = document.getElementById('basicMeasurementsList');
+        if (!basicContainer) {
+            basicContainer = document.createElement('div');
+            basicContainer.id = 'basicMeasurementsList';
+            basicContainer.style.cssText = `
+                padding: 20px;
+                background: #f9f9f9;
+                border-radius: 8px;
+                margin: 0;
+                margin-right: 20px;
+                width: 100%;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                height: fit-content;
+            `;
+            imageContainer.appendChild(basicContainer);
+        }
+        
+        basicContainer.innerHTML = '';
+        
+        if (!taskData || !taskData.basic) {
+            // Show a loading message
+            basicContainer.innerHTML = '<p style="text-align: center; color: #666;">Loading basic measurements...</p>';
+            return;
+        }
+        
+        const basicData = taskData.basic;
+        
+        // Create title
+        const title = document.createElement('h2');
+        title.textContent = 'Basic Anthropometric Measurements';
+        title.style.cssText = 'margin-bottom: 20px; color: #333; text-align: center;';
+        basicContainer.appendChild(title);
+        
+        // Create measurement cards
+        for (const measurementKey in basicData) {
+            const measurement = basicData[measurementKey];
+            
+            const card = document.createElement('div');
+            card.style.cssText = `
+                background: white;
+                border: 2px solid #ddd;
+                border-radius: 8px;
+                padding: 15px;
+                margin: 10px 0;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                pointer-events: auto;
+                position: relative;
+                z-index: 1;
+            `;
+            
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = '#007bff';
+                card.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.borderColor = '#ddd';
+                card.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+            });
+            
+            const cardTitle = document.createElement('h3');
+            cardTitle.textContent = measurement.title;
+            cardTitle.style.cssText = 'margin: 0 0 10px 0; color: #007bff; font-size: 18px;';
+            
+            const cardDescription = document.createElement('p');
+            cardDescription.textContent = measurement.measurement.definition;
+            cardDescription.style.cssText = 'margin: 0; color: #666; line-height: 1.4;';
+            
+            card.appendChild(cardTitle);
+            card.appendChild(cardDescription);
+            
+            // Add click handler
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                if (selectedDot) {
+                    selectedDot.classList.remove('element-selected');
+                }
+                card.classList.add('element-selected');
+                selectedDot = card;
+                
+                showInfoPanel(measurement);
+            });
+            
+            basicContainer.appendChild(card);
+        }
+    }
+
     function createDot(siteKey, siteData, taskType) {
         const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         circle.setAttribute("cx", siteData.x);
@@ -436,7 +567,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const sectionTitle = currentTask === 'skinfolds' ? 'Measurement Procedure' : 
                                 currentTask === 'lengths' ? 'Length Measurement' :
                                 currentTask === 'girths' ? 'Girth Measurement' :
-                                currentTask === 'breadths' ? 'Breadth Measurement' : 'Measurement';
+                                currentTask === 'breadths' ? 'Breadth Measurement' :
+                                currentTask === 'basic' ? 'Measurement Procedure' : 'Measurement';
             
             html += `<div class="collapsible-section">`;
             html += `<h4 class="collapsible-header">${sectionTitle}</h4>`;
@@ -485,10 +617,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         setupCollapsibleSections();
         infoDisplay.style.display = 'block';
-        infoDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // Only auto-scroll for non-basic measurements to prevent unwanted scrolling
+        if (currentTask !== 'basic') {
+            infoDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
 
-        // Handle video for skinfolds and landmarks
-        if ((currentTask === 'skinfolds' || currentTask === 'landmarks') && data.videoId && data.startTime !== undefined && data.endTime !== undefined) {
+        // Handle video for skinfolds, landmarks, and basic measurements
+        if ((currentTask === 'skinfolds' || currentTask === 'landmarks' || currentTask === 'basic') && data.videoId && data.startTime !== undefined && data.endTime !== undefined) {
             currentVideoStartTime = data.startTime;
             currentVideoEndTime = data.endTime;
             const embedUrl = `https://www.youtube.com/embed/${data.videoId}?start=${currentVideoStartTime}&end=${currentVideoEndTime}&autoplay=1&rel=0`;

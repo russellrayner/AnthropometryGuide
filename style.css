@@ -650,3 +650,10 @@ header h1 {
         border-bottom: 3px solid #ff8c00;
     }
 }
+
+/* Basic measurements styles */
+.element-selected {
+    border-color: #007bff !important;
+    background-color: #e3f2fd !important;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3) !important;
+}

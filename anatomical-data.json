@@ -740,5 +740,43 @@
             "endY": "71.4%",
             "type": "line"
         }
+    },
+    "basic": {
+         "body_mass": {
+            "title": "Body Mass®",
+            "measurement": {
+                "definition": "The mass of the body measured in kilograms, representing the total weight of all body tissues and fluids.",
+                "subjectPosition": "The subject stands centrally on the weighing scale platform without support, with body weight distributed evenly on both feet. Minimal clothing should be worn (swimwear or underwear), and the subject should be barefoot.",
+                "technique": "Verify the scale reads zero before measurement. The subject steps onto the centre of the scales and remains motionless until the reading stabilises. Record the measurement when the digital display becomes steady. Nude mass is the preferred measure, though mass in minimal clothing provides sufficient accuracy for most purposes.",
+                "notes": "Body mass exhibits diurnal variation of approximately 1 kg in children and 2 kg in adults. The most stable values are obtained in the morning, twelve hours after food intake and after voiding. When standardisation of measurement time is not possible, record the time of day. Weigh clothing separately if precise nude mass calculation is required."
+            },
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 693,
+            "endTime": 705
+        },
+        "stature": {
+            "title": "Stature® (Stretch Method)",
+            "measurement": {
+                "definition": "The vertical distance from the floor to the Vertex® (highest point of the skull) when the subject stands in the anatomical position with the head positioned in the Frankfort plane.",
+                "subjectPosition": "The subject stands with feet together, heels, buttocks, and upper back touching the stadiometer. The head is positioned in the Frankfort plane, achieved when the Orbitale® (lower edge of the orbit) aligns horizontally with the Tragion® (notch superior to the tragus). The head need not touch the stadiometer when correctly positioned.",
+                "technique": "The measurer places hands along the subject's jaw line to apply gentle upward pressure through the mastoid processes. The subject takes and holds a deep breath while maintaining the Frankfort plane. The headboard is placed firmly on the Vertex®, compressing hair as much as possible. Ensure feet remain on the floor and head position is maintained throughout measurement.",
+                "notes": "Stature exhibits diurnal variation with subjects typically taller in the morning and shorter in the evening, with approximately 1% height loss over the day. The stretch stature method reduces this variation. Repeated measures should be taken at the same time of day when possible, and measurement time should be recorded."
+            },
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 707,
+            "endTime": 743
+        },
+        "sitting_height": {
+            "title": "Sitting Height",
+            "measurement": {
+                "definition": "The vertical distance from the sitting platform to the Vertex® when the subject is seated with the head positioned in the Frankfort plane.",
+                "subjectPosition": "The subject sits erect on a measuring box or level platform with hands resting on the thighs. The back should be positioned against the stadiometer when possible. Feet should be flat on the floor or appropriately supported.",
+                "technique": "Apply the stretch method by instructing the subject to take and hold a deep breath while maintaining the head in the Frankfort plane. The measurer applies gentle upward lift through the mastoid processes while the headboard is placed firmly on the Vertex®, compressing hair maximally. Ensure the subject does not contract gluteal muscles or push with the legs during measurement.",
+                "notes": "The preferred technique employs the stretch method similar to stature measurement. Repeated measures should be taken at the same time of day as the original measurement, and measurement time should be recorded. The height of the sitting platform must be known for accurate calculation of sitting height."
+            },
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 744,
+            "endTime": 776
+        }
     }
 } 
