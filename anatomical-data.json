@@ -513,31 +513,18 @@
             "radiusY": "1.9%",
             "type": "ellipse"
         },
-        "arm_relaxed": {
-            "title": "Arm (Relaxed) Girth",
+        "arm_girth": {
+            "title": "Arm Girth (Relaxed & Flexed/Tensed)",
             "measurement": {
-                "definition": "The circumference of the arm at the marked Mid-acromiale-radiale® level, with the arm relaxed.",
-                "subjectPosition": "Subject stands with upper limbs relaxed by sides.",
-                "technique": "Pass a flexible tape around the arm at the marked level, ensuring the tape is in a plane perpendicular to the long axis of the arm and applies minimal compression to the skin."
+                "definition": "There are two measurements of the upper arm circumference.",
+                "subjectPosition": "See individual measurement positions below.",
+                "method": "<h4><strong>1. Relaxed Arm Girth</strong></h4><p>This measures the arm in a resting state.</p><ul><li><strong>Subject Position:</strong> The subject stands with their arm hanging relaxed by their side.</li><li><strong>Technique:</strong><ol><li>A flexible tape is passed around the arm at the <strong>Mid-acromiale-radiale® landmark</strong> (the midpoint between the bony tip of the shoulder and the elbow).</li><li>The tape must be kept level (perpendicular to the length of the arm).</li><li>The measurement is taken with minimal pressure on the skin.</li></ol></li></ul><h4><strong>2. Flexed & Tensed Arm Girth</strong></h4><p>This measures the arm with the biceps contracted.</p><ul><li><strong>Subject Position:</strong> The subject raises their arm to be horizontal with the ground, supinates the forearm (palm facing up), and bends the elbow to an angle between 45° and 90°.</li><li><strong>Technique:</strong><ol><li>The subject is asked to tense their arm to help identify the highest point, or <strong>peak</strong>, of the biceps muscle.</li><li>The measurer loosely places the tape over this peak.</li><li>The subject is encouraged to contract their arm muscles as hard as possible.</li><li>The measurement is taken at the largest circumference.</li><li>If there is no obvious biceps peak, the measurement should be taken at the Mid-acromiale-radiale® landmark instead.</li></ol></li></ul>",
+                "notes": "Both measurements are typically taken at or near the Mid-acromiale-radiale® level. The flexed/tensed measurement will usually be larger and may be taken at a slightly different level if the biceps peak is not at the standard landmark level."
             },
             "centerX": "16.9%",
             "centerY": "35.0%",
-            "radiusX": "2.3%",
-            "radiusY": "1.5%",
-            "rotationAngle": 15,
-            "type": "ellipse"
-        },
-        "arm_flexed_tensed": {
-            "title": "Arm (Flexed & Tensed) Girth",
-            "measurement": {
-                "definition": "The maximum circumference of the arm, measured at the peak of the contracted biceps muscle.",
-                "subjectPosition": "The subject's right arm is raised anteriorly to the horizontal with the forearm supinated and flexed at about 45-90° to the arm.",
-                "technique": "The flexed and tensed arm girth is measured at the level of the peak of the contracted Biceps. The measurer stands to the side of the subject and with the tape loosely in position. The subject is asked to partially tense the elbow flexors to identify the probable peak of the contracted muscles. The subject is encouraged to contract the arm muscles as strongly as possible and hold it while the measurement is made at the peak of the Biceps. If there is no obvious peak of the Biceps this girth should be measured at the level of the Mid-acromiale-radiale® landmark."
-            },
-            "centerX": "16.9%",
-            "centerY": "35.0%",
-            "radiusX": "2.5%",
-            "radiusY": "1.7%",
+            "radiusX": "2.4%",
+            "radiusY": "1.6%",
             "rotationAngle": 15,
             "type": "ellipse"
         },
@@ -777,6 +764,75 @@
             "videoId": "qZtZWQXZ9sI",
             "startTime": 744,
             "endTime": 776
+        }
+    },
+    "quiz": {
+        "landmarks": {
+            "questions": [
+                {"type": "identification", "landmark": "acromiale", "distractors": ["radiale", "stylion", "subscapulare"]},
+                {"type": "identification", "landmark": "radiale", "distractors": ["acromiale", "mid_acromiale_radiale", "stylion"]},
+                {"type": "identification", "landmark": "mid_acromiale_radiale", "distractors": ["acromiale", "radiale", "mid_stylion"]},
+                {"type": "identification", "landmark": "stylion", "distractors": ["radiale", "mid_stylion", "sphyrion_tibiale"]},
+                {"type": "identification", "landmark": "mid_stylion", "distractors": ["stylion", "mesosternale", "radiale"]},
+                {"type": "identification", "landmark": "subscapulare", "distractors": ["acromiale", "mesosternale", "iliocristale"]},
+                {"type": "identification", "landmark": "mesosternale", "distractors": ["subscapulare", "mid_stylion", "iliospinale"]},
+                {"type": "identification", "landmark": "iliocristale", "distractors": ["iliospinale", "trochanterion", "subscapulare"]},
+                {"type": "identification", "landmark": "iliospinale", "distractors": ["iliocristale", "trochanterion", "tibiale_laterale"]},
+                {"type": "identification", "landmark": "trochanterion", "distractors": ["iliocristale", "iliospinale", "tibiale_laterale"]},
+                {"type": "identification", "landmark": "tibiale_laterale", "distractors": ["tibiale_mediale", "trochanterion", "sphyrion_tibiale"]},
+                {"type": "identification", "landmark": "tibiale_mediale", "distractors": ["tibiale_laterale", "sphyrion_tibiale", "mid_trochanterion_tibiale_laterale"]},
+                {"type": "identification", "landmark": "sphyrion_tibiale", "distractors": ["tibiale_mediale", "stylion", "tibiale_laterale"]}
+            ]
+        },
+        "skinfolds": {
+            "questions": [
+                {"type": "identification", "site": "triceps", "distractors": ["biceps", "subscapular", "front_thigh"]},
+                {"type": "identification", "site": "subscapular", "distractors": ["triceps", "iliac_crest", "supraspinale"]},
+                {"type": "identification", "site": "biceps", "distractors": ["triceps", "front_thigh", "abdominal"]},
+                {"type": "identification", "site": "iliac_crest", "distractors": ["supraspinale", "subscapular", "abdominal"]},
+                {"type": "identification", "site": "supraspinale", "distractors": ["iliac_crest", "abdominal", "subscapular"]},
+                {"type": "identification", "site": "abdominal", "distractors": ["supraspinale", "iliac_crest", "front_thigh"]},
+                {"type": "identification", "site": "front_thigh", "distractors": ["medial_calf", "triceps", "biceps"]},
+                {"type": "identification", "site": "medial_calf", "distractors": ["front_thigh", "abdominal", "supraspinale"]}
+            ]
+        },
+        "girths": {
+            "questions": [
+                {"type": "identification", "measurement": "head", "distractors": ["neck", "chest", "waist_minimum"]},
+                {"type": "identification", "measurement": "neck", "distractors": ["head", "chest", "arm_girth"]},
+                {"type": "identification", "measurement": "arm_girth", "distractors": ["forearm", "chest", "wrist"]},
+                {"type": "identification", "measurement": "forearm", "distractors": ["arm_girth", "wrist", "chest"]},
+                {"type": "identification", "measurement": "wrist", "distractors": ["forearm", "ankle_minimum", "arm_girth"]},
+                {"type": "identification", "measurement": "chest", "distractors": ["waist_minimum", "neck", "gluteal_hips"]},
+                {"type": "identification", "measurement": "waist_minimum", "distractors": ["chest", "gluteal_hips", "thigh_1cm_gluteal"]},
+                {"type": "identification", "measurement": "gluteal_hips", "distractors": ["waist_minimum", "thigh_1cm_gluteal", "chest"]},
+                {"type": "identification", "measurement": "thigh_1cm_gluteal", "distractors": ["thigh_mid_troch_tib_lat", "gluteal_hips", "calf_maximum"]},
+                {"type": "identification", "measurement": "thigh_mid_troch_tib_lat", "distractors": ["thigh_1cm_gluteal", "calf_maximum", "gluteal_hips"]},
+                {"type": "identification", "measurement": "calf_maximum", "distractors": ["ankle_minimum", "thigh_mid_troch_tib_lat", "thigh_1cm_gluteal"]},
+                {"type": "identification", "measurement": "ankle_minimum", "distractors": ["calf_maximum", "wrist", "thigh_mid_troch_tib_lat"]}
+            ]
+        },
+        "lengths": {
+            "questions": [
+                {"type": "identification", "measurement": "acromiale_radiale_length", "distractors": ["radiale_stylion_length", "midstylion_dactylion_length", "trochanterion_tibiale_laterale_length"]},
+                {"type": "identification", "measurement": "radiale_stylion_length", "distractors": ["acromiale_radiale_length", "midstylion_dactylion_length", "tibiale_mediale_sphyrion_tibiale_length"]},
+                {"type": "identification", "measurement": "midstylion_dactylion_length", "distractors": ["radiale_stylion_length", "acromiale_radiale_length", "tibiale_mediale_sphyrion_tibiale_length"]},
+                {"type": "identification", "measurement": "iliospinale_height", "distractors": ["trochanterion_height", "tibiale_laterale_height", "trochanterion_tibiale_laterale_length"]},
+                {"type": "identification", "measurement": "trochanterion_height", "distractors": ["iliospinale_height", "tibiale_laterale_height", "trochanterion_tibiale_laterale_length"]},
+                {"type": "identification", "measurement": "trochanterion_tibiale_laterale_length", "distractors": ["trochanterion_height", "tibiale_laterale_height", "acromiale_radiale_length"]},
+                {"type": "identification", "measurement": "tibiale_laterale_height", "distractors": ["trochanterion_height", "iliospinale_height", "tibiale_mediale_sphyrion_tibiale_length"]},
+                {"type": "identification", "measurement": "tibiale_mediale_sphyrion_tibiale_length", "distractors": ["tibiale_laterale_height", "radiale_stylion_length", "midstylion_dactylion_length"]}
+            ]
+        },
+        "breadths": {
+            "questions": [
+                {"type": "identification", "measurement": "biacromial", "distractors": ["biiliocristal", "transverse_chest_breadth", "biepicondylar_humerus_breadth"]},
+                {"type": "identification", "measurement": "biiliocristal", "distractors": ["biacromial", "anterior_posterior_chest_depth", "biepicondylar_femur_breadth"]},
+                {"type": "identification", "measurement": "transverse_chest_breadth", "distractors": ["anterior_posterior_chest_depth", "biacromial", "biepicondylar_humerus_breadth"]},
+                {"type": "identification", "measurement": "anterior_posterior_chest_depth", "distractors": ["transverse_chest_breadth", "biiliocristal", "biacromial"]},
+                {"type": "identification", "measurement": "biepicondylar_humerus_breadth", "distractors": ["biepicondylar_femur_breadth", "transverse_chest_breadth", "biacromial"]},
+                {"type": "identification", "measurement": "biepicondylar_femur_breadth", "distractors": ["biepicondylar_humerus_breadth", "biiliocristal", "anterior_posterior_chest_depth"]}
+            ]
         }
     }
 } 

@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const taskDescription = document.getElementById('taskDescription');
     let selectedDot = null;
     let currentTask = 'basic';
+    
+    // Quiz mode variables
+    let isQuizMode = false;
+    let currentQuizType = 'identification'; // 'identification' or 'multipleChoice'
+    let currentQuestions = [];
+    let currentQuestionIndex = 0;
+    let quizScore = { correct: 0, total: 0 };
+    let currentCorrectAnswer = null;
 
     const videoPlayerContainer = document.getElementById('videoPlayerContainer');
     const youtubePlayer = document.getElementById('youtubePlayer');
@@ -57,6 +65,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Variable to store loaded anatomical data
     let taskData = null;
+    
+    // Quiz UI elements
+    const quizControls = document.getElementById('quizControls');
+    const learnModeBtn = document.getElementById('learnModeBtn');
+    const quizModeBtn = document.getElementById('quizModeBtn');
+    const quizTypeSelector = document.getElementById('quizTypeSelector');
+    const identificationQuizBtn = document.getElementById('identificationQuizBtn');
+    const multipleChoiceQuizBtn = document.getElementById('multipleChoiceQuizBtn');
+    const quizProgress = document.getElementById('quizProgress');
+    const quizQuestion = document.getElementById('quizQuestion');
+    const questionText = document.getElementById('questionText');
+    const multipleChoiceOptions = document.getElementById('multipleChoiceOptions');
+    const quizFeedback = document.getElementById('quizFeedback');
+    const nextQuestionBtn = document.getElementById('nextQuestionBtn');
+    const currentQuestionNum = document.getElementById('currentQuestionNum');
+    const totalQuestions = document.getElementById('totalQuestions');
+    const correctAnswers = document.getElementById('correctAnswers');
+    const totalAnswered = document.getElementById('totalAnswered');
 
     // Function to load anatomical data from JSON file
     async function loadAnatomicalData() {
@@ -394,6 +420,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 if (element) {
                     element.addEventListener('click', function(event) {
+                        // If in quiz mode, don't show the learning panel
+                        if (isQuizMode) {
+                            return; // Quiz click handler will handle this
+                        }
+                        
                         if (selectedDot) {
                             selectedDot.classList.remove('element-selected');
                         }
@@ -668,6 +699,12 @@ document.addEventListener('DOMContentLoaded', function() {
             currentTask = selectedTask;
             taskDescription.textContent = taskDescriptions[currentTask];
             loadTaskData(currentTask);
+            updateQuizControlsVisibility();
+            
+            // Reset quiz mode when switching tasks
+            if (isQuizMode) {
+                toggleQuizMode(false);
+            }
             
             // Reinitialize developer sites if in developer mode
             if (developerMode) {
@@ -941,6 +978,295 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateLockedYDisplay();
             }
         });
+    }
+
+    // Quiz mode functions
+    function toggleQuizMode(enable) {
+        isQuizMode = enable;
+        document.body.classList.toggle('quiz-mode', enable);
+        
+        if (enable) {
+            hideInfoPanel();
+            learnModeBtn.classList.remove('active');
+            quizModeBtn.classList.add('active');
+            quizTypeSelector.style.display = 'flex';
+            quizProgress.style.display = 'flex';
+            quizQuestion.style.display = 'block';
+            startQuiz();
+        } else {
+            quizModeBtn.classList.remove('active');
+            learnModeBtn.classList.add('active');
+            quizTypeSelector.style.display = 'none';
+            quizProgress.style.display = 'none';
+            quizQuestion.style.display = 'none';
+            clearQuizStyles();
+        }
+    }
+
+    function clearQuizStyles() {
+        const allElements = svgDotsContainer.querySelectorAll('.measurement-element, .measurement-dot');
+        allElements.forEach(element => {
+            element.classList.remove('quiz-correct', 'quiz-incorrect', 'quiz-highlight');
+            element.removeEventListener('click', handleQuizElementClick);
+            element.style.pointerEvents = 'auto'; // Restore normal clicking
+        });
+    }
+
+    function startQuiz() {
+        if (!taskData || !taskData.quiz || !taskData.quiz[currentTask] || currentTask === 'basic') {
+            alert('Quiz not available for this tab');
+            toggleQuizMode(false);
+            return;
+        }
+
+        currentQuestions = [...taskData.quiz[currentTask].questions];
+        shuffleArray(currentQuestions);
+        currentQuestionIndex = 0;
+        quizScore = { correct: 0, total: 0 };
+        updateQuizProgress();
+        showQuestion();
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function showQuestion() {
+        if (currentQuestionIndex >= currentQuestions.length) {
+            showQuizComplete();
+            return;
+        }
+
+        clearQuizStyles();
+        const question = currentQuestions[currentQuestionIndex];
+        const targetKey = question.landmark || question.site || question.measurement;
+        currentCorrectAnswer = targetKey;
+
+        if (currentQuizType === 'identification') {
+            showIdentificationQuestion(question, targetKey);
+        } else {
+            showMultipleChoiceQuestion(question, targetKey);
+        }
+
+        quizFeedback.style.display = 'none';
+        updateQuizProgress();
+    }
+
+    function showIdentificationQuestion(question, targetKey) {
+        const data = taskData[currentTask][targetKey];
+        questionText.textContent = `Click on the location of: ${data.title}`;
+        multipleChoiceOptions.style.display = 'none';
+        
+        // Make all measurement elements clickable for quiz
+        const allElements = svgDotsContainer.querySelectorAll('.measurement-element, .measurement-dot');
+        allElements.forEach(element => {
+            element.style.pointerEvents = 'auto';
+            // Remove any existing quiz click listeners first
+            element.removeEventListener('click', handleQuizElementClick);
+            // Add the quiz click listener
+            element.addEventListener('click', handleQuizElementClick);
+        });
+    }
+
+    function showMultipleChoiceQuestion(question, targetKey) {
+        const correctData = taskData[currentTask][targetKey];
+        
+        // Highlight the correct element
+        const correctElement = svgDotsContainer.querySelector(`[data-site="${targetKey}"]`);
+        if (correctElement) {
+            correctElement.classList.add('quiz-highlight');
+        }
+
+        questionText.textContent = `What is this highlighted measurement?`;
+        multipleChoiceOptions.style.display = 'grid';
+
+        // Create answer options
+        const options = [targetKey, ...question.distractors];
+        shuffleArray(options);
+
+        const choiceButtons = multipleChoiceOptions.querySelectorAll('.choice-button');
+        choiceButtons.forEach((button, index) => {
+            if (index < options.length) {
+                const optionKey = options[index];
+                const optionData = taskData[currentTask][optionKey];
+                button.textContent = optionData ? optionData.title : optionKey;
+                button.dataset.answer = optionKey;
+                button.classList.remove('correct', 'incorrect', 'disabled');
+                button.addEventListener('click', handleMultipleChoiceClick);
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        });
+    }
+
+    function handleQuizElementClick(event) {
+        event.stopPropagation();
+        event.preventDefault();
+        const clickedElement = event.currentTarget;
+        const clickedKey = clickedElement.dataset.site;
+        
+        // Remove event listeners to prevent multiple clicks
+        const allElements = svgDotsContainer.querySelectorAll('.measurement-element, .measurement-dot');
+        allElements.forEach(element => {
+            element.removeEventListener('click', handleQuizElementClick);
+            element.style.pointerEvents = 'none'; // Disable further clicking
+        });
+
+        checkAnswer(clickedKey, clickedElement);
+    }
+
+    function handleMultipleChoiceClick(event) {
+        const clickedButton = event.target;
+        const selectedAnswer = clickedButton.dataset.answer;
+        
+        // Disable all buttons
+        const allButtons = multipleChoiceOptions.querySelectorAll('.choice-button');
+        allButtons.forEach(button => {
+            button.classList.add('disabled');
+            button.removeEventListener('click', handleMultipleChoiceClick);
+        });
+
+        checkAnswer(selectedAnswer, clickedButton);
+    }
+
+    function checkAnswer(selectedAnswer, clickedElement) {
+        const isCorrect = selectedAnswer === currentCorrectAnswer;
+        quizScore.total++;
+        
+        if (isCorrect) {
+            quizScore.correct++;
+            showFeedback(true, clickedElement);
+        } else {
+            showFeedback(false, clickedElement);
+            
+            // Highlight correct answer
+            if (currentQuizType === 'identification') {
+                const correctElement = svgDotsContainer.querySelector(`[data-site="${currentCorrectAnswer}"]`);
+                if (correctElement) {
+                    correctElement.classList.add('quiz-correct');
+                }
+            } else {
+                const correctButton = multipleChoiceOptions.querySelector(`[data-answer="${currentCorrectAnswer}"]`);
+                if (correctButton) {
+                    correctButton.classList.add('correct');
+                }
+            }
+        }
+
+        updateQuizProgress();
+    }
+
+    function showFeedback(isCorrect, clickedElement) {
+        const correctData = taskData[currentTask][currentCorrectAnswer];
+        
+        if (isCorrect) {
+            if (currentQuizType === 'identification') {
+                clickedElement.classList.add('quiz-correct');
+            } else {
+                clickedElement.classList.add('correct');
+            }
+            quizFeedback.className = 'quiz-feedback correct';
+            quizFeedback.querySelector('#feedbackText').textContent = `Correct! That is the ${correctData.title}.`;
+        } else {
+            if (currentQuizType === 'identification') {
+                clickedElement.classList.add('quiz-incorrect');
+            } else {
+                clickedElement.classList.add('incorrect');
+            }
+            quizFeedback.className = 'quiz-feedback incorrect';
+            quizFeedback.querySelector('#feedbackText').textContent = `Incorrect. The correct answer is ${correctData.title}.`;
+        }
+
+        quizFeedback.style.display = 'block';
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        showQuestion();
+    }
+
+    function showQuizComplete() {
+        const percentage = Math.round((quizScore.correct / quizScore.total) * 100);
+        questionText.textContent = `Quiz Complete!`;
+        multipleChoiceOptions.style.display = 'none';
+        
+        const scoreText = `Final Score: ${quizScore.correct}/${quizScore.total} (${percentage}%)`;
+        let performanceText = '';
+        
+        if (percentage >= 90) {
+            performanceText = 'Excellent work! You have mastered this section.';
+        } else if (percentage >= 75) {
+            performanceText = 'Good job! You have a solid understanding.';
+        } else if (percentage >= 60) {
+            performanceText = 'Fair work. Consider reviewing the material again.';
+        } else {
+            performanceText = 'Keep studying! Review the learning materials and try again.';
+        }
+
+        quizFeedback.className = 'quiz-feedback';
+        quizFeedback.querySelector('#feedbackText').innerHTML = `${scoreText}<br><br>${performanceText}`;
+        quizFeedback.style.display = 'block';
+        
+        nextQuestionBtn.textContent = 'Start New Quiz';
+    }
+
+    function updateQuizProgress() {
+        currentQuestionNum.textContent = Math.min(currentQuestionIndex + 1, currentQuestions.length);
+        totalQuestions.textContent = currentQuestions.length;
+        correctAnswers.textContent = quizScore.correct;
+        totalAnswered.textContent = quizScore.total;
+    }
+
+    // Quiz event listeners
+    if (learnModeBtn) {
+        learnModeBtn.addEventListener('click', () => toggleQuizMode(false));
+    }
+
+    if (quizModeBtn) {
+        quizModeBtn.addEventListener('click', () => toggleQuizMode(true));
+    }
+
+    if (identificationQuizBtn) {
+        identificationQuizBtn.addEventListener('click', () => {
+            currentQuizType = 'identification';
+            identificationQuizBtn.classList.add('active');
+            multipleChoiceQuizBtn.classList.remove('active');
+            if (isQuizMode) startQuiz();
+        });
+    }
+
+    if (multipleChoiceQuizBtn) {
+        multipleChoiceQuizBtn.addEventListener('click', () => {
+            currentQuizType = 'multipleChoice';
+            multipleChoiceQuizBtn.classList.add('active');
+            identificationQuizBtn.classList.remove('active');
+            if (isQuizMode) startQuiz();
+        });
+    }
+
+    if (nextQuestionBtn) {
+        nextQuestionBtn.addEventListener('click', () => {
+            if (nextQuestionBtn.textContent === 'Start New Quiz') {
+                startQuiz();
+                nextQuestionBtn.textContent = 'Next Question';
+            } else {
+                nextQuestion();
+            }
+        });
+    }
+
+    // Show quiz controls for non-basic tabs
+    function updateQuizControlsVisibility() {
+        if (currentTask === 'basic') {
+            quizControls.style.display = 'none';
+            toggleQuizMode(false);
+        } else {
+            quizControls.style.display = 'flex';
+        }
     }
 
     // Load anatomical data and initialize the application
