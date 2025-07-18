@@ -380,36 +380,141 @@
         }
     },
     "lengths": {
-        "arm_length": {
-            "title": "Arm Length®",
+        
+		"acromiale_radiale_length": {
+            "title": "Acromiale-radiale Length",
             "measurement": {
-                "definition": "The linear distance between the Acromiale® (superior-lateral aspect of acromion) and Radiale® (proximal-lateral head of radius) landmarks.",
-                "subjectPosition": "Subject stands with upper limbs relaxed by sides.",
-                "technique": "Use a large sliding caliper or segmometer to measure the direct distance between the two landmarks."
+                "definition": "The length of the upper arm, measured as the direct distance between the Acromiale® and Radiale® landmarks.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides and the right forearm pronated.",
+                "technique": "Using a large sliding caliper or segmometer, measure the distance between the marked Acromiale® and Radiale® landmarks. Ensure the caliper branches do not move from the landmarks during measurement."
             },
-            "startX": "82.0%",
-            "startY": "25.0%",
-            "endX": "85.0%",
-            "endY": "45.0%",
+            "startX": "83.9%",
+            "startY": "23.4%",
+            "endX": "85.4%",
+            "endY": "39.5%",
             "type": "line"
         },
-        "forearm_length": {
-            "title": "Forearm Length®",
+        "radiale_stylion_length": {
+            "title": "Radiale-stylion Length",
             "measurement": {
-                "definition": "The linear distance between the Radiale® (proximal-lateral head of radius) and Stylion® (distal tip of radial styloid process) landmarks.",
-                "subjectPosition": "Subject stands with upper limbs relaxed by sides.",
-                "technique": "Use a large sliding caliper or segmometer to measure the direct distance between the two landmarks."
+                "definition": "The length of the forearm, measured as the direct distance between the Radiale® and Stylion® landmarks.",
+                "subjectPosition": "The subject assumes a relaxed position with the arms hanging by the sides, with the right forearm in a mid-pronated position.",
+                "technique": "Using a large sliding caliper or segmometer, measure the distance between the marked Radiale® and Stylion® landmarks."
             },
-            "startX": "85.0%",
-            "startY": "45.0%",
-            "endX": "88.0%",
-            "endY": "55.0%",
+            "startX": "85.4%",
+            "startY": "39.5%",
+            "endX": "88.7%",
+            "endY": "51.3%",
+            "type": "line"
+        },
+        "midstylion_dactylion_length": {
+            "title": "Midstylion-dactylion Length",
+            "measurement": {
+                "definition": "The length of the hand, measured from the Midstylion® landmark to the Dactylion® (tip of the third finger).",
+                "subjectPosition": "The subject stands with the right elbow partially flexed, forearm supinated, and fingers extended.",
+                "technique": "Using a large sliding caliper or segmometer, measure the shortest distance from the marked Midstylion® line to the Dactylion®."
+            },
+            "startX": "88.7%",
+            "startY": "51.3%",
+            "endX": "91.1%",
+            "endY": "60.0%",
+            "type": "line"
+        },
+        "iliospinale_height": {
+            "title": "Iliospinale Height",
+            "measurement": {
+                "definition": "The vertical distance from the floor or a box to the Iliospinale® landmark.",
+                "subjectPosition": "The subject stands with feet together and arms hanging by the sides.",
+                "technique": "Using an anthropometer or segmometer, measure the vertical height from the floor (or top of a box) to the marked Iliospinale® landmark. If a box is used, add the box height to the measurement."
+            },
+            "startX": "19.2%",
+            "startY": "52.3%",
+            "endX": "19.2%",
+            "endY": "95.0%",
+            "type": "line"
+        },
+        "trochanterion_height": {
+            "title": "Trochanterion Height",
+            "measurement": {
+                "definition": "The vertical distance from the floor or a box to the Trochanterion® landmark.",
+                "subjectPosition": "The subject stands with feet together and arms hanging by the sides.",
+                "technique": "Using an anthropometer or segmometer, measure the vertical height from the floor (or top of a box) to the marked Trochanterion® landmark. If a box is used, add the box height to the measurement."
+            },
+            "startX": "82.0%",
+            "startY": "54.3%",
+            "endX": "82.0%",
+            "endY": "95.0%",
+            "type": "line"
+        },
+        "trochanterion_tibiale_laterale_length": {
+            "title": "Trochanterion-tibiale laterale Length",
+            "measurement": {
+                "definition": "The length of the thigh, measured as the direct distance between the Trochanterion® and Tibiale laterale® landmarks.",
+                "subjectPosition": "The subject stands with feet together and arms folded across the thorax.",
+                "technique": "Using an anthropometer or segmometer, measure the distance between the marked Trochanterion® and Tibiale laterale® landmarks."
+            },
+            "startX": "81.0%",
+            "startY": "54.3%",
+            "endX": "81.0%",
+            "endY": "72.1%",
+            "type": "line"
+        },
+        "tibiale_laterale_height": {
+            "title": "Tibiale laterale Height",
+            "measurement": {
+                "definition": "The length of the leg, measured as the vertical distance from a box to the Tibiale laterale® landmark.",
+                "subjectPosition": "The subject stands on a box with feet together and arms hanging by the sides.",
+                "technique": "Using an anthropometer or segmometer, measure the vertical height from the top of the box to the marked Tibiale laterale® landmark."
+            },
+            "startX": "20.7%",
+            "startY": "72.1%",
+            "endX": "20.7%",
+            "endY": "95.0%",
+            "type": "line"
+        },
+        "tibiale_mediale_sphyrion_tibiale_length": {
+            "title": "Tibiale mediale-sphyrion tibiale Length",
+            "measurement": {
+                "definition": "The length of the tibia, measured as the direct distance between the Tibiale mediale® and Sphyrion tibiale® landmarks.",
+                "subjectPosition": "The subject is seated with the right ankle resting over the left knee.",
+                "technique": "Using an anthropometer or segmometer, measure the distance between the marked Tibiale mediale® and Sphyrion tibiale® landmarks."
+            },
+            "startX": "25.4%",
+            "startY": "73.4%",
+            "endX": "25.9%",
+            "endY": "91.9%",
             "type": "line"
         }
     },
     "girths": {
-        "arm_girth": {
-            "title": "Arm (Relaxed)®",
+        "head": {
+            "title": "Head Girth",
+            "measurement": {
+                "definition": "The maximum circumference of the head, measured above the eyebrows and ears.",
+                "subjectPosition": "The subject assumes a relaxed seated or standing position with the head in the Frankfort plane.",
+                "technique": "The girth of the head is obtained in the Frankfort plane at the level immediately above the Glabella with the tape perpendicular to the long axis of the head. The tape needs to be pulled tight to compress the hair. Use of the middle fingers at the sides of the head is often necessary to prevent the tape from slipping over the head. Do not include the ears and ensure that there are no hair pins, clips or similar items in the hair during the measurement."
+            },
+            "centerX": "27.8%",
+            "centerY": "7.8%",
+            "radiusX": "4.7%",
+            "radiusY": "1.5%",
+            "type": "ellipse"
+        },
+        "neck": {
+            "title": "Neck Girth",
+            "measurement": {
+                "definition": "The circumference of the neck, measured just superior to the thyroid cartilage (Adam's apple).",
+                "subjectPosition": "The subject assumes a relaxed seated or standing position with the head in the Frankfort plane.",
+                "technique": "The girth around the neck is measured immediately superior to the thyroid cartilage (Adam's apple). The subject should maintain the head in the Frankfort plane. It is important not to pull the tape tight in this region since the tissues are compressible. The tape is held perpendicular to the long axis of the neck which may not necessarily be in the horizontal plane."
+            },
+            "centerX": "27.7%",
+            "centerY": "18.4%",
+            "radiusX": "3.4%",
+            "radiusY": "1.9%",
+            "type": "ellipse"
+        },
+        "arm_relaxed": {
+            "title": "Arm (Relaxed) Girth",
             "measurement": {
                 "definition": "The circumference of the arm at the marked Mid-acromiale-radiale® level, with the arm relaxed.",
                 "subjectPosition": "Subject stands with upper limbs relaxed by sides.",
@@ -422,8 +527,63 @@
             "rotationAngle": 15,
             "type": "ellipse"
         },
-        "waist_girth": {
-            "title": "Waist®",
+        "arm_flexed_tensed": {
+            "title": "Arm (Flexed & Tensed) Girth",
+            "measurement": {
+                "definition": "The maximum circumference of the arm, measured at the peak of the contracted biceps muscle.",
+                "subjectPosition": "The subject's right arm is raised anteriorly to the horizontal with the forearm supinated and flexed at about 45-90° to the arm.",
+                "technique": "The flexed and tensed arm girth is measured at the level of the peak of the contracted Biceps. The measurer stands to the side of the subject and with the tape loosely in position. The subject is asked to partially tense the elbow flexors to identify the probable peak of the contracted muscles. The subject is encouraged to contract the arm muscles as strongly as possible and hold it while the measurement is made at the peak of the Biceps. If there is no obvious peak of the Biceps this girth should be measured at the level of the Mid-acromiale-radiale® landmark."
+            },
+            "centerX": "16.9%",
+            "centerY": "35.0%",
+            "radiusX": "2.5%",
+            "radiusY": "1.7%",
+            "rotationAngle": 15,
+            "type": "ellipse"
+        },
+        "forearm": {
+            "title": "Forearm Girth",
+            "measurement": {
+                "definition": "The maximum circumference of the forearm, distal to the humeral epicondyles.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the left arm hanging by the side. The subject's right arm is slightly flexed at the shoulder and the elbow is extended.",
+                "technique": "The measurement is taken at the maximum girth of the forearm distal to the humeral epicondyles. The subject holds the palm up (ie forearm supinated) while relaxing the muscles of the forearm. Using the cross-hand technique move the tape measure up and down the forearm and make serial measurements in order to correctly locate the level of the maximum girth. It usually occurs just distal to the elbow."
+            },
+            "centerX": "15.5%",
+            "centerY": "42.0%",
+            "radiusX": "2.0%",
+            "radiusY": "1.2%",
+            "rotationAngle": 15,
+            "type": "ellipse"
+        },
+        "wrist": {
+            "title": "Wrist Girth",
+            "measurement": {
+                "definition": "The minimum circumference of the wrist, distal to the styloid processes.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the left arm hanging by the side. The subject's right arm is slightly flexed at the shoulder, the elbow is extended, the forearm supinated and the hand relaxed.",
+                "technique": "This girth measurement is taken distal to the styloid processes. It is the minimum girth in this region. Manipulation of the tape measure is required to be sure the minimal girth is obtained. The tissues should not be compressed by excessive tension."
+            },
+            "centerX": "13.5%",
+            "centerY": "50.0%",
+            "radiusX": "1.7%",
+            "radiusY": "1.0%",
+            "rotationAngle": 15,
+            "type": "ellipse"
+        },
+        "chest": {
+            "title": "Chest Girth",
+            "measurement": {
+                "definition": "The circumference of the chest at the level of the Mesosternale landmark.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides and slightly abducted.",
+                "technique": "This girth is taken at the level of the Mesosternale. The anthropometrist stands to the right of the subject who abducts the arms to the horizontal position allowing the tape to be passed around the thorax. The stub of the tape and the housing are then both held in the right hand while the anthropometrist uses the left hand to adjust the level of the tape at the back to the adjudged level of the marked Mesosternale. The anthropometrist resumes control of the stub with the left hand and using the cross-hand technique positions the tape in front at the level of the marked Mesosternale. The subject is instructed to lower their arms to the relaxed position with the arms slightly abducted. The tape is then readjusted as necessary to ensure it has not slipped and does not excessively indent the skin. The subject should breathe normally and the measurement is taken at the end of a normal expiration (end tidal)."
+            },
+            "centerX": "27.8%",
+            "centerY": "32.4%",
+            "radiusX": "8.0%",
+            "radiusY": "3.5%",
+            "type": "ellipse"
+        },
+        "waist_minimum": {
+            "title": "Waist (Minimum) Girth",
             "measurement": {
                 "definition": "The circumference at the narrowest point between the inferior costal (rib) border and the superior border of the iliac crest.",
                 "subjectPosition": "Subject stands with upper limbs relaxed by sides, abdomen relaxed.",
@@ -433,6 +593,71 @@
             "centerY": "40.4%",
             "radiusX": "7.6%",
             "radiusY": "3.0%",
+            "type": "ellipse"
+        },
+        "gluteal_hips": {
+            "title": "Gluteal (Hips) Girth",
+            "measurement": {
+                "definition": "The circumference at the level of the greatest posterior protuberance of the buttocks.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the arms folded across the thorax. The subject's feet should be together and the gluteal muscles relaxed.",
+                "technique": "The girth is taken at the level of the greatest posterior protuberance of the buttocks which usually corresponds anteriorly to about the level of the symphysis pubis. The anthropometrist passes the tape around the hips from the side. The stub of the tape and the housing are then both held in the right hand while the anthropometrist uses the left hand to adjust the level of the tape at the back to the adjudged level of the greatest posterior protuberance of the buttocks. The anthropometrist resumes control of the stub with the left hand, and using the cross-hand technique, positions the tape in front and the sides so that the tape is held in a horizontal plane at the target level. The tape is then readjusted as necessary to ensure it has not slipped and does not excessively indent the skin."
+            },
+            "centerX": "27.8%",
+            "centerY": "50.4%",
+            "radiusX": "8.5%",
+            "radiusY": "4.0%",
+            "type": "ellipse"
+        },
+        "thigh_1cm_gluteal": {
+            "title": "Thigh (1cm from Gluteal Fold) Girth",
+            "measurement": {
+                "definition": "The circumference of the thigh, 1 cm below the gluteal fold.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the arms folded across the thorax. The subject stands with the feet slightly apart and mass equally distributed on both feet.",
+                "technique": "The girth of the thigh is taken 1 cm below the level of the Gluteal fold, perpendicular to the long axis of the thigh. It is usually helpful to have the subject stand on a box or stool for this measure. The anthropometrist passes the tape between the lower thighs and then slides the tape up to the correct plane. The stub of the tape and the housing are both held in the right hand while the anthropometrist uses the left hand to adjust the level of the tape to the target level. The anthropometrist resumes control of the stub with the left hand and using the cross-hand technique positions the tape so that it is held in a perpendicular plane. The tape is then readjusted as necessary to ensure it has not slipped and does not excessively indent the skin."
+            },
+            "centerX": "22.8%",
+            "centerY": "58.0%",
+            "radiusX": "5.0%",
+            "radiusY": "2.5%",
+            "type": "ellipse"
+        },
+        "thigh_mid_troch_tib_lat": {
+            "title": "Thigh (Mid-Trochanterion-Tibiale Laterale) Girth",
+            "measurement": {
+                "definition": "The circumference of the thigh at the level of the Mid-trochanterion-tibiale laterale landmark.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the arms folded across the thorax. The subject's feet should be separated with the weight evenly distributed.",
+                "technique": "This is the right mid-thigh girth at the marked Mid-trochanterion-tibiale-laterale site. It is usually helpful to have the subject stand on a box or stool for this measure. The anthropometrist passes the tape between the lower thighs and then slides the tape up to the correct plane. The stub of the tape and the housing are both held in the right hand while the anthropometrist uses the left hand to adjust the level of the tape to the target level. The anthropometrist resumes control of the stub with the left hand and using the cross-hand technique positions the tape so that it is held in a perpendicular plane. The tape is then readjusted as necessary to ensure it has not slipped and does not excessively indent the skin."
+            },
+            "centerX": "22.8%",
+            "centerY": "61.9%",
+            "radiusX": "4.5%",
+            "radiusY": "2.2%",
+            "type": "ellipse"
+        },
+        "calf_maximum": {
+            "title": "Calf (Maximum) Girth",
+            "measurement": {
+                "definition": "The maximum circumference of the calf at the level of the Medial calf® skinfold site.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides. The subject's feet should be separated with the weight evenly distributed.",
+                "technique": "The maximum girth of the calf at the marked Medial calf® skinfold site. The subject stands in an elevated position. The elevated position will make it easier for the measurer to align the eyes with the tape. The anthropometrist passes the tape around the calf and then slides the tape to the correct plane. The stub of the tape and the housing are both held in the right hand while the anthropometrist uses the left hand to adjust the level of the tape to the marked level. The anthropometrist resumes control of the stub with the left hand and using the cross-hand technique positions the tape so that it is held in a plane perpendicular to the axis of the leg. The tape is then readjusted as necessary to ensure it has not slipped and does not excessively indent the skin."
+            },
+            "centerX": "23.0%",
+            "centerY": "79.9%",
+            "radiusX": "3.6%",
+            "radiusY": "1.5%",
+            "type": "ellipse"
+        },
+        "ankle_minimum": {
+            "title": "Ankle (Minimum) Girth",
+            "measurement": {
+                "definition": "The minimum circumference of the ankle, superior to the Sphyrion tibiale.",
+                "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides. The subject's feet should be separated with the weight evenly distributed.",
+                "technique": "The minimum girth of the ankle is taken at the narrowest point superior to the Sphyrion tibiale. The subject stands in an elevated position. The elevated position will make it easier for the measurer to align the eyes with the tape. The anthropometrist passes the tape around the ankle. and manipulates it up and down this region to ensure that the minimum girth is obtained. The stub of the tape and the housing are both held in the right hand while the anthropometrist uses the left hand to adjust the level of the tape to the marked level. The anthropometrist resumes control of the stub with the left hand and using the cross-hand technique positions the tape so that it is held in a plane perpendicular to the axis of the leg. The tape is then readjusted as necessary to ensure it has not slipped and does not excessively indent the skin."
+            },
+            "centerX": "24.3%",
+            "centerY": "91.0%",
+            "radiusX": "1.9%",
+            "radiusY": "1.0%",
             "type": "ellipse"
         }
     },
@@ -444,10 +669,10 @@
                 "subjectPosition": "Subject stands in the standard anatomical position.",
                 "technique": "Use a large sliding caliper (anthropometer). The subject's arms should be relaxed at their sides. The caliper blades are placed over the Acromiale® landmarks."
             },
-            "startX": "61.1%",
-            "startY": "22.6%",
-            "endX": "83.5%",
-            "endY": "22.6%",
+            "startX": "49.3%",
+            "startY": "24.1%",
+            "endX": "66.3%",
+            "endY": "24.1%",
             "type": "line"
         },
         "biiliocristal": {
@@ -457,10 +682,10 @@
                 "subjectPosition": "Subject stands in the standard anatomical position.",
                 "technique": "Use a large sliding caliper (anthropometer). Apply firm pressure to the caliper blades over the Iliocristale® landmarks to compress any intervening soft tissue."
             },
-            "startX": "18.7%",
-            "startY": "47.8%",
-            "endX": "37%",
-            "endY": "47.8%",
+            "startX": "14.3%",
+            "startY": "52.6%",
+            "endX": "30.0%",
+            "endY": "52.6%",
             "type": "line"
         },
         "transverse_chest_breadth": {
@@ -470,10 +695,10 @@
                 "subjectPosition": "The subject assumes a relaxed standing or seated position, with arms abducted sufficiently to allow caliper access to the lateral rib cage.",
                 "technique": "The measurer stands facing the subject. Align the superior aspect of the caliper with the Mesosternale® landmark. Angle the caliper blades 30° downwards from horizontal to contact the most lateral points of the rib cage, preventing slippage between ribs. Avoid including Pectoralis Major or Latissimus Dorsi muscles. Take the measurement at the end of a normal exhalation."
             },
-            "startX": "19.5%",
-            "startY": "29.9%",
-            "endX": "36.0%",
-            "endY": "29.9%",
+            "startX": "16.1%",
+            "startY": "36.4%",
+            "endX": "28.1%",
+            "endY": "36.4%",
             "type": "line"
         },
         "anterior_posterior_chest_depth": {
@@ -483,10 +708,10 @@
                 "subjectPosition": "The subject assumes a seated position with the torso erect and palms resting on the thighs.",
                 "technique": "The measurer applies the caliper over the subject's right shoulder. Position the posterior branch of the caliper on the spinous process of the vertebra at the horizontal level of the Mesosternale®. Place the anterior branch on the Mesosternale®. Apply very light pressure. The subject should breathe normally; take the measurement at the end of a normal exhalation."
             },
-            "startX": "28.5%",
-            "startY": "29.9%",
-            "endX": "32.5%",
-            "endY": "29.9%",
+            "startX": "91.5%",
+            "startY": "28.1%",
+            "endX": "81.1%",
+            "endY": "28.1%",
             "type": "line"
         },
         "biepicondylar_humerus_breadth": {
@@ -496,10 +721,10 @@
                 "subjectPosition": "The subject assumes a relaxed standing or seated position. The right arm is raised anteriorly to the horizontal, and the forearm is flexed at a 90° angle to the arm.",
                 "technique": "Palpate the medial and lateral epicondyles of the humerus, starting proximally. Place the caliper faces on these identified epicondyles. Maintain firm pressure with the index fingers while reading the measurement. Note: The measured distance may be somewhat oblique as the medial epicondyle is typically lower than the lateral epicondyle."
             },
-            "startX": "84.0%",
-            "startY": "39.0%",
-            "endX": "86.8%",
-            "endY": "40.0%",
+            "startX": "11.3%",
+            "startY": "38.7%",
+            "endX": "15.0%",
+            "endY": "40.1%",
             "type": "line"
         },
         "biepicondylar_femur_breadth": {
@@ -509,10 +734,10 @@
                 "subjectPosition": "The subject assumes a relaxed seated position with palms resting on the thighs. The right leg is flexed at the knee to form a 90° angle with the thigh.",
                 "technique": "Palpate the medial and lateral epicondyles of the femur, starting proximally to the sites. Place the caliper faces on these identified epicondyles. Maintain firm pressure with the index fingers while reading the measurement."
             },
-            "startX": "20.0%",
-            "startY": "72.5%",
-            "endX": "26.0%",
-            "endY": "73.0%",
+            "startX": "16.1%",
+            "startY": "71.4%",
+            "endX": "20.9%",
+            "endY": "71.4%",
             "type": "line"
         }
     }

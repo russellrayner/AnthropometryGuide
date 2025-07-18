@@ -47,6 +47,27 @@
         </div>
     </main>
 
+    <div id="developerPanel" style="display: none; position: fixed; bottom: 10px; left: 10px; background: #fff; border: 1px solid #000; padding: 10px; z-index: 1000; max-width: 400px;">
+        <h3>Developer Mode</h3>
+        <p>Current Site: <span id="currentSite"></span></p>
+        <p>Click to set: <span id="clickPrompt"></span></p>
+        <div style="margin: 5px 0;">
+            <label><input type="checkbox" id="hideOverlays" checked> Hide existing overlays</label>
+        </div>
+        <div style="margin: 5px 0;">
+            <label><input type="checkbox" id="lockYAxis"> Lock Y-axis to previous point</label>
+            <span id="lockedYValue" style="font-size: 11px; color: #666;"></span>
+        </div>
+        <div id="siteDefinition" style="margin: 8px 0; padding: 8px; background: #f0f0f0; border-radius: 4px; font-size: 12px; max-height: 100px; overflow-y: auto;">
+            <strong>Definition:</strong> <span id="definitionText">Select a site to see its definition</span>
+        </div>
+        <div>
+            <button id="prevSite">Previous</button>
+            <button id="nextSite">Next</button>
+            <button id="outputCoords">Output Coordinates</button>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -24,6 +24,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add coordinate finder functionality
     let coordinateFindingMode = false;
     const imageContainer = document.querySelector('.image-container');
+    
+    // Developer mode variables
+    let developerMode = false;
+    let currentSiteIndex = 0;
+    let currentTaskSites = [];
+    const developerPanel = document.getElementById('developerPanel');
+    const currentSiteSpan = document.getElementById('currentSite');
+    const clickPromptSpan = document.getElementById('clickPrompt');
+    const prevSiteButton = document.getElementById('prevSite');
+    const nextSiteButton = document.getElementById('nextSite');
+    const outputCoordsButton = document.getElementById('outputCoords');
+    const hideOverlaysCheckbox = document.getElementById('hideOverlays');
+    const lockYAxisCheckbox = document.getElementById('lockYAxis');
+    const lockedYValueSpan = document.getElementById('lockedYValue');
+    const definitionText = document.getElementById('definitionText');
+    let alignmentCoordinates = {};
+    let lastYCoordinate = null;
+    let previewLine = null;
+    let isWaitingForEndPoint = false;
+    let startPoint = null;
 
     // Task descriptions for each type
     const taskDescriptions = {
@@ -56,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Add coordinate finder event listeners
+    // Add coordinate finder and developer mode event listeners
     document.addEventListener('keydown', function(e) {
         if (e.altKey && e.key.toLowerCase() === 'c') {
             e.preventDefault();
@@ -83,28 +103,138 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Coordinate finding mode: OFF - Measurement elements restored');
             }
         }
+        
+        // Toggle developer mode with Alt+D
+        if (e.altKey && e.key.toLowerCase() === 'd') {
+            e.preventDefault();
+            toggleDeveloperMode();
+        }
     });
 
     imageContainer.addEventListener('click', function(e) {
-        if (!coordinateFindingMode) return;
+        if (!coordinateFindingMode && !developerMode) return;
 
         const rect = skinfoldImage.getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
         const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
 
-        const tempDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-        tempDot.setAttribute("cx", x + "%");
-        tempDot.setAttribute("cy", y + "%");
-        tempDot.setAttribute("r", "1.3%");
-        tempDot.setAttribute("fill", "yellow");
-        tempDot.setAttribute("stroke", "black");
-        svgDotsContainer.appendChild(tempDot);
+        if (coordinateFindingMode) {
+            // Original coordinate finding functionality
+            const tempDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            tempDot.setAttribute("cx", x + "%");
+            tempDot.setAttribute("cy", y + "%");
+            tempDot.setAttribute("r", "1.3%");
+            tempDot.setAttribute("fill", "yellow");
+            tempDot.setAttribute("stroke", "black");
+            svgDotsContainer.appendChild(tempDot);
 
-        console.log(`Coordinates: x: "${x}%", y: "${y}%"`);
+            console.log(`Coordinates: x: "${x}%", y: "${y}%"`);
 
-        setTimeout(() => {
-            svgDotsContainer.removeChild(tempDot);
-        }, 2000);
+            setTimeout(() => {
+                svgDotsContainer.removeChild(tempDot);
+            }, 2000);
+        } else if (developerMode && currentTaskSites.length > 0) {
+            // Developer mode alignment functionality
+            const currentSite = currentTaskSites[currentSiteIndex];
+            if (!alignmentCoordinates[currentTask]) {
+                alignmentCoordinates[currentTask] = {};
+            }
+            
+            // Apply Y-axis lock if enabled - use first click's Y if no previous Y is set
+            let finalY = y;
+            if (lockYAxisCheckbox.checked) {
+                if (lastYCoordinate !== null) {
+                    finalY = lastYCoordinate;
+                } else {
+                    // First click of the site - this will become the locked Y value
+                    lastYCoordinate = y;
+                    updateLockedYDisplay();
+                }
+            }
+            
+            // Store coordinates for current site
+            const siteData = taskData[currentTask][currentSite];
+            if (siteData.type === "line") {
+                // For lines, determine if this is start or end point based on clicks
+                if (!alignmentCoordinates[currentTask][currentSite]) {
+                    alignmentCoordinates[currentTask][currentSite] = { startX: x + "%", startY: finalY + "%" };
+                    lastYCoordinate = finalY;
+                    updateLockedYDisplay();
+                    clickPromptSpan.textContent = `${currentSite} - Click END point`;
+                    
+                    // Set up preview line
+                    startPoint = { x: parseFloat(x), y: parseFloat(finalY) };
+                    isWaitingForEndPoint = true;
+                    createPreviewLine();
+                } else {
+                    alignmentCoordinates[currentTask][currentSite].endX = x + "%";
+                    alignmentCoordinates[currentTask][currentSite].endY = finalY + "%";
+                    lastYCoordinate = finalY;
+                    updateLockedYDisplay();
+                    
+                    // Clean up preview line
+                    removePreviewLine();
+                    isWaitingForEndPoint = false;
+                    startPoint = null;
+                    
+                    nextSite();
+                }
+            } else if (siteData.type === "ellipse") {
+                // For ellipses, get center point first, then radius points
+                if (!alignmentCoordinates[currentTask][currentSite]) {
+                    alignmentCoordinates[currentTask][currentSite] = { centerX: x + "%", centerY: finalY + "%" };
+                    lastYCoordinate = finalY;
+                    updateLockedYDisplay();
+                    clickPromptSpan.textContent = `${currentSite} - Click edge for radius`;
+                } else {
+                    const centerX = parseFloat(alignmentCoordinates[currentTask][currentSite].centerX);
+                    const centerY = parseFloat(alignmentCoordinates[currentTask][currentSite].centerY);
+                    const radiusX = Math.abs(parseFloat(x) - centerX).toFixed(1);
+                    const radiusY = Math.abs(parseFloat(y) - centerY).toFixed(1);
+                    alignmentCoordinates[currentTask][currentSite].radiusX = radiusX + "%";
+                    alignmentCoordinates[currentTask][currentSite].radiusY = radiusY + "%";
+                    nextSite();
+                }
+            } else {
+                // Regular dots
+                alignmentCoordinates[currentTask][currentSite] = { x: x + "%", y: finalY + "%" };
+                lastYCoordinate = finalY;
+                updateLockedYDisplay();
+                nextSite();
+            }
+            
+            // Show temporary marker (use finalY to show where the point was actually placed)
+            const tempDot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            tempDot.setAttribute("cx", x + "%");
+            tempDot.setAttribute("cy", finalY + "%");
+            tempDot.setAttribute("r", "1.0%");
+            tempDot.setAttribute("fill", lockYAxisCheckbox.checked ? "#00BFFF" : "#FF4444");
+            tempDot.setAttribute("stroke", "#000000");
+            tempDot.setAttribute("stroke-width", "2");
+            svgDotsContainer.appendChild(tempDot);
+
+            setTimeout(() => {
+                if (svgDotsContainer.contains(tempDot)) {
+                    svgDotsContainer.removeChild(tempDot);
+                }
+            }, 1000);
+        }
+    });
+
+    // Mouse move event for preview line
+    imageContainer.addEventListener('mousemove', function(e) {
+        if (!developerMode || !isWaitingForEndPoint || !startPoint) return;
+
+        const rect = skinfoldImage.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+        let y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+        
+        // Apply Y-axis lock if enabled
+        if (lockYAxisCheckbox.checked && lastYCoordinate !== null) {
+            y = lastYCoordinate;
+        }
+
+        updatePreviewLine(parseFloat(x), parseFloat(y));
     });
 
     // Function to handle collapsible sections
@@ -214,6 +344,12 @@ document.addEventListener('DOMContentLoaded', function() {
         clearAllElements();
         hideInfoPanel();
         
+        if (taskType === 'breadths') {
+            skinfoldImage.src = 'Blank-Sillouette-With-Side.png';
+        } else {
+            skinfoldImage.src = 'Blank-Sillouette.png';
+        }
+
         if (!taskData) return;
         
         const data = taskData[taskType];
@@ -396,6 +532,11 @@ document.addEventListener('DOMContentLoaded', function() {
             currentTask = selectedTask;
             taskDescription.textContent = taskDescriptions[currentTask];
             loadTaskData(currentTask);
+            
+            // Reinitialize developer sites if in developer mode
+            if (developerMode) {
+                initializeDeveloperSites();
+            }
         }
     });
 
@@ -435,6 +576,235 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (skinfoldImage.complete && skinfoldImage.naturalHeight !== 0) {
         adjustDotPositions();
+    }
+
+    // Developer mode functions
+    function toggleDeveloperMode() {
+        developerMode = !developerMode;
+        if (developerMode) {
+            startDeveloperMode();
+        } else {
+            stopDeveloperMode();
+        }
+    }
+
+    function startDeveloperMode() {
+        developerPanel.style.display = 'block';
+        document.body.classList.add('developer-mode-active');
+        
+        // Hide measurement elements based on checkbox state
+        toggleOverlayVisibility();
+        
+        // Initialize sites for current task
+        initializeDeveloperSites();
+        console.log('Developer mode: ON - Ready to align overlays for', currentTask);
+    }
+
+    function stopDeveloperMode() {
+        developerPanel.style.display = 'none';
+        document.body.classList.remove('developer-mode-active');
+        
+        // Restore measurement elements
+        const allMeasurementElements = svgDotsContainer.querySelectorAll('.measurement-element, .measurement-dot');
+        allMeasurementElements.forEach(element => {
+            element.style.display = '';
+        });
+        
+        currentSiteIndex = 0;
+        currentTaskSites = [];
+        lastYCoordinate = null;
+        updateLockedYDisplay();
+        
+        // Clean up preview line
+        removePreviewLine();
+        isWaitingForEndPoint = false;
+        startPoint = null;
+        
+        console.log('Developer mode: OFF');
+    }
+
+    function initializeDeveloperSites() {
+        if (!taskData || !taskData[currentTask]) return;
+        
+        currentTaskSites = Object.keys(taskData[currentTask]);
+        currentSiteIndex = 0;
+        lastYCoordinate = null;
+        updateLockedYDisplay();
+        
+        // Clean up any existing preview line
+        removePreviewLine();
+        isWaitingForEndPoint = false;
+        startPoint = null;
+        
+        if (currentTaskSites.length > 0) {
+            updateDeveloperDisplay();
+        }
+    }
+
+    function updateDeveloperDisplay() {
+        if (currentTaskSites.length === 0) return;
+        
+        const currentSite = currentTaskSites[currentSiteIndex];
+        const siteData = taskData[currentTask][currentSite];
+        
+        currentSiteSpan.textContent = `${currentSite} (${currentSiteIndex + 1}/${currentTaskSites.length})`;
+        
+        // Set prompt based on site type
+        if (siteData.type === "line") {
+            clickPromptSpan.textContent = `${currentSite} - Click START point`;
+        } else if (siteData.type === "ellipse") {
+            clickPromptSpan.textContent = `${currentSite} - Click CENTER point`;
+        } else {
+            clickPromptSpan.textContent = `${currentSite} - Click dot position`;
+        }
+        
+        // Update definition display
+        updateSiteDefinition(siteData);
+    }
+
+    function updateSiteDefinition(siteData) {
+        let definition = 'No definition available';
+        
+        // Get definition from the appropriate section
+        if (siteData.identification && siteData.identification.definition) {
+            definition = siteData.identification.definition;
+        } else if (siteData.measurement && siteData.measurement.definition) {
+            definition = siteData.measurement.definition;
+        }
+        
+        // Add location info if available
+        if (siteData.identification && siteData.identification.location) {
+            definition += ' Location: ' + siteData.identification.location;
+        }
+        
+        definitionText.textContent = definition;
+    }
+
+    function toggleOverlayVisibility() {
+        const allMeasurementElements = svgDotsContainer.querySelectorAll('.measurement-element, .measurement-dot');
+        const shouldHide = hideOverlaysCheckbox.checked;
+        
+        allMeasurementElements.forEach(element => {
+            element.style.display = shouldHide ? 'none' : '';
+        });
+    }
+
+    function updateLockedYDisplay() {
+        if (lastYCoordinate !== null) {
+            lockedYValueSpan.textContent = `(Y: ${lastYCoordinate}%)`;
+        } else {
+            lockedYValueSpan.textContent = '';
+        }
+    }
+
+    function createPreviewLine() {
+        if (!startPoint) return;
+        
+        previewLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        previewLine.setAttribute("x1", startPoint.x + "%");
+        previewLine.setAttribute("y1", startPoint.y + "%");
+        previewLine.setAttribute("x2", startPoint.x + "%");
+        previewLine.setAttribute("y2", startPoint.y + "%");
+        previewLine.setAttribute("stroke", "#FF6B35");
+        previewLine.setAttribute("stroke-width", "2");
+        previewLine.setAttribute("opacity", "0.8");
+        previewLine.style.pointerEvents = "none";
+        svgDotsContainer.appendChild(previewLine);
+    }
+
+    function updatePreviewLine(endX, endY) {
+        if (!previewLine || !startPoint) return;
+        
+        previewLine.setAttribute("x2", endX + "%");
+        previewLine.setAttribute("y2", endY + "%");
+    }
+
+    function removePreviewLine() {
+        if (previewLine && svgDotsContainer.contains(previewLine)) {
+            svgDotsContainer.removeChild(previewLine);
+        }
+        previewLine = null;
+    }
+
+    function nextSite() {
+        // Clean up preview line when switching sites
+        removePreviewLine();
+        isWaitingForEndPoint = false;
+        startPoint = null;
+        
+        // Clear Y-axis lock when moving to new site
+        lastYCoordinate = null;
+        updateLockedYDisplay();
+        
+        currentSiteIndex++;
+        if (currentSiteIndex >= currentTaskSites.length) {
+            currentSiteIndex = 0;
+        }
+        updateDeveloperDisplay();
+    }
+
+    function prevSite() {
+        // Clean up preview line when switching sites
+        removePreviewLine();
+        isWaitingForEndPoint = false;
+        startPoint = null;
+        
+        // Clear Y-axis lock when moving to new site
+        lastYCoordinate = null;
+        updateLockedYDisplay();
+        
+        currentSiteIndex--;
+        if (currentSiteIndex < 0) {
+            currentSiteIndex = currentTaskSites.length - 1;
+        }
+        updateDeveloperDisplay();
+    }
+
+    function outputCoordinates() {
+        if (Object.keys(alignmentCoordinates).length === 0) {
+            console.log('No alignment coordinates recorded yet.');
+            return;
+        }
+        
+        console.log('Alignment Coordinates:');
+        console.log(JSON.stringify(alignmentCoordinates, null, 2));
+        
+        // Also copy to clipboard if possible
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(JSON.stringify(alignmentCoordinates, null, 2))
+                .then(() => console.log('Coordinates copied to clipboard'))
+                .catch(err => console.log('Failed to copy to clipboard:', err));
+        }
+    }
+
+    // Developer panel event listeners
+    if (prevSiteButton) {
+        prevSiteButton.addEventListener('click', prevSite);
+    }
+    
+    if (nextSiteButton) {
+        nextSiteButton.addEventListener('click', nextSite);
+    }
+    
+    if (outputCoordsButton) {
+        outputCoordsButton.addEventListener('click', outputCoordinates);
+    }
+    
+    if (hideOverlaysCheckbox) {
+        hideOverlaysCheckbox.addEventListener('change', function() {
+            if (developerMode) {
+                toggleOverlayVisibility();
+            }
+        });
+    }
+    
+    if (lockYAxisCheckbox) {
+        lockYAxisCheckbox.addEventListener('change', function() {
+            if (!this.checked) {
+                lastYCoordinate = null;
+                updateLockedYDisplay();
+            }
+        });
     }
 
     // Load anatomical data and initialize the application
