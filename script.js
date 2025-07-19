@@ -654,8 +654,8 @@ document.addEventListener('DOMContentLoaded', function() {
             infoDisplay.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Handle video for skinfolds, landmarks, and basic measurements
-        if ((currentTask === 'skinfolds' || currentTask === 'landmarks' || currentTask === 'basic') && data.videoId && data.startTime !== undefined && data.endTime !== undefined) {
+        // Handle video for skinfolds, landmarks, girths, and basic measurements
+        if ((currentTask === 'skinfolds' || currentTask === 'landmarks' || currentTask === 'girths' || currentTask === 'basic') && data.videoId && data.startTime !== undefined && data.endTime !== undefined) {
             currentVideoStartTime = data.startTime;
             currentVideoEndTime = data.endTime;
             const embedUrl = `https://www.youtube.com/embed/${data.videoId}?start=${currentVideoStartTime}&end=${currentVideoEndTime}&autoplay=1&rel=0`;

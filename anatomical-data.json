@@ -498,7 +498,10 @@
             "centerY": "7.8%",
             "radiusX": "4.7%",
             "radiusY": "1.5%",
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1104,
+            "endTime": 1146
         },
         "neck": {
             "title": "Neck Girth",
@@ -511,7 +514,10 @@
             "centerY": "18.4%",
             "radiusX": "3.4%",
             "radiusY": "1.9%",
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1148,
+            "endTime": 1183
         },
         "arm_girth": {
             "title": "Arm Girth (Relaxed & Flexed/Tensed)",
@@ -526,7 +532,10 @@
             "radiusX": "2.4%",
             "radiusY": "1.6%",
             "rotationAngle": 15,
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1185,
+            "endTime": 1258
         },
         "forearm": {
             "title": "Forearm Girth",
@@ -540,7 +549,10 @@
             "radiusX": "2.0%",
             "radiusY": "1.2%",
             "rotationAngle": 15,
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1260,
+            "endTime": 1290
         },
         "wrist": {
             "title": "Wrist Girth",
@@ -554,7 +566,10 @@
             "radiusX": "1.7%",
             "radiusY": "1.0%",
             "rotationAngle": 15,
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1291,
+            "endTime": 1319
         },
         "chest": {
             "title": "Chest Girth",
@@ -567,7 +582,10 @@
             "centerY": "32.4%",
             "radiusX": "8.0%",
             "radiusY": "3.5%",
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1321,
+            "endTime": 1374
         },
         "waist_minimum": {
             "title": "Waist (Minimum) Girth",
@@ -580,7 +598,10 @@
             "centerY": "40.4%",
             "radiusX": "7.6%",
             "radiusY": "3.0%",
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1376,
+            "endTime": 1412
         },
         "gluteal_hips": {
             "title": "Gluteal (Hips) Girth",
@@ -593,7 +614,10 @@
             "centerY": "50.4%",
             "radiusX": "8.5%",
             "radiusY": "4.0%",
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1414,
+            "endTime": 1444
         },
         "thigh_1cm_gluteal": {
             "title": "Thigh (1cm from Gluteal Fold) Girth",
@@ -606,7 +630,10 @@
             "centerY": "58.0%",
             "radiusX": "5.0%",
             "radiusY": "2.5%",
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1445,
+            "endTime": 1476
         },
         "thigh_mid_troch_tib_lat": {
             "title": "Thigh (Mid-Trochanterion-Tibiale Laterale) Girth",
@@ -619,7 +646,10 @@
             "centerY": "61.9%",
             "radiusX": "4.5%",
             "radiusY": "2.2%",
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1477,
+            "endTime": 1507
         },
         "calf_maximum": {
             "title": "Calf (Maximum) Girth",
@@ -632,7 +662,10 @@
             "centerY": "79.9%",
             "radiusX": "3.6%",
             "radiusY": "1.5%",
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1509,
+            "endTime": 1551
         },
         "ankle_minimum": {
             "title": "Ankle (Minimum) Girth",
@@ -645,7 +678,10 @@
             "centerY": "91.0%",
             "radiusX": "1.9%",
             "radiusY": "1.0%",
-            "type": "ellipse"
+            "type": "ellipse",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1554,
+            "endTime": 1580
         }
     },
     "breadths": {
