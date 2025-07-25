@@ -588,7 +588,7 @@
             "endTime": 1374
         },
         "waist_minimum": {
-            "title": "Waist (Minimum) Girth",
+            "title": "Waist Girth",
             "measurement": {
                 "definition": "The circumference at the narrowest point between the inferior costal (rib) border and the superior border of the iliac crest.",
                 "subjectPosition": "Subject stands with upper limbs relaxed by sides, abdomen relaxed.",
@@ -604,7 +604,7 @@
             "endTime": 1412
         },
         "gluteal_hips": {
-            "title": "Gluteal (Hips) Girth",
+            "title": "Gluteal (Hip) Girth",
             "measurement": {
                 "definition": "The circumference at the level of the greatest posterior protuberance of the buttocks.",
                 "subjectPosition": "The subject assumes a relaxed standing position with the arms folded across the thorax. The subject's feet should be together and the gluteal muscles relaxed.",
@@ -620,7 +620,7 @@
             "endTime": 1444
         },
         "thigh_1cm_gluteal": {
-            "title": "Thigh (1cm from Gluteal Fold) Girth",
+            "title": "Thigh Girth",
             "measurement": {
                 "definition": "The circumference of the thigh, 1 cm below the gluteal fold.",
                 "subjectPosition": "The subject assumes a relaxed standing position with the arms folded across the thorax. The subject stands with the feet slightly apart and mass equally distributed on both feet.",
@@ -636,7 +636,7 @@
             "endTime": 1476
         },
         "thigh_mid_troch_tib_lat": {
-            "title": "Thigh (Mid-Trochanterion-Tibiale Laterale) Girth",
+            "title": "Mid-Thigh Girth",
             "measurement": {
                 "definition": "The circumference of the thigh at the level of the Mid-trochanterion-tibiale laterale landmark.",
                 "subjectPosition": "The subject assumes a relaxed standing position with the arms folded across the thorax. The subject's feet should be separated with the weight evenly distributed.",
@@ -652,7 +652,7 @@
             "endTime": 1507
         },
         "calf_maximum": {
-            "title": "Calf (Maximum) Girth",
+            "title": "Calf Girth",
             "measurement": {
                 "definition": "The maximum circumference of the calf at the level of the Medial calf® skinfold site.",
                 "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides. The subject's feet should be separated with the weight evenly distributed.",
@@ -668,7 +668,7 @@
             "endTime": 1551
         },
         "ankle_minimum": {
-            "title": "Ankle (Minimum) Girth",
+            "title": "Ankle Girth",
             "measurement": {
                 "definition": "The minimum circumference of the ankle, superior to the Sphyrion tibiale.",
                 "subjectPosition": "The subject assumes a relaxed standing position with the arms hanging by the sides. The subject's feet should be separated with the weight evenly distributed.",
