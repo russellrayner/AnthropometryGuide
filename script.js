@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let isWaitingForEndPoint = false;
     let startPoint = null;
 
+    // Tooltip functionality variables
+    const landmarkTooltip = document.getElementById('landmarkTooltip');
+
     // Task descriptions for each type
     const taskDescriptions = {
         basic: "Learn the fundamental anthropometric measurements used in body composition assessment.",
@@ -359,6 +362,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         svgDotsContainer.appendChild(element);
+        
+        // Add tooltip functionality to all measurement elements
+        addTooltipToElement(element, siteKey, siteData, taskType);
+        
         return element;
     }
 
@@ -553,6 +560,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Tooltip functionality functions
+    function showTooltip(element, text, event) {
+        if (!landmarkTooltip) return;
+        
+        landmarkTooltip.textContent = text;
+        landmarkTooltip.classList.add('visible');
+        
+        // Position tooltip above the cursor
+        const rect = imageContainer.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        
+        landmarkTooltip.style.left = (x - landmarkTooltip.offsetWidth / 2) + 'px';
+        landmarkTooltip.style.top = (y - landmarkTooltip.offsetHeight - 10) + 'px';
+    }
+
+    function hideTooltip() {
+        if (!landmarkTooltip) return;
+        landmarkTooltip.classList.remove('visible');
+    }
+
+    function addTooltipToElement(element, siteKey, siteData, taskType) {
+        // Add tooltip functionality for all task types
+        element.addEventListener('mouseenter', function(event) {
+            if (isQuizMode) return; // Don't show tooltip in quiz mode
+            showTooltip(element, siteData.title, event);
+        });
+        
+        element.addEventListener('mouseleave', hideTooltip);
+        
+        element.addEventListener('mousemove', function(event) {
+            if (isQuizMode) return;
+            if (landmarkTooltip.classList.contains('visible')) {
+                const rect = imageContainer.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                
+                landmarkTooltip.style.left = (x - landmarkTooltip.offsetWidth / 2) + 'px';
+                landmarkTooltip.style.top = (y - landmarkTooltip.offsetHeight - 10) + 'px';
+            }
+        });
+    }
+
     function createDot(siteKey, siteData, taskType) {
         const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         circle.setAttribute("cx", siteData.x);
@@ -562,6 +612,10 @@ document.addEventListener('DOMContentLoaded', function() {
         circle.setAttribute("data-task", taskType);
         circle.classList.add("measurement-dot", `${taskType}-dot`);
         svgDotsContainer.appendChild(circle);
+        
+        // Add tooltip functionality for all dot-based measurements
+        addTooltipToElement(circle, siteKey, siteData, taskType);
+        
         return circle;
     }
 
