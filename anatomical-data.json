@@ -392,7 +392,10 @@
             "startY": "23.4%",
             "endX": "85.4%",
             "endY": "39.5%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1586,
+            "endTime": 1606
         },
         "radiale_stylion_length": {
             "title": "Radiale-stylion Length",
@@ -405,7 +408,10 @@
             "startY": "39.5%",
             "endX": "88.7%",
             "endY": "51.3%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1607,
+            "endTime": 1626
         },
         "midstylion_dactylion_length": {
             "title": "Midstylion-dactylion Length",
@@ -418,7 +424,10 @@
             "startY": "51.3%",
             "endX": "91.1%",
             "endY": "60.0%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1628,
+            "endTime": 1643
         },
         "iliospinale_height": {
             "title": "Iliospinale Height",
@@ -431,7 +440,10 @@
             "startY": "52.3%",
             "endX": "19.2%",
             "endY": "95.0%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1645,
+            "endTime": 1672
         },
         "trochanterion_height": {
             "title": "Trochanterion Height",
@@ -444,7 +456,10 @@
             "startY": "54.3%",
             "endX": "82.0%",
             "endY": "95.0%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1673,
+            "endTime": 1692
         },
         "trochanterion_tibiale_laterale_length": {
             "title": "Trochanterion-tibiale laterale Length",
@@ -457,7 +472,10 @@
             "startY": "54.3%",
             "endX": "81.0%",
             "endY": "72.1%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1694,
+            "endTime": 1722
         },
         "tibiale_laterale_height": {
             "title": "Tibiale laterale Height",
@@ -470,7 +488,10 @@
             "startY": "72.1%",
             "endX": "20.7%",
             "endY": "95.0%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1724,
+            "endTime": 1741
         },
         "tibiale_mediale_sphyrion_tibiale_length": {
             "title": "Tibiale mediale-sphyrion tibiale Length",
@@ -483,7 +504,10 @@
             "startY": "73.4%",
             "endX": "25.9%",
             "endY": "91.9%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1789,
+            "endTime": 1807
         }
     },
     "girths": {
@@ -696,7 +720,10 @@
             "startY": "24.1%",
             "endX": "66.3%",
             "endY": "24.1%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1869,
+            "endTime": 1893
         },
         "biiliocristal": {
             "title": "Biiliocristal Breadth®",
@@ -709,7 +736,10 @@
             "startY": "52.6%",
             "endX": "30.0%",
             "endY": "52.6%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1911,
+            "endTime": 1937
         },
         "transverse_chest_breadth": {
             "title": "Transverse Chest Breadth®",
@@ -722,7 +752,10 @@
             "startY": "36.4%",
             "endX": "28.1%",
             "endY": "36.4%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1939,
+            "endTime": 1953
         },
         "anterior_posterior_chest_depth": {
             "title": "Anterior-Posterior Chest Depth®",
@@ -735,7 +768,10 @@
             "startY": "28.1%",
             "endX": "81.1%",
             "endY": "28.1%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1954,
+            "endTime": 1978
         },
         "biepicondylar_humerus_breadth": {
             "title": "Biepicondylar Humerus Breadth®",
@@ -748,7 +784,10 @@
             "startY": "38.7%",
             "endX": "15.0%",
             "endY": "40.1%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 1980,
+            "endTime": 1999
         },
         "biepicondylar_femur_breadth": {
             "title": "Biepicondylar Femur Breadth®",
@@ -761,7 +800,10 @@
             "startY": "71.4%",
             "endX": "20.9%",
             "endY": "71.4%",
-            "type": "line"
+            "type": "line",
+            "videoId": "qZtZWQXZ9sI",
+            "startTime": 2019,
+            "endTime": 2039
         }
     },
     "basic": {
